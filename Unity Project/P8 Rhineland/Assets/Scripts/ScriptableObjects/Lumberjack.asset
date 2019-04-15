@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879df1781faa794785efe74bc8e6d0b, type: 3}
   m_Name: Lumberjack
   m_EditorClassIdentifier: 
-  type: 0
-  resource: Wood
-  carryCap: 10
+  resource: 0
+  carryCap: 2
+  gatherRange: 2
+  gatherTime: 2

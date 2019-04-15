@@ -71,7 +71,7 @@ public class Gatherer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == type.resource)
+        if(other.tag == type.resource.ToString())
         {
             target = other.gameObject;
         }
@@ -83,7 +83,7 @@ public class Gatherer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(currentJob == state.gather && other.gameObject.tag == type.resource)
+        if(currentJob == state.gather && other.gameObject.tag == type.resource.ToString())
         {
             timer += Time.deltaTime;
             if(timer >= type.gatherTime)
@@ -104,7 +104,7 @@ public class Gatherer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Home")
         {
-            type.Deliver(gathered);
+            type.Deliver(gathered, collision.gameObject);
             gathered = 0;
             gathering = true;
             target = null;
