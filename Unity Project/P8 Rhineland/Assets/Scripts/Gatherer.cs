@@ -98,11 +98,20 @@ public class Gatherer : MonoBehaviour
                 }
             }
         }
+
+        /*if(currentJob == state.deliver && gameObject.tag == "Home")
+        {
+            type.Deliver(gathered, other.gameObject);
+            gathered = 0;
+            gathering = true;
+            target = null;
+            currentJob = state.search;
+        }*/
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Home")
+        if(collision.gameObject.tag == "Home" && gathered > 0)
         {
             type.Deliver(gathered, collision.gameObject);
             gathered = 0;

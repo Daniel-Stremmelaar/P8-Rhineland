@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Gatherer", menuName = "Gatherer Data", order = 51)]
 public class GathererType : ScriptableObject
 {
-    public enum resources { Wood };
+    public enum resources { Wood, Stone };
     public resources resource;
 
     [Header("Gathering")]
@@ -21,10 +21,14 @@ public class GathererType : ScriptableObject
             switch (resource)
             {
                 case resources.Wood:
-                    g.GetComponent<DeliverPoint>().r.wood += i;
+                    g.GetComponent<Building>().r.wood += i;
+                    break;
+
+                case resources.Stone:
+                    g.GetComponent<Building>().r.stone += i;
                     break;
             }
-            g.GetComponent<DeliverPoint>().r.UpdateUI();
+            g.GetComponent<Building>().r.UpdateUI();
         }
     }
 }

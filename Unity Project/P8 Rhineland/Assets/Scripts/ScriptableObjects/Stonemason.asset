@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0879df1781faa794785efe74bc8e6d0b, type: 3}
-  m_Name: Lumberjack
+  m_Name: Stonemason
   m_EditorClassIdentifier: 
-  resource: 0
+  resource: 1
   carryCap: 2
   gatherRange: 3
   gatherTime: 2

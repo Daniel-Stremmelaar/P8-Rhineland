@@ -6,15 +6,19 @@ using UnityEngine.UI;
 public class ResourceManager : MonoBehaviour
 {
     public int wood;
-    public Text text;
+    public int stone;
+    public Text woodText;
+    public Text stoneText;
 
     private void Start()
     {
-        text.text = "Wood: " + wood.ToString();
+        woodText.text = "Wood: " + wood.ToString();
+        stoneText.text = "Stone: " + stone.ToString();
     }
 
     public void UpdateUI()
     {
-        text.text = "Wood: " + wood.ToString();
+        woodText.text = "Wood: " + wood.ToString();
+        stoneText.text = "Stone: " + stone.ToString();
     }
 }
