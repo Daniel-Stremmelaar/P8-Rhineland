@@ -7,20 +7,20 @@ public class Gatherer : MonoBehaviour
 {
     [Header("Behavior")]
     public GathererType type;
-    private enum state { search, gather, deliver, eat };
-    private state currentJob;
+    public enum state { search, gather, deliver, eat };
+    public state currentJob;
 
     [Header("Navigation")]
     public int triggerGrow;
     private NavMeshAgent agent;
     private SphereCollider trigger;
-    private GameObject target;
+    public GameObject target;
     private GameObject home;
 
     [Header("Gathering")]
     private bool gathering;
     private int gathered;
-    private float timer;
+    public float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +74,7 @@ public class Gatherer : MonoBehaviour
         if(other.tag == type.resource.ToString())
         {
             target = other.gameObject;
+            target.GetComponent<ResourcePoint>().current.Add(this.gameObject.GetComponent<Gatherer>());
         }
         if(other.tag == "Home")
         {
@@ -89,11 +90,17 @@ public class Gatherer : MonoBehaviour
             if(timer >= type.gatherTime)
             {
                 gathered += 1;
+                target.GetComponent<ResourcePoint>().amount -= 1;
+                if(target.GetComponent<ResourcePoint>().amount == 0)
+                {
+                    target.GetComponent<ResourcePoint>().Empty();
+                }
                 timer = 0.0f;
                 if(gathered == type.carryCap)
                 {
                     gathering = false;
                     home = null;
+                    target.GetComponent<ResourcePoint>().current.Remove(this.gameObject.GetComponent<Gatherer>());
                     currentJob = state.search;
                 }
             }
