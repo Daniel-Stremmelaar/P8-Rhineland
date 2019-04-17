@@ -29,7 +29,6 @@ public class Building : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 placing = false;
-                c.enabled = true;
             }
             if (Input.GetButtonDown("Fire2"))
             {
@@ -37,6 +36,10 @@ public class Building : MonoBehaviour
             }
 
             c.enabled = false;
+        }
+        else
+        {
+            c.enabled = true;
         }
     }
 }
