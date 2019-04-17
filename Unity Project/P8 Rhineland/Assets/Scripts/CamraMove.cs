@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class CamraMove : MonoBehaviour
 {
+    [Header("CamMove")]
     public float camMoveSpeed;
     public float screenThickness;
+
+    [Header("CamZoom")]
+    public float camZoomSpeed;
+    public float maxZoom;
+    public float minZoom;
 
     void Update()
     {
         CameraMove();
+        CameraZoom();
     }
 
     //cam movement
@@ -42,4 +49,13 @@ public class CamraMove : MonoBehaviour
     }
 
     //scrool wheel zoom in and out
+    void CameraZoom()
+    {
+        float f = Camera.main.fieldOfView;
+
+        f += Input.GetAxis("Mouse ScrollWheel") * camZoomSpeed;
+        f = Mathf.Clamp(f, minZoom, maxZoom);
+
+        Camera.main.fieldOfView = f;
+    }
 }
