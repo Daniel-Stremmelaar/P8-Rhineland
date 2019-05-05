@@ -339,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomEventPlus:
   - name: BonusWood
-    discription: you found some wood
+    discription: you found some random wood
     plusSomthing: 10
   randomEventMinus:
   - name: Burnd wood

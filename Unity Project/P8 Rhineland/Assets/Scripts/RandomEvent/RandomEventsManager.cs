@@ -5,6 +5,9 @@ using UnityEngine;
 //select an event
 public class RandomEventsManager : MonoBehaviour
 {
+    // hangt af van de hoeveelheid minerals
+    // hangt af van de hapiness
+
     void Start()
     {
         
