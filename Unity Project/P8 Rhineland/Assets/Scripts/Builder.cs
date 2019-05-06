@@ -9,6 +9,8 @@ public class Builder : MonoBehaviour
     private Building holder;
     public List<BuildingType> buildings = new List<BuildingType>();
     public Button storehouse;
+    public Material green;
+    public Material red;
     // Start is called before the first frame update
     void Start()
     {
