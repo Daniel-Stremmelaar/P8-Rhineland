@@ -8,6 +8,8 @@ public class RandomEventsManager : MonoBehaviour
     // hangt af van de hoeveelheid minerals
     // hangt af van de hapiness
 
+    public List<RandomEventScriptableObject> events = new List<RandomEventScriptableObject>();
+
     void Start()
     {
         
@@ -15,6 +17,9 @@ public class RandomEventsManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            events[0].Event();
+        }
     }
 }
