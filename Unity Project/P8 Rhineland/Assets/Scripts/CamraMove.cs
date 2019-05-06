@@ -45,6 +45,11 @@ public class CamraMove : MonoBehaviour
             currPos.x += camMoveSpeed * Time.deltaTime;
         }
 
+        if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") != 0 || Input.GetButtonUp("Vertical") && Input.GetAxis("Vertical") != 0)
+        {
+            Input.ResetInputAxes();
+        }
+
         transform.position = currPos;
     }
 
@@ -53,7 +58,7 @@ public class CamraMove : MonoBehaviour
     {
         float f = Camera.main.fieldOfView;
 
-        f += Input.GetAxis("Mouse ScrollWheel") * camZoomSpeed;
+        f += -Input.GetAxis("Mouse ScrollWheel") * camZoomSpeed;
         f = Mathf.Clamp(f, minZoom, maxZoom);
 
         Camera.main.fieldOfView = f;
