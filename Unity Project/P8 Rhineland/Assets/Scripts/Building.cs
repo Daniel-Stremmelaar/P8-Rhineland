@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    [Header("Info")]
     public BuildingType type;
-    public ResourceManager r;
-    public bool placing;
     public Material material;
-    public Builder builder;
-    private Collider c;
+
+    [Header("Placing")]
     private RaycastHit hit;
-    public List<GameObject> colliding = new List<GameObject>();
+    private List<GameObject> colliding = new List<GameObject>();
+    private bool placing;
     private bool placeable;
-    // Start is called before the first frame update
+
+    [Header("Data")]
+    public Gatherer spawnType;
+    public Vector3 spawnOffset;
+    private Builder builder;
+    private ResourceManager r;
+    private Collider c;
+
     void Start()
     {
         r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
@@ -21,7 +28,6 @@ public class Building : MonoBehaviour
         c = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(placing == true)
@@ -36,7 +42,7 @@ public class Building : MonoBehaviour
             {
                 transform.position = hit.point;
             }
-            if (Input.GetButtonDown("Fire1") && placeable == true)
+            if (Input.GetButtonDown("Fire1") && placeable == true && r.Check("Wood", type.woodCost) && r.Check("Stone", type.stoneCost))
             {
                 placing = false;
                 //c.enabled = true;
@@ -62,6 +68,10 @@ public class Building : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material = builder.red;
             }
         }
+        if(!r.Check("Wood", type.woodCost) || !r.Check("Stone", type.stoneCost))
+        {
+            gameObject.GetComponent<Renderer>().material = builder.red;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,5 +82,13 @@ public class Building : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         colliding.Remove(other.gameObject);
+    }
+
+    public void Recruit(Gatherer g)
+    {
+        if( r.Check("Gold", spawnType.goldCost) )
+        {
+            Instantiate(g, gameObject.transform.position + spawnOffset, Quaternion.identity);
+        }
     }
 }

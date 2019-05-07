@@ -34,4 +34,76 @@ public class ResourceManager : MonoBehaviour
         happinessText.text = "Happiness: " + happiness.ToString();
         popualtionText.text = "Popualtion: " + popualtion.ToString() + "/" + popCap.ToString();
     }
+
+    public void Spend(string s, int i)
+    {
+        if(s == "Wood")
+        {
+            wood -= i;
+        }
+        if (s == "Stone")
+        {
+            stone -= i;
+        }
+        if (s == "Food")
+        {
+            food -= i;
+        }
+        if (s == "Gold")
+        {
+            gold -= i;
+        }
+    }
+
+    public bool Check(string s, int i)
+    {
+        if (s == "Wood")
+        {
+            if(i <= wood)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "Stone")
+        {
+            if (i <= stone)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "Food")
+        {
+            if (i <= food)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "Gold")
+        {
+            if (i <= gold)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
