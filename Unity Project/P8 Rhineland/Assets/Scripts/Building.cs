@@ -18,7 +18,7 @@ public class Building : MonoBehaviour
     public Gatherer spawnType;
     public Vector3 spawnOffset;
     private Builder builder;
-    private ResourceManager r;
+    public ResourceManager r;
     private Collider c;
 
     void Start()
