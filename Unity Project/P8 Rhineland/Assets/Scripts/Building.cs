@@ -11,7 +11,7 @@ public class Building : MonoBehaviour
     [Header("Placing")]
     private RaycastHit hit;
     private List<GameObject> colliding = new List<GameObject>();
-    private bool placing;
+    public bool placing;
     private bool placeable;
 
     [Header("Data")]
