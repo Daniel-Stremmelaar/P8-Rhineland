@@ -7,7 +7,12 @@ public class ResourceManager : MonoBehaviour
 {
     public int wood;
     public int stone;
-    public int food;
+    public int weed;
+    public int flower;
+    public int bread;
+    public int ironOre;
+    public int goldOre;
+    public int iron;
     public int gold;
     public int happiness;
     public int popualtion;
@@ -15,7 +20,15 @@ public class ResourceManager : MonoBehaviour
 
     public Text woodText;
     public Text stoneText;
-    public Text foodText;
+
+    public Text weedText;
+    public Text flowerText;
+    public Text breadText;
+
+    public Text ironOreText;
+    public Text goldOreText;
+
+    public Text ironText;
     public Text goldText;
     public Text happinessText;
     public Text popualtionText;
@@ -29,7 +42,14 @@ public class ResourceManager : MonoBehaviour
     {
         woodText.text = "Wood: " + wood.ToString();
         stoneText.text = "Stone: " + stone.ToString();
-        foodText.text = "Food: " + food.ToString();
+
+        weedText.text = "Weed: " + weed.ToString();
+        flowerText.text = "Flower: " + flower.ToString();
+        breadText.text = "Bread: " + bread.ToString();
+
+        ironOreText.text = "IronOre: " + ironOre.ToString();
+        goldOreText.text = "GoldOre: " + goldOre.ToString();
+        ironText.text = "IronOre: " + iron.ToString();
         goldText.text = "Gold: " + gold.ToString();
         happinessText.text = "Happiness: " + happiness.ToString();
         popualtionText.text = "Popualtion: " + popualtion.ToString() + "/" + popCap.ToString();
@@ -45,9 +65,29 @@ public class ResourceManager : MonoBehaviour
         {
             stone -= i;
         }
-        if (s == "Food")
+        if (s == "Weed")
         {
-            food -= i;
+            weed -= i;
+        }
+        if (s == "Flower")
+        {
+            flower -= i;
+        }
+        if (s == "Bread")
+        {
+            bread -= i;
+        }
+        if (s == "IronOre")
+        {
+            ironOre -= i;
+        }
+        if (s == "GoldOre")
+        {
+            goldOre -= i;
+        }
+        if (s == "Iron")
+        {
+            iron -= i;
         }
         if (s == "Gold")
         {
@@ -79,9 +119,64 @@ public class ResourceManager : MonoBehaviour
                 return false;
             }
         }
-        else if (s == "Food")
+        else if (s == "Weed")
         {
-            if (i <= food)
+            if (i <= weed)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "Flower")
+        {
+            if (i <= flower)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "Bread")
+        {
+            if (i <= bread)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "IronOre")
+        {
+            if (i <= ironOre)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "GoldOre")
+        {
+            if (i <= goldOre)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (s == "Iron")
+        {
+            if (i <= iron)
             {
                 return true;
             }
