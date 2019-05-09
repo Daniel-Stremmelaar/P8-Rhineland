@@ -7,10 +7,15 @@ public class ResourceManager : MonoBehaviour
 {
     [Header("Resources Current")]
     public int wood;
+    public int planks;
     public int stone;
+    public int food;
     public int wheat;
     public int flour;
     public int bread;
+    public int berry;
+    public int wine;
+    public int fish;
     public int ironOre;
     public int goldOre;
     public int iron;
@@ -20,10 +25,15 @@ public class ResourceManager : MonoBehaviour
 
     [Header("Resources Caps")]
     public int woodCap;
+    public int planksCap;
     public int stoneCap;
+    public int foodCap;
     public int wheatCap;
     public int flourCap;
     public int breadCap;
+    public int berryCap;
+    public int wineCap;
+    public int fishCap;
     public int ironOreCap;
     public int goldOreCap;
     public int ironCap;
@@ -34,16 +44,29 @@ public class ResourceManager : MonoBehaviour
 
     [Header("Resources Text")]
     public Text woodText;
+    public Text planksText;
     public Text stoneText;
+    public Text foodText;
     public Text wheatText;
     public Text flourText;
     public Text breadText;
+    public Text berryText;
+    public Text wineText;
+    public Text fishText;
     public Text ironOreText;
     public Text goldOreText;
     public Text ironText;
     public Text goldText;
     public Text happinessText;
     public Text popualtionText;
+
+    [Header("Food Count")]
+    public int wheatValue;
+    public int flourValue;
+    public int breadValue;
+    public int berryValue;
+    public int wineValue;
+    public int fishValue;
 
     private void Start()
     {
@@ -52,17 +75,23 @@ public class ResourceManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        woodText.text = "Wood: " + wood.ToString();
-        stoneText.text = "Stone: " + stone.ToString();
+        food = (wheat * wheatValue) + (flour * flourValue) + (bread * breadValue) + (berry * berryValue) + (wine * wineValue) + (fish * fishValue);
+        foodCap = (wheatCap * wheatValue) + (flourCap * flourValue) + (breadCap * breadValue) + (berryCap * berryValue) + (wineCap * wineValue) + (fishCap * fishValue);
 
-        wheatText.text = "Wheat: " + wheat.ToString();
-        flourText.text = "Flour: " + flour.ToString();
-        breadText.text = "Bread: " + bread.ToString();
-
-        ironOreText.text = "IronOre: " + ironOre.ToString();
-        goldOreText.text = "GoldOre: " + goldOre.ToString();
-        ironText.text = "IronOre: " + iron.ToString();
-        goldText.text = "Gold: " + gold.ToString();
+        woodText.text = "Wood: " + wood.ToString() + "/" + woodCap.ToString();
+        planksText.text = "Planks: " + planks.ToString() + "/" + planksCap.ToString();
+        stoneText.text = "Stone: " + stone.ToString() + "/" + stoneCap.ToString();
+        foodText.text = "Food: " + food.ToString() + "/" + foodCap.ToString();
+        wheatText.text = "Wheat: " + wheat.ToString() + "/" + wheatCap.ToString();
+        flourText.text = "Flour: " + flour.ToString() + "/" + flourCap.ToString();
+        breadText.text = "Bread: " + bread.ToString() + "/" + breadCap.ToString();
+        berryText.text = "Berry: " + berry.ToString() + "/" + berryCap.ToString();
+        wineText.text = "Wine: " + wine.ToString() + "/" + wineCap.ToString();
+        fishText.text = "Fish: " + fish.ToString() + "/" + fishCap.ToString();
+        ironOreText.text = "IronOre: " + ironOre.ToString() + "/" + ironOreCap.ToString();
+        goldOreText.text = "GoldOre: " + goldOre.ToString() + "/" + goldOreCap.ToString();
+        ironText.text = "IronOre: " + iron.ToString() + "/" + ironCap.ToString();
+        goldText.text = "Gold: " + gold.ToString() + "/" + goldCap.ToString();
         happinessText.text = "Happiness: " + happiness.ToString();
         popualtionText.text = "Popualtion: " + popualtion.ToString() + "/" + popCap.ToString();
     }
@@ -73,21 +102,13 @@ public class ResourceManager : MonoBehaviour
         {
             wood -= i;
         }
+        if(s == "Planks")
+        {
+            planks -= i;
+        }
         if (s == "Stone")
         {
             stone -= i;
-        }
-        if (s == "Wheat")
-        {
-            wheat -= i;
-        }
-        if (s == "Flour")
-        {
-            flour -= i;
-        }
-        if (s == "Bread")
-        {
-            bread -= i;
         }
         if (s == "IronOre")
         {
@@ -105,6 +126,8 @@ public class ResourceManager : MonoBehaviour
         {
             gold -= i;
         }
+
+        UpdateUI();
     }
 
     public bool Check(string s, int i)
@@ -120,42 +143,20 @@ public class ResourceManager : MonoBehaviour
                 return false;
             }
         }
+        else if (s == "Planks")
+        {
+            if (i <= planks)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         else if (s == "Stone")
         {
             if (i <= stone)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (s == "Wheat")
-        {
-            if (i <= wheat)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (s == "Flour")
-        {
-            if (i <= flour)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (s == "Bread")
-        {
-            if (i <= bread)
             {
                 return true;
             }
@@ -213,4 +214,6 @@ public class ResourceManager : MonoBehaviour
             return false;
         }
     }
+
+    // Add spending and checking food
 }
