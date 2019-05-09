@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
+    [Header("Resources Current")]
     public int wood;
     public int stone;
-    public int weed;
-    public int flower;
+    public int wheat;
+    public int flour;
     public int bread;
     public int ironOre;
     public int goldOre;
@@ -16,18 +17,29 @@ public class ResourceManager : MonoBehaviour
     public int gold;
     public int happiness;
     public int popualtion;
+
+    [Header("Resources Caps")]
+    public int woodCap;
+    public int stoneCap;
+    public int wheatCap;
+    public int flourCap;
+    public int breadCap;
+    public int ironOreCap;
+    public int goldOreCap;
+    public int ironCap;
+    public int goldCap;
+    public int happinessMax;
+    public int happinessMin;
     public int popCap;
 
+    [Header("Resources Text")]
     public Text woodText;
     public Text stoneText;
-
-    public Text weedText;
-    public Text flowerText;
+    public Text wheatText;
+    public Text flourText;
     public Text breadText;
-
     public Text ironOreText;
     public Text goldOreText;
-
     public Text ironText;
     public Text goldText;
     public Text happinessText;
@@ -43,8 +55,8 @@ public class ResourceManager : MonoBehaviour
         woodText.text = "Wood: " + wood.ToString();
         stoneText.text = "Stone: " + stone.ToString();
 
-        weedText.text = "Weed: " + weed.ToString();
-        flowerText.text = "Flower: " + flower.ToString();
+        wheatText.text = "Wheat: " + wheat.ToString();
+        flourText.text = "Flour: " + flour.ToString();
         breadText.text = "Bread: " + bread.ToString();
 
         ironOreText.text = "IronOre: " + ironOre.ToString();
@@ -65,13 +77,13 @@ public class ResourceManager : MonoBehaviour
         {
             stone -= i;
         }
-        if (s == "Weed")
+        if (s == "Wheat")
         {
-            weed -= i;
+            wheat -= i;
         }
-        if (s == "Flower")
+        if (s == "Flour")
         {
-            flower -= i;
+            flour -= i;
         }
         if (s == "Bread")
         {
@@ -119,9 +131,9 @@ public class ResourceManager : MonoBehaviour
                 return false;
             }
         }
-        else if (s == "Weed")
+        else if (s == "Wheat")
         {
-            if (i <= weed)
+            if (i <= wheat)
             {
                 return true;
             }
@@ -130,9 +142,9 @@ public class ResourceManager : MonoBehaviour
                 return false;
             }
         }
-        else if (s == "Flower")
+        else if (s == "Flour")
         {
-            if (i <= flower)
+            if (i <= flour)
             {
                 return true;
             }
