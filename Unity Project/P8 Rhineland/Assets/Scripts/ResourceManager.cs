@@ -130,6 +130,40 @@ public class ResourceManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void Gain(string s, int i)
+    {
+        if (s == "Wood")
+        {
+            wood += i;
+        }
+        if (s == "Planks")
+        {
+            planks += i;
+        }
+        if (s == "Stone")
+        {
+            stone += i;
+        }
+        if (s == "IronOre")
+        {
+            ironOre += i;
+        }
+        if (s == "GoldOre")
+        {
+            goldOre += i;
+        }
+        if (s == "Iron")
+        {
+            iron += i;
+        }
+        if (s == "Gold")
+        {
+            gold += i;
+        }
+
+        UpdateUI();
+    }
+
     public bool Check(string s, int i)
     {
         if (s == "Wood")

@@ -17,6 +17,9 @@ public class Building : MonoBehaviour
     private Builder builder;
     public ResourceManager r;
     private Collider c;
+    public int hp;
+    public float time;
+    public float timeReset;
 
     void Start()
     {
@@ -27,6 +30,18 @@ public class Building : MonoBehaviour
 
     void Update()
     {
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        if(time <= 0)
+        {
+            Maintain(type.maintainCost);
+            time = timeReset;
+        }
+        time -= Time.deltaTime;
+
         if(placing == true)
         {
             //c.enabled = false;
@@ -90,6 +105,37 @@ public class Building : MonoBehaviour
         if( r.Check("Gold", type.spawnType.type.goldCost) )
         {
             Instantiate(g, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
+            r.Spend("Gold", type.spawnType.type.goldCost);
         }
+    }
+
+    public void Maintain(int i)
+    {
+        if(r.Check("Gold", i))
+        {
+            r.Spend("Gold", i);
+        }
+        else
+        {
+            hp -= 1;
+        }
+    }
+
+    public void Repair(BuildingType t)
+    {
+        if( r.Check("Wood", t.woodCost/10) && r.Check("Stone", type.stoneCost/10) && r.Check("Planks", type.plankCost/10) && r.Check("Iron", type.ironCost / 10))
+        {
+            hp = type.hp;
+        }
+    }
+
+    public void Sell(BuildingType t)
+    {
+        r.Gain("Wood", type.woodCost / 10 * 3);
+        r.Gain("Stone", type.stoneCost / 10 * 3);
+        r.Gain("Planks", type.plankCost / 10 * 3);
+        r.Gain("Iron", type.ironCost/10 * 3);
+
+        Destroy(gameObject);
     }
 }
