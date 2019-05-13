@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879df1781faa794785efe74bc8e6d0b, type: 3}
   m_Name: Lumberjack
   m_EditorClassIdentifier: 
-  resource: 0
   carryCap: 2
   gatherRange: 3
   gatherTime: 2
+  goldCost: 0
+  foodMin: 0
+  foodMax: 10
+  food: 5
+  consume: 2
+  consumeTimer: 2
+  consumeTimerReset: 2
+  happiness: 0
+  happinessMax: 0
+  resource: 0

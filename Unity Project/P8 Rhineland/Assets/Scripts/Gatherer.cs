@@ -71,6 +71,7 @@ public class Gatherer : MonoBehaviour
                 //eat behavior
                 break;
         }
+        type.FoodConsumption();
     }
 
     private void OnTriggerEnter(Collider other)
