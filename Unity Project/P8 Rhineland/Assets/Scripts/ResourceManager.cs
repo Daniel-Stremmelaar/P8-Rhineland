@@ -73,6 +73,18 @@ public class ResourceManager : MonoBehaviour
         UpdateUI();
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            Gain("Wood", 100);
+            Gain("Stone", 100);
+            Gain("Planks", 100);
+            Gain("Iron", 100);
+            Gain("Gold", 100);
+        }
+    }
+
     public void UpdateUI()
     {
         food = (wheat * wheatValue) + (flour * flourValue) + (bread * breadValue) + (berry * berryValue) + (wine * wineValue) + (fish * fishValue);
@@ -82,6 +94,11 @@ public class ResourceManager : MonoBehaviour
         planksText.text = "Planks: " + planks.ToString() + "/" + planksCap.ToString();
         stoneText.text = "Stone: " + stone.ToString() + "/" + stoneCap.ToString();
         foodText.text = "Food: " + food.ToString() + "/" + foodCap.ToString();
+        ironText.text = "IronOre: " + iron.ToString() + "/" + ironCap.ToString();
+        goldText.text = "Gold: " + gold.ToString() + "/" + goldCap.ToString();
+        happinessText.text = "Happiness: " + happiness.ToString();
+        popualtionText.text = "Popualtion: " + popualtion.ToString() + "/" + popCap.ToString();
+        /*
         wheatText.text = "Wheat: " + wheat.ToString() + "/" + wheatCap.ToString();
         flourText.text = "Flour: " + flour.ToString() + "/" + flourCap.ToString();
         breadText.text = "Bread: " + bread.ToString() + "/" + breadCap.ToString();
@@ -90,10 +107,7 @@ public class ResourceManager : MonoBehaviour
         fishText.text = "Fish: " + fish.ToString() + "/" + fishCap.ToString();
         ironOreText.text = "IronOre: " + ironOre.ToString() + "/" + ironOreCap.ToString();
         goldOreText.text = "GoldOre: " + goldOre.ToString() + "/" + goldOreCap.ToString();
-        ironText.text = "IronOre: " + iron.ToString() + "/" + ironCap.ToString();
-        goldText.text = "Gold: " + gold.ToString() + "/" + goldCap.ToString();
-        happinessText.text = "Happiness: " + happiness.ToString();
-        popualtionText.text = "Popualtion: " + popualtion.ToString() + "/" + popCap.ToString();
+        */
     }
 
     public void Spend(string s, int i)

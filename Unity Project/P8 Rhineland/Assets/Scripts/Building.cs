@@ -26,6 +26,7 @@ public class Building : MonoBehaviour
         r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
         builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
         c = GetComponent<Collider>();
+        hp = type.hp;
     }
 
     void Update()

@@ -19,9 +19,9 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hire.onClick.AddListener(delegate { Hire(selected.GetComponent<Building>()); });
+        /*hire.onClick.AddListener(delegate { Hire(selected.GetComponent<Building>()); });
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
-        sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
+        sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });*/
     }
 
     // Update is called once per frame
