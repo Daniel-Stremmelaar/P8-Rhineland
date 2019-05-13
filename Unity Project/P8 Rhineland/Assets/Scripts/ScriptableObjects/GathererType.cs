@@ -5,14 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Gatherer", menuName = "Gatherer Data", order = 51)]
 public class GathererType : ScriptableObject
 {
-    public enum resources { Wood, Stone };
-    public resources resource;
-
     [Header("Gathering")]
     public int carryCap;
     public int gatherRange;
     public float gatherTime;
-    
+
+    [Header("Data")]
+    public int goldCost;
+    public int consume;
+    public enum resources { Wood, Stone };
+    public resources resource;
+
     public void Deliver(int i, GameObject g)
     {
         if(i > 0)

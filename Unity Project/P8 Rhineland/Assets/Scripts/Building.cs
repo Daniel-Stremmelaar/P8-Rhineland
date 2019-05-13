@@ -6,7 +6,6 @@ public class Building : MonoBehaviour
 {
     [Header("Info")]
     public BuildingType type;
-    public Material material;
 
     [Header("Placing")]
     private RaycastHit hit;
@@ -15,8 +14,6 @@ public class Building : MonoBehaviour
     private bool placeable;
 
     [Header("Data")]
-    public Gatherer spawnType;
-    public Vector3 spawnOffset;
     private Builder builder;
     public ResourceManager r;
     private Collider c;
@@ -42,12 +39,16 @@ public class Building : MonoBehaviour
             {
                 transform.position = hit.point;
             }
-            if (Input.GetButtonDown("Fire1") && placeable == true && r.Check("Wood", type.woodCost) && r.Check("Stone", type.stoneCost))
+            if (Input.GetButtonDown("Fire1") && placeable == true && r.Check("Wood", type.woodCost) && r.Check("Stone", type.stoneCost) && r.Check("Planks", type.plankCost) && r.Check("Iron", type.ironCost))
             {
                 placing = false;
                 //c.enabled = true;
                 c.isTrigger = false;
-                gameObject.GetComponent<Renderer>().material = material;
+                gameObject.GetComponent<Renderer>().material = type.material;
+                r.Spend("Wood", type.woodCost);
+                r.Spend("Stone", type.stoneCost);
+                r.Spend("Planks", type.plankCost);
+                r.Spend("Iron", type.ironCost);
             }
             if (Input.GetButtonDown("Fire2"))
             {
@@ -86,9 +87,9 @@ public class Building : MonoBehaviour
 
     public void Recruit(Gatherer g)
     {
-        if( r.Check("Gold", spawnType.goldCost) )
+        if( r.Check("Gold", type.spawnType.type.goldCost) )
         {
-            Instantiate(g, gameObject.transform.position + spawnOffset, Quaternion.identity);
+            Instantiate(g, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
         }
     }
 }

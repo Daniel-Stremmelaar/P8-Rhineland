@@ -23,9 +23,7 @@ public class Gatherer : MonoBehaviour
     public float timer;
 
     [Header("Data")]
-    public int goldCost;
     public int food;
-    public int consume;
     public int happiness;
 
     // Start is called before the first frame update
