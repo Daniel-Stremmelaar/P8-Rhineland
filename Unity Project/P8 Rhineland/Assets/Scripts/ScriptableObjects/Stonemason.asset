@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879df1781faa794785efe74bc8e6d0b, type: 3}
   m_Name: Stonemason
   m_EditorClassIdentifier: 
-  resource: 1
   carryCap: 2
   gatherRange: 3
   gatherTime: 2
+  goldCost: 0
+  foodMin: 0
+  foodMax: 100
+  food: 10
+  consume: 0
+  consumeTimer: 1.0327404
+  consumeTimerReset: 2
+  happiness: 50
+  resource: 1

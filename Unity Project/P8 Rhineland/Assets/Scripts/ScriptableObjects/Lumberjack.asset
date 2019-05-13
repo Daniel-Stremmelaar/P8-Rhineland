@@ -17,11 +17,10 @@ MonoBehaviour:
   gatherTime: 2
   goldCost: 0
   foodMin: 0
-  foodMax: 10
-  food: 5
-  consume: 2
-  consumeTimer: 2
+  foodMax: 100
+  food: 10
+  consume: 0
+  consumeTimer: 1.0327404
   consumeTimerReset: 2
-  happiness: 0
-  happinessMax: 0
+  happiness: 50
   resource: 0

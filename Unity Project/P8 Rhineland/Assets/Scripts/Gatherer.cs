@@ -22,9 +22,19 @@ public class Gatherer : MonoBehaviour
     private int gathered;
     public float timer;
 
-    [Header("Data")]
+    [Header("Happiness and consumption")]
+    public int foodMin;
+    public int foodMax;
     public int food;
+    public int consume;
+
+    public float consumeTimer;
+    public float consumeTimerReset;
+
     public int happiness;
+
+    float happinessMod;
+    float consumeMod;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +43,9 @@ public class Gatherer : MonoBehaviour
         currentJob = state.search;
         agent = GetComponent<NavMeshAgent>();
         trigger = GetComponent<SphereCollider>();
+
+        happinessMod = 0.006f * happiness + 0.7f;
+        consumeMod = 2 - happinessMod;
     }
 
     // Update is called once per frame
@@ -71,7 +84,7 @@ public class Gatherer : MonoBehaviour
                 //eat behavior
                 break;
         }
-        type.FoodConsumption();
+        FoodConsumption();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -130,6 +143,24 @@ public class Gatherer : MonoBehaviour
             gathering = true;
             target = null;
             currentJob = state.search;
+        }
+    }
+
+    public void FoodConsumption()
+    {
+        consumeTimer -= Time.deltaTime;
+        if (consumeTimer <= 0)
+        {
+            if (food > foodMin)
+            {
+                food -= Mathf.RoundToInt(consumeMod);
+            }
+            else
+            {
+                Debug.Log("NO FOOD IN POP");
+                //if 0 -- kill pop
+            }
+            consumeTimer = consumeTimerReset;
         }
     }
 }
