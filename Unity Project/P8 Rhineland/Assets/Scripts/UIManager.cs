@@ -14,6 +14,10 @@ public class UIManager : MonoBehaviour
     public Button repair;
     public Button sell;
 
+    [Header("Job")]
+    public List<ScriptableObject> jobsList = new List<ScriptableObject>();
+    public Dropdown jobDropdown;
+
     [Header("Data")]
     public GameObject selected;
     // Start is called before the first frame update
@@ -43,5 +47,11 @@ public class UIManager : MonoBehaviour
     public void Sell(Building b)
     {
 
+    }
+
+    public void SwitchJob()
+    {
+        //list dropdown
+        //copple the dropdown
     }
 }
