@@ -75,7 +75,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Gain("Wood", 100);
             Gain("Stone", 100);
