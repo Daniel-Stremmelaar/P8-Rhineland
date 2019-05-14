@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
         /*hire.onClick.AddListener(delegate { Hire(selected.GetComponent<Building>()); });
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });*/
+        CoppleDropDown();
     }
 
     // Update is called once per frame
@@ -49,9 +50,39 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void CoppleDropDown()
+    {
+        List<string> fillName = new List<string>();
+        int curPos = 0;
+        foreach (var name in jobsList)
+        {
+            fillName.Add(jobsList[curPos].name);
+            curPos += 1;
+        }
+        jobDropdown.ClearOptions();
+        jobDropdown.AddOptions(fillName);
+    }
+
     public void SwitchJob()
     {
         //list dropdown
         //copple the dropdown
     }
+
+    /*
+         public void CoppleDropdownList()
+    {
+        List<string> fillName = new List<string>();
+        foreach (var name in modelList[currIndex].alphasList)
+        {
+            fillName.Add(name.name);
+        }
+        foreach (var dropDown in alphaDorpdownList)
+        {
+            dropDown.ClearOptions();
+            dropDown.AddOptions(fillName);
+            dropDown.value = 5;
+        }
+    }
+     */
 }

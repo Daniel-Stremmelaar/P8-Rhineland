@@ -28,6 +28,9 @@ public class Gatherer : MonoBehaviour
     public int food;
     public int consume;
 
+    public float happinessTimer;
+    public float happinessTimerReset;
+
     public float consumeTimer;
     public float consumeTimerReset;
 
@@ -85,6 +88,7 @@ public class Gatherer : MonoBehaviour
                 break;
         }
         FoodConsumption();
+        HappinessInfluence();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -146,14 +150,34 @@ public class Gatherer : MonoBehaviour
         }
     }
 
+    public void HappinessInfluence()
+    {
+        happinessTimer -= Time.deltaTime * happinessMod;
+        if (happinessTimer <= 0)
+        {
+            if (happiness >= 0 && happiness <= 30)
+            {
+                happiness -= 1;
+                Debug.Log("onder 30");
+                //movespeed
+            }
+            if (happiness >= 31 && happiness <= 60)
+            {
+                happiness -= 1;
+                Debug.Log("midden");
+            }
+            happinessTimer = happinessTimerReset;
+        }
+    }
+
     public void FoodConsumption()
     {
-        consumeTimer -= Time.deltaTime;
+        consumeTimer -= Time.deltaTime * consumeMod;
         if (consumeTimer <= 0)
         {
             if (food > foodMin)
             {
-                food -= Mathf.RoundToInt(consumeMod);
+                food -= 1;
             }
             else
             {
