@@ -119,6 +119,18 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    public bool CheckCap(int index, int i)
+    {
+        if(resourceCaps[index] - resourcesCurrent[index] > i)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public int Eat(int hunger)
     {
         int i = 0;

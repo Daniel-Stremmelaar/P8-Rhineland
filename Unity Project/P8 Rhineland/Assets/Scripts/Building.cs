@@ -111,10 +111,11 @@ public class Building : MonoBehaviour
 
     public void Recruit(Gatherer g)
     {
-        if( r.Check(13, type.spawnType.type.goldCost) )
+        if( r.Check(13, type.spawnType.type.goldCost) && r.CheckCap(15, 1))
         {
             Instantiate(g, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
             r.Spend(13, type.spawnType.type.goldCost);
+            r.resourcesCurrent[15] += 1;
         }
     }
 
@@ -140,6 +141,7 @@ public class Building : MonoBehaviour
 
     public void Sell(BuildingType t)
     {
+        if(r.CheckCap(0, type.woodCost / 10 * 3) && r.CheckCap(2, type.stoneCost / 10 * 3) && r.CheckCap(1, type.plankCost / 10 * 3) && r.CheckCap(12, type.ironCost / 10 * 3))
         r.Gain(0, type.woodCost / 10 * 3);
         r.Gain(2, type.stoneCost / 10 * 3);
         r.Gain(1, type.plankCost / 10 * 3);

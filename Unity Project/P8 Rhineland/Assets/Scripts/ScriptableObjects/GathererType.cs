@@ -12,7 +12,7 @@ public class GathererType : ScriptableObject
 
     [Header("Data")]
     public int goldCost;
-    private int type;
+    public int type;
 
     public enum resources { Wood, Stone, Planks, Berry, IronOre, GoldOre };
     public resources resource;

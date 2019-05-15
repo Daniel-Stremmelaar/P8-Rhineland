@@ -140,7 +140,7 @@ public class Gatherer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Home" && gathered > 0)
+        if(collision.gameObject.tag == "Home" && gathered > 0 &&  collision.gameObject.GetComponent<Building>().r.CheckCap(type.type, gathered))
         {
             type.Deliver(gathered, collision.gameObject);
             gathered = 0;
