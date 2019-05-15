@@ -54,6 +54,16 @@ public class ResourceManager : MonoBehaviour
             resourceTexts[14].text = "Happiness: " + average.ToString();
 
             //Update food UI
+            average = 0;
+            count = 0;
+            foreach(int i in foods)
+            {
+                average += i * foodsValues[count].quantity;
+                count++;
+            }
+            average /= count;
+            average = Mathf.RoundToInt(average);
+            resourceTexts[3].text = "Food: " + average.ToString();
 
             time = timer;
         }
@@ -138,6 +148,5 @@ public class ResourceManager : MonoBehaviour
             i = 0;
         }
         return i;
-
     }
 }
