@@ -12,13 +12,9 @@ public class ResourceManager : MonoBehaviour
     public List<Text> resourceTexts = new List<Text>();
     public List<Gatherer> villagers = new List<Gatherer>();
 
-    [Header("Food Values")]
-    public int wheatValue;
-    public int flourValue;
-    public int breadValue;
-    public int berryValue;
-    public int wineValue;
-    public int fishValue;
+    [Header("Eating")]
+    public List<int> foods = new List<int>();
+    public List<ResourceType> foodsValues = new List<ResourceType>();
 
     [Header("Data")]
     public float time;
@@ -45,6 +41,7 @@ public class ResourceManager : MonoBehaviour
         time -= Time.deltaTime;
         if (time <= 0)
         {
+            //Update happiness UI
             average = 0;
             count = 0;
             foreach(Gatherer g in villagers)
@@ -55,6 +52,9 @@ public class ResourceManager : MonoBehaviour
             average /= count;
             average = Mathf.RoundToInt(average);
             resourceTexts[14].text = "Happiness: " + average.ToString();
+
+            //Update food UI
+
             time = timer;
         }
     }
@@ -64,19 +64,22 @@ public class ResourceManager : MonoBehaviour
         index = 0;
         foreach(Text t in resourceTexts)
         {
-            if(index == 14)
+            if (t != null)
             {
+                if (index == 14 || index == 3)
+                {
+                    index++;
+                }
+                if (resourceCaps[index] > 0)
+                {
+                    t.text = resourceTypes[index].name + ": " + resourcesCurrent[index].ToString() + "/" + resourceCaps[index].ToString();
+                }
+                else
+                {
+                    t.text = resourceTypes[index].name + ": " + resourcesCurrent[index];
+                }
                 index++;
             }
-            if(resourceCaps[index] > 0)
-            {
-                t.text = resourceTypes[index].name + ": " + resourcesCurrent[index].ToString() + "/" + resourceCaps[index].ToString();
-            }
-            else
-            {
-                t.text = resourceTypes[index].name + ": " + resourcesCurrent[index];
-            }
-            index++;
         }
     }
 
@@ -106,5 +109,35 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    // Add spending and checking food
+    public int Eat(int hunger)
+    {
+        int i = 0;
+        for(i = hunger; i > 0; i = i)
+        {
+            for(int n = 0; n < foods.Count+1; n = n)
+            {
+                if(foods[n] == 0)
+                {
+                    n++;
+                }
+                else
+                {
+                    foods[n]--;
+                    i -= foodsValues[n].quantity;
+                }
+                if(i <= 0)
+                {
+                    i = 0;
+                    return i;
+                }
+            }
+            return i;
+        }
+        if (i <= 0)
+        {
+            i = 0;
+        }
+        return i;
+
+    }
 }
