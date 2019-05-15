@@ -13,10 +13,19 @@ public class CamraMove : MonoBehaviour
     public float maxZoom;
     public float minZoom;
 
+    UIManager uIManager;
+    RaycastHit unitHit = new RaycastHit();
+
+    private void Start()
+    {
+        uIManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
+    }
+
     void Update()
     {
         CameraMove();
         CameraZoom();
+        ScelectUnit();
     }
 
     //cam movement
@@ -62,5 +71,24 @@ public class CamraMove : MonoBehaviour
         f = Mathf.Clamp(f, minZoom, maxZoom);
 
         Camera.main.fieldOfView = f;
+    }
+
+    void ScelectUnit()
+    {
+        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out unitHit);
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (unitHit.transform.tag == "Gatherer")
+            {
+                Debug.Log("Hit " + unitHit.transform.tag);
+                //hit.   uIManager.gatherInfoPanel.SetActive(true);
+
+            }
+            else
+            {
+                //hit.   uIManager.gatherInfoPanel.SetActive(false);
+            }
+        }
     }
 }

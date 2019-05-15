@@ -17,9 +17,6 @@ public class RandomEventsManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            events[0].Event();
-        }
+        
     }
 }

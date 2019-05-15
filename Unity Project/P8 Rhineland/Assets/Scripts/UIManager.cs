@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [Header("Job")]
     public List<ScriptableObject> jobsList = new List<ScriptableObject>();
     public Dropdown jobDropdown;
+    public GameObject gatherInfoPanel;
 
     [Header("Data")]
     public GameObject selected;
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });*/
         CoppleDropDown();
+        gatherInfoPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,7 +72,10 @@ public class UIManager : MonoBehaviour
     }
 
     /*
-         public void CoppleDropdownList()
+    /// als elke gat eigen values heeft open het met de values     
+    
+    
+    public void CoppleDropdownList()
     {
         List<string> fillName = new List<string>();
         foreach (var name in modelList[currIndex].alphasList)

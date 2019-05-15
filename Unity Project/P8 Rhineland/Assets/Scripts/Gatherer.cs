@@ -158,13 +158,13 @@ public class Gatherer : MonoBehaviour
             if (happiness >= 0 && happiness <= 30)
             {
                 happiness -= 1;
-                Debug.Log("onder 30");
-                //movespeed
+                //Debug.Log("onder 30");
+                ///movespeed
             }
             if (happiness >= 31 && happiness <= 60)
             {
                 happiness -= 1;
-                Debug.Log("midden");
+                //Debug.Log("midden");
             }
             happinessTimer = happinessTimerReset;
         }

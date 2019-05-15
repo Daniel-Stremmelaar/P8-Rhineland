@@ -11,9 +11,10 @@ public class RandomEventScriptableObject : ScriptableObject
 
     public int amount;
 
-
+    /*
     public void Event()
     {
         Debug.Log(description + amount.ToString());
     }
+    */
 }
