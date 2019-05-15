@@ -15,11 +15,14 @@ public class Building : MonoBehaviour
 
     [Header("Data")]
     private Builder builder;
-    public ResourceManager r;
     private Collider c;
     public int hp;
     public float time;
     public float timeReset;
+
+    [Header("Resources")]
+    public ResourceManager r;
+    public List<Resources> creates = new List<Resources>();
 
     void Start()
     {
@@ -40,6 +43,11 @@ public class Building : MonoBehaviour
         {
             Maintain(type.maintainCost);
             time = timeReset;
+
+            foreach(Resources r in creates)
+            {
+                //check to make
+            }
         }
         time -= Time.deltaTime;
 
@@ -55,16 +63,16 @@ public class Building : MonoBehaviour
             {
                 transform.position = hit.point;
             }
-            if (Input.GetButtonDown("Fire1") && placeable == true && r.Check("Wood", type.woodCost) && r.Check("Stone", type.stoneCost) && r.Check("Planks", type.plankCost) && r.Check("Iron", type.ironCost))
+            if (Input.GetButtonDown("Fire1") && placeable == true && r.Check(0, type.woodCost) && r.Check(2, type.stoneCost) && r.Check(1, type.plankCost) && r.Check(12, type.ironCost))
             {
                 placing = false;
                 //c.enabled = true;
                 c.isTrigger = false;
                 gameObject.GetComponent<Renderer>().material = type.material;
-                r.Spend("Wood", type.woodCost);
-                r.Spend("Stone", type.stoneCost);
-                r.Spend("Planks", type.plankCost);
-                r.Spend("Iron", type.ironCost);
+                r.Spend(0, type.woodCost);
+                r.Spend(2, type.stoneCost);
+                r.Spend(1, type.plankCost);
+                r.Spend(12, type.ironCost);
             }
             if (Input.GetButtonDown("Fire2"))
             {
@@ -85,7 +93,7 @@ public class Building : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material = builder.red;
             }
         }
-        if(!r.Check("Wood", type.woodCost) || !r.Check("Stone", type.stoneCost))
+        if(!r.Check(0, type.woodCost) || !r.Check(2, type.stoneCost) || !r.Check(1, type.plankCost) || !r.Check(12, type.ironCost))
         {
             gameObject.GetComponent<Renderer>().material = builder.red;
         }
@@ -103,18 +111,18 @@ public class Building : MonoBehaviour
 
     public void Recruit(Gatherer g)
     {
-        if( r.Check("Gold", type.spawnType.type.goldCost) )
+        if( r.Check(13, type.spawnType.type.goldCost) )
         {
             Instantiate(g, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
-            r.Spend("Gold", type.spawnType.type.goldCost);
+            r.Spend(13, type.spawnType.type.goldCost);
         }
     }
 
     public void Maintain(int i)
     {
-        if(r.Check("Gold", i))
+        if(r.Check(13, i))
         {
-            r.Spend("Gold", i);
+            r.Spend(13, i);
         }
         else
         {
@@ -124,7 +132,7 @@ public class Building : MonoBehaviour
 
     public void Repair(BuildingType t)
     {
-        if( r.Check("Wood", t.woodCost/10) && r.Check("Stone", type.stoneCost/10) && r.Check("Planks", type.plankCost/10) && r.Check("Iron", type.ironCost / 10))
+        if( r.Check(0, t.woodCost/10) && r.Check(2, type.stoneCost/10) && r.Check(1, type.plankCost/10) && r.Check(12, type.ironCost / 10))
         {
             hp = type.hp;
         }
@@ -132,10 +140,10 @@ public class Building : MonoBehaviour
 
     public void Sell(BuildingType t)
     {
-        r.Gain("Wood", type.woodCost / 10 * 3);
-        r.Gain("Stone", type.stoneCost / 10 * 3);
-        r.Gain("Planks", type.plankCost / 10 * 3);
-        r.Gain("Iron", type.ironCost/10 * 3);
+        r.Gain(0, type.woodCost / 10 * 3);
+        r.Gain(2, type.stoneCost / 10 * 3);
+        r.Gain(1, type.plankCost / 10 * 3);
+        r.Gain(12, type.ironCost/10 * 3);
 
         Destroy(gameObject);
     }
