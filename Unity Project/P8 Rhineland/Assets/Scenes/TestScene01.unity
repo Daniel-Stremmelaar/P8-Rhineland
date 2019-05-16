@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.2726409, g: 0.39523438, b: 0.6538148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -803,6 +803,10 @@ MonoBehaviour:
   jobsList:
   - {fileID: 11400000, guid: 276d42b56e205fc43b2e805142c8b82c, type: 2}
   - {fileID: 11400000, guid: af66f8fcc1109bf40b199d448859de8a, type: 2}
+  - {fileID: 11400000, guid: 59ba34dc63153c84a965cbbbceaac400, type: 2}
+  - {fileID: 11400000, guid: 7c52fbc67f867114d8cbd2232ef9d935, type: 2}
+  - {fileID: 11400000, guid: 639b38caf880e7c44b8db87cb5f298ae, type: 2}
+  - {fileID: 11400000, guid: fd6ba5f13a833d6418063135fc29fb02, type: 2}
   jobDropdown: {fileID: 544411512}
   gatherInfoPanel: {fileID: 2090389389}
   selected: {fileID: 0}
@@ -2401,12 +2405,8 @@ MonoBehaviour:
   resourceCaps: 
   resourceTexts: []
   villagers: []
-  wheatValue: 0
-  flourValue: 0
-  breadValue: 0
-  berryValue: 0
-  wineValue: 0
-  fishValue: 0
+  foods: 
+  foodsValues: []
   time: 0
   timer: 0
   index: 0

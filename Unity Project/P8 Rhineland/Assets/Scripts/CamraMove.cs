@@ -81,12 +81,14 @@ public class CamraMove : MonoBehaviour
         {
             if (unitHit.transform.tag == "Gatherer")
             {
-                Debug.Log("Hit " + unitHit.transform.tag);
-                //hit.   uIManager.gatherInfoPanel.SetActive(true);
+                Debug.Log("Hit " + unitHit.transform.name);
+                unitHit.transform.gameObject.GetComponent<Gatherer>().selected = true;
+                unitHit.transform.gameObject.GetComponent<Gatherer>().OpenUI();
 
             }
             else
             {
+                Debug.Log("MIS CLICK");
                 //hit.   uIManager.gatherInfoPanel.SetActive(false);
             }
         }

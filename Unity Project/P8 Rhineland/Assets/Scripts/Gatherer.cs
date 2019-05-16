@@ -39,6 +39,10 @@ public class Gatherer : MonoBehaviour
     float happinessMod;
     float consumeMod;
 
+    [Header("Selection")]
+    public bool selected = false;
+    UIManager ui;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +53,8 @@ public class Gatherer : MonoBehaviour
 
         happinessMod = 0.006f * happiness + 0.7f;
         consumeMod = 2 - happinessMod;
+
+        ui = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -185,6 +191,20 @@ public class Gatherer : MonoBehaviour
                 //if 0 -- kill pop
             }
             consumeTimer = consumeTimerReset;
+        }
+    }
+
+    public void OpenUI()
+    {
+        if (selected == true)
+        {
+            Debug.Log("TETSTETSTETSTETSTETSTETSTE");
+            ui.gatherInfoPanel.SetActive(true);
+
+            
+            //geef gode job door
+           // ui.jobDropdown.
+            //geef andere stats mee
         }
     }
 }
