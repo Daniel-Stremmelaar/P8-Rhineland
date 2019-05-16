@@ -49,9 +49,16 @@ public class ResourceManager : MonoBehaviour
                 average += g.happiness;
                 count++;
             }
-            average /= count;
-            average = Mathf.RoundToInt(average);
-            resourceTexts[14].text = "Happiness: " + average.ToString();
+            if (count < 1)
+            {
+                average /= count;
+                average = Mathf.RoundToInt(average);
+                resourceTexts[14].text = "Happiness: " + average.ToString();
+            }
+            else
+            {
+                print("Divide by 0");
+            }
 
             //Update food UI
             average = 0;
@@ -69,12 +76,14 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    //Fix bug: shows food resources instead of wanted resources
     public void UpdateUI()
     {
         index = 0;
-        foreach(Text t in resourceTexts)
+        int t;
+        for (t = 0; t < resourceTexts.Count + 1; t++)
         {
-            if (t != null)
+            if (resourceTexts[t] != null)
             {
                 if (index == 14 || index == 3)
                 {
@@ -82,11 +91,11 @@ public class ResourceManager : MonoBehaviour
                 }
                 if (resourceCaps[index] > 0)
                 {
-                    t.text = resourceTypes[index].name + ": " + resourcesCurrent[index].ToString() + "/" + resourceCaps[index].ToString();
+                    resourceTexts[t].text = resourceTypes[index].name + ": " + resourcesCurrent[index].ToString() + "/" + resourceCaps[index].ToString();
                 }
                 else
                 {
-                    t.text = resourceTypes[index].name + ": " + resourcesCurrent[index];
+                    resourceTexts[t].text = resourceTypes[index].name + ": " + resourcesCurrent[index];
                 }
                 index++;
             }

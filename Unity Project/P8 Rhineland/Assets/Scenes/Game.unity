@@ -1488,6 +1488,9 @@ MonoBehaviour:
   hire: {fileID: 0}
   repair: {fileID: 0}
   sell: {fileID: 0}
+  jobsList: []
+  jobDropdown: {fileID: 0}
+  gatherInfoPanel: {fileID: 0}
   selected: {fileID: 0}
 --- !u!114 &1617780285
 MonoBehaviour:
@@ -1550,61 +1553,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d28d2b8ae3b0934ab9859d81a33658a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: 0
-  planks: 0
-  stone: 0
-  food: 0
-  wheat: 0
-  flour: 0
-  bread: 0
-  berry: 0
-  wine: 0
-  fish: 0
-  ironOre: 0
-  goldOre: 0
-  iron: 0
-  gold: 0
-  happiness: 0
-  popualtion: 0
-  woodCap: 300
-  planksCap: 300
-  stoneCap: 300
-  foodCap: 300
-  wheatCap: 100
-  flourCap: 0
-  breadCap: 0
-  berryCap: 100
-  wineCap: 0
-  fishCap: 100
-  ironOreCap: 300
-  goldOreCap: 300
-  ironCap: 300
-  goldCap: 300
-  happinessMax: 100
-  happinessMin: 0
-  popCap: 20
-  woodText: {fileID: 1298183231}
-  planksText: {fileID: 1912355968}
-  stoneText: {fileID: 589781891}
-  foodText: {fileID: 955466608}
-  wheatText: {fileID: 0}
-  flourText: {fileID: 0}
-  breadText: {fileID: 0}
-  berryText: {fileID: 0}
-  wineText: {fileID: 0}
-  fishText: {fileID: 0}
-  ironOreText: {fileID: 0}
-  goldOreText: {fileID: 0}
-  ironText: {fileID: 1048296110}
-  goldText: {fileID: 731515963}
-  happinessText: {fileID: 905578314}
-  popualtionText: {fileID: 1037533317}
-  wheatValue: 2
-  flourValue: 3
-  breadValue: 5
-  berryValue: 1
-  wineValue: 4
-  fishValue: 4
+  resourceTypes:
+  - {fileID: 11400000, guid: 08937cff94519bf429091806d97e8d09, type: 2}
+  - {fileID: 11400000, guid: cb7d0e1b444a8d94e8f60baee0bfdfd2, type: 2}
+  - {fileID: 11400000, guid: 8e15c2dd511c62e4ea7dfffa9f7300d4, type: 2}
+  - {fileID: 11400000, guid: 65cb980f2a8fcc344b34d9fcf4232a45, type: 2}
+  - {fileID: 11400000, guid: 1f0e3518491bcea4990dcdac7b3c2f34, type: 2}
+  - {fileID: 11400000, guid: 5c41b4a94aff0194aba0cd6c25c7142d, type: 2}
+  - {fileID: 11400000, guid: ae7e4286ab7f1304a9356a5f29392aaa, type: 2}
+  - {fileID: 11400000, guid: e5c7af1eacdbf7c4fb8f0df9d73dda19, type: 2}
+  - {fileID: 11400000, guid: 225ca3c4eae013544be37eb1d446e6f9, type: 2}
+  - {fileID: 11400000, guid: c903e77a1a01eef4ab58631e6e06b695, type: 2}
+  - {fileID: 11400000, guid: 7a731723d9c097c46b4555c4338693cd, type: 2}
+  - {fileID: 11400000, guid: 5bca432f2dc7a7843b61d88f2727da68, type: 2}
+  - {fileID: 11400000, guid: 937ca42b6bad12f47acdb07dfc9c1ff9, type: 2}
+  - {fileID: 11400000, guid: 6737a596b444780479d053548f9c4b9c, type: 2}
+  - {fileID: 11400000, guid: 7e269a4371b23cc41a176f440fef69ea, type: 2}
+  - {fileID: 11400000, guid: 7473a12ff243d06468a5f8945e750c30, type: 2}
+  resourcesCurrent: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  resourceCaps: 6400000064000000640000000000000064000000640000006400000064000000640000006400000064000000640000006400000064000000000000000a000000
+  resourceTexts:
+  - {fileID: 1298183231}
+  - {fileID: 1912355968}
+  - {fileID: 589781891}
+  - {fileID: 955466608}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1048296110}
+  - {fileID: 731515963}
+  - {fileID: 905578314}
+  - {fileID: 1037533317}
+  villagers: []
+  foods: 
+  foodsValues: []
+  time: 0
+  timer: 0
+  index: 0
 --- !u!4 &1645079560
 Transform:
   m_ObjectHideFlags: 0
