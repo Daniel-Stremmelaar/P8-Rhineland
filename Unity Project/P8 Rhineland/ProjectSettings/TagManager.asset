@@ -11,6 +11,7 @@ TagManager:
   - Terrain
   - Builder
   - Gatherer
+  - UIManager
   layers:
   - Default
   - TransparentFX

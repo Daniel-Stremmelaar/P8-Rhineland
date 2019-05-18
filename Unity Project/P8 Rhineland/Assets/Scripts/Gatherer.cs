@@ -201,7 +201,6 @@ public class Gatherer : MonoBehaviour
         {
             Debug.Log("TETSTETSTETSTETSTETSTETSTE");
             ui.gatherInfoPanel.SetActive(true);
-
             
             //geef gode job door
            // ui.jobDropdown.
