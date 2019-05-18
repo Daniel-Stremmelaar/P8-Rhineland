@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     public Button sell;
 
     [Header("Job")]
-    public List<ScriptableObject> jobsList = new List<ScriptableObject>();
+    public List<GathererType> jobsList = new List<GathererType>();
     public Dropdown jobDropdown;
     public GameObject gatherInfoPanel;
 
@@ -64,12 +64,7 @@ public class UIManager : MonoBehaviour
         jobDropdown.ClearOptions();
         jobDropdown.AddOptions(fillName);
     }
-
-    public void SwitchJob()
-    {
-        //list dropdown
-        //copple the dropdown
-    }
+    // copple list job to job gatherer
 
     /*
     /// als elke gat eigen values heeft open het met de values     
