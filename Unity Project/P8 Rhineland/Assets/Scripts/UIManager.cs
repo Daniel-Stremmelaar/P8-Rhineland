@@ -52,6 +52,12 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void OpenUIGatherInfo()
+    {
+        //set stuff right
+        gatherInfoPanel.SetActive(true);
+    }
+
     public void CoppleDropDown()
     {
         List<string> fillName = new List<string>();

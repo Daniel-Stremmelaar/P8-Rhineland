@@ -89,7 +89,13 @@ public class CamraMove : MonoBehaviour
             else
             {
                 Debug.Log("MIS CLICK");
-                //hit.   uIManager.gatherInfoPanel.SetActive(false);
+                
+                //hit. uIManager.gatherInfoPanel.SetActive(false);
+                //hit. selected false
+                foreach (GameObject g in GameObject.FindGameObjectsWithTag("Gatherer"))
+                {
+                    g.GetComponent<Gatherer>().selected = false;
+                }
             }
         }
     }
