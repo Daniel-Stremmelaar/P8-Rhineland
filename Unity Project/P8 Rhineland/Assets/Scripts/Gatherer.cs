@@ -55,6 +55,7 @@ public class Gatherer : MonoBehaviour
         consumeMod = 2 - happinessMod;
 
         ui = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
+        
         //weghalen en bij de recruit de juiste invullen
         type = ui.jobsList[0];
     }
@@ -200,8 +201,9 @@ public class Gatherer : MonoBehaviour
     {
         if (selected == true)
         {
-            Debug.Log("TETSTETSTETSTETSTETSTETSTE");
+            Debug.Log("TEST01");
             ui.OpenUIGatherInfo();
+            Debug.Log("TEST02");
             
             //geef gode job door
            // ui.jobDropdown.
