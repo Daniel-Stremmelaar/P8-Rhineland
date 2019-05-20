@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
   m_Name: Lumberjack
   m_EditorClassIdentifier: 
-  woodCost: 0
+  woodCost: 200
   stoneCost: 0
   plankCost: 0
   ironCost: 0

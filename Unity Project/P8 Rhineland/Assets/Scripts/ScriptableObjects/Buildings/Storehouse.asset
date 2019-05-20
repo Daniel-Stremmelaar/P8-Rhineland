@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
   m_Name: Storehouse
   m_EditorClassIdentifier: 
-  woodCost: 10
-  stoneCost: 10
-  plankCost: 10
-  ironCost: 10
+  woodCost: 50
+  stoneCost: 50
+  plankCost: 50
+  ironCost: 0
   maintainCost: 0
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
   material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 4
+  upgrade: {fileID: 0}
