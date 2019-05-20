@@ -55,9 +55,6 @@ public class Gatherer : MonoBehaviour
         consumeMod = 2 - happinessMod;
 
         ui = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
-        
-        //weghalen en bij de recruit de juiste invullen
-        type = ui.jobsList[0];
     }
 
     // Update is called once per frame
