@@ -133,6 +133,11 @@ public class Building : MonoBehaviour
         else
         {
             hp -= 1;
+            if (hp <= 0)
+            {
+                Debug.Log("Destroyed  " + gameObject.name);
+                Destroy(gameObject);
+            }
         }
     }
 
