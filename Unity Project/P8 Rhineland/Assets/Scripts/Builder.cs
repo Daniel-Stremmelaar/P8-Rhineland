@@ -8,13 +8,18 @@ public class Builder : MonoBehaviour
     public Building b;
     private Building holder;
     public List<BuildingType> buildings = new List<BuildingType>();
-    public Button storehouse;
+    public List<Button> buttons = new List<Button>();
     public Material green;
     public Material red;
-    // Start is called before the first frame update
+
     void Start()
     {
-        storehouse.onClick.AddListener(delegate { Build(0); } );
+        int i = 0;
+        foreach(Button b in buttons)
+        {
+            b.onClick.AddListener(delegate { Build(i); } );
+            i++;
+        }
     }
 
     public void Build(int i)
