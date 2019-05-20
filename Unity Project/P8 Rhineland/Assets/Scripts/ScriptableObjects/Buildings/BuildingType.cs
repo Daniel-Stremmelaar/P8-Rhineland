@@ -16,6 +16,7 @@ public class BuildingType : ScriptableObject
     public int hp;
     public Gatherer spawnType;
     public Vector3 spawnOffset;
+    public Mesh mesh;
     public Material material;
     public enum recieves { wood, stone, food, gold, all, none };
     public recieves recieveType;

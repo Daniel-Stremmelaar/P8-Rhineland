@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250740143}
   m_LocalRotation: {x: 0.49599367, y: -0, z: -0, w: 0.8683261}
-  m_LocalPosition: {x: 364, y: 156, z: 181}
+  m_LocalPosition: {x: 364, y: 27, z: 257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3971,6 +3971,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingPanel: {fileID: 0}
   villagerPanel: {fileID: 0}
+  buttons:
+  - {fileID: 1231013492}
+  - {fileID: 1116124525}
+  - {fileID: 2033375390}
+  panels:
+  - {fileID: 24078566}
+  - {fileID: 2028514722}
+  - {fileID: 1904779741}
   hire: {fileID: 0}
   repair: {fileID: 0}
   sell: {fileID: 0}
@@ -3992,8 +4000,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   b: {fileID: 3704049579762952449, guid: af7f655376d858f488bfdcdce6fca0ac, type: 3}
   buildings:
+  - {fileID: 11400000, guid: bf60da745dc3bb4458033d7eaa85d653, type: 2}
+  - {fileID: 11400000, guid: 89cc76812f59d7f4aa4cefc123a48f76, type: 2}
+  - {fileID: 11400000, guid: 8a9bb256065ce314eaf77bdf09d6c8bf, type: 2}
+  - {fileID: 11400000, guid: 61438f4f570e97940a04c63070fc34d9, type: 2}
+  - {fileID: 11400000, guid: f5428619f49cf544cb2d6c0f6960949f, type: 2}
+  - {fileID: 11400000, guid: 0e437a5a895b37b449d121fc9ac2e985, type: 2}
+  - {fileID: 11400000, guid: 221336366851a87439941febb7118cee, type: 2}
+  - {fileID: 11400000, guid: 8ccf6c5819432ca49a45461f1356620f, type: 2}
+  - {fileID: 11400000, guid: 5d9d9ffbbb7569e47b9a91b831a3de8d, type: 2}
+  - {fileID: 11400000, guid: fef28134bd3a41d40a796227276d3a69, type: 2}
+  - {fileID: 11400000, guid: f18b74ab81809b246b4ab24d85aaeeb1, type: 2}
+  - {fileID: 11400000, guid: befdf111ea4090b4e98c4fa553817136, type: 2}
+  - {fileID: 11400000, guid: 6f9ebb3f2b2a9a34cacee38eb245140b, type: 2}
   - {fileID: 11400000, guid: c5a6b47dec561c541b1adb990fb4befe, type: 2}
-  buttons: []
+  - {fileID: 11400000, guid: c1c7a3a41bb08a942b26f770d459e623, type: 2}
+  buttons:
+  - {fileID: 1502149403}
+  - {fileID: 400149803}
+  - {fileID: 1046077175}
+  - {fileID: 510424017}
+  - {fileID: 1647068930}
+  - {fileID: 595171192}
+  - {fileID: 2123068787}
+  - {fileID: 102683958}
+  - {fileID: 525139230}
+  - {fileID: 1877240488}
+  - {fileID: 1545922397}
+  - {fileID: 1176401165}
+  - {fileID: 1797639918}
+  - {fileID: 464683253}
+  - {fileID: 807804536}
   green: {fileID: 2100000, guid: 826ae7407bd9da7448b523aedd1fd124, type: 2}
   red: {fileID: 2100000, guid: 7bef8567b5c29624d84d346e13942a87, type: 2}
 --- !u!4 &1617780286
@@ -4079,7 +4116,7 @@ MonoBehaviour:
   foods: 
   foodsValues: []
   time: 0
-  timer: 0
+  timer: 10
   index: 0
 --- !u!4 &1645079560
 Transform:

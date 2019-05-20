@@ -9,6 +9,10 @@ public class UIManager : MonoBehaviour
     public GameObject buildingPanel;
     public GameObject villagerPanel;
 
+    [Header("Panel Management")]
+    public List<Button> buttons = new List<Button>();
+    public List<GameObject> panels = new List<GameObject>();
+
     [Header("Building Panel Elements")]
     public Button hire;
     public Button repair;
@@ -18,13 +22,15 @@ public class UIManager : MonoBehaviour
     public List<GathererType> jobsList = new List<GathererType>();
     public Dropdown jobDropdown;
     public GameObject gatherInfoPanel;
-    public Image ghatererPhoto;
 
     [Header("Data")]
     public GameObject selected;
     // Start is called before the first frame update
     void Start()
     {
+        buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
+        buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
+        buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
         /*hire.onClick.AddListener(delegate { Hire(selected.GetComponent<Building>()); });
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });*/
@@ -53,10 +59,9 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void OpenUIGatherInfo(Sprite s)
+    public void OpenUIGatherInfo()
     {
-        ghatererPhoto.sprite = s;
-
+        //set stuff right
         gatherInfoPanel.SetActive(true);
     }
 
@@ -71,6 +76,15 @@ public class UIManager : MonoBehaviour
         }
         jobDropdown.ClearOptions();
         jobDropdown.AddOptions(fillName);
+    }
+
+    public void OpenPanel(GameObject panel)
+    {
+        foreach(GameObject g in panels)
+        {
+            g.SetActive(false);
+            panel.SetActive(true);
+        }
     }
     // copple list job to job gatherer
 

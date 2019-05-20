@@ -17,9 +17,10 @@ MonoBehaviour:
   plankCost: 0
   ironCost: 0
   maintainCost: 0
-  hp: 0
+  hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
+  mesh: {fileID: 0}
   material: {fileID: 0}
   recieveType: 4
   upgrade: {fileID: 0}

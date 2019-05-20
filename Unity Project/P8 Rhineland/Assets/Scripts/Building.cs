@@ -30,6 +30,7 @@ public class Building : MonoBehaviour
         builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
         c = GetComponent<Collider>();
         hp = type.hp;
+        gameObject.GetComponent<MeshFilter>().mesh = type.mesh;
     }
 
     void Update()

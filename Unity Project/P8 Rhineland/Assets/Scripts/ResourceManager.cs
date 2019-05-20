@@ -49,7 +49,7 @@ public class ResourceManager : MonoBehaviour
                 average += g.happiness;
                 count++;
             }
-            if (count < 1)
+            if (count > 0)
             {
                 average /= count;
                 average = Mathf.RoundToInt(average);
@@ -68,9 +68,16 @@ public class ResourceManager : MonoBehaviour
                 average += i * foodsValues[count].quantity;
                 count++;
             }
-            average /= count;
-            average = Mathf.RoundToInt(average);
-            resourceTexts[3].text = "Food: " + average.ToString();
+            if (count > 0)
+            {
+                average /= count;
+                average = Mathf.RoundToInt(average);
+                resourceTexts[3].text = "Food: " + average.ToString();
+            }
+            else
+            {
+                print("Divide by 0");
+            }
 
             time = timer;
         }
@@ -81,7 +88,7 @@ public class ResourceManager : MonoBehaviour
     {
         index = 0;
         int t;
-        for (t = 0; t < resourceTexts.Count + 1; t++)
+        for (t = 0; t < resourceTexts.Count; t++)
         {
             if (resourceTexts[t] != null)
             {
