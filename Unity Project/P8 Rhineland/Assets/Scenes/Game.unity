@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 250740145}
   - component: {fileID: 250740144}
   - component: {fileID: 250740147}
+  - component: {fileID: 250740148}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -397,13 +398,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250740143}
-  m_LocalRotation: {x: 0.49599367, y: -0, z: -0, w: 0.8683261}
-  m_LocalPosition: {x: 364, y: 137, z: 192}
+  m_LocalRotation: {x: 0, y: 0.8660254, z: -0.5, w: 0}
+  m_LocalPosition: {x: 26.59, y: 41, z: 54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 59.471004, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 180, z: 0}
 --- !u!114 &250740147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,6 +498,23 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &250740148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250740143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86cc24ba836eed45bc27c4713affb51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camMoveSpeed: 10
+  screenThickness: 30
+  camZoomSpeed: 15
+  maxZoom: 90
+  minZoom: 15
 --- !u!1 &274900044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,6 +4003,7 @@ MonoBehaviour:
   jobsList: []
   jobDropdown: {fileID: 0}
   gatherInfoPanel: {fileID: 0}
+  gethererImage: {fileID: 0}
   selected: {fileID: 0}
 --- !u!114 &1617780285
 MonoBehaviour:
