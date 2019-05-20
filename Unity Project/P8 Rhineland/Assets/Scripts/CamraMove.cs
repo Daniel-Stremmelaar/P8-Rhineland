@@ -18,7 +18,7 @@ public class CamraMove : MonoBehaviour
 
     private void Start()
     {
-        uIManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
+        uIManager = GameObject.FindWithTag("Builder").GetComponent<UIManager>();
     }
 
     void Update()
@@ -97,7 +97,7 @@ public class CamraMove : MonoBehaviour
             {
                 g.GetComponent<Gatherer>().selected = false;
             }
-            GameObject.FindWithTag("UIManager").GetComponent<UIManager>().gatherInfoPanel.SetActive(false);
+            GameObject.FindWithTag("Builder").GetComponent<UIManager>().gatherInfoPanel.SetActive(false);
         }
     }
 
