@@ -19,4 +19,5 @@ public class BuildingType : ScriptableObject
     public Material material;
     public enum recieves { wood, stone, food, gold, all, none };
     public recieves recieveType;
+    public BuildingType upgrade;
 }
