@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public List<GathererType> jobsList = new List<GathererType>();
     public Dropdown jobDropdown;
     public GameObject gatherInfoPanel;
+    public Image gethererImage;
 
     [Header("Data")]
     public GameObject selected;
@@ -31,11 +32,14 @@ public class UIManager : MonoBehaviour
         buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
         buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
         buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
-        /*hire.onClick.AddListener(delegate { Hire(selected.GetComponent<Building>()); });
+        /*
+        hire.onClick.AddListener(delegate { Hire(selected.GetComponent<Building>()); });
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
-        sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });*/
+        sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
+        */
         CoppleDropDown();
         gatherInfoPanel.SetActive(false);
+        Debug.Log("DONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE START");
     }
 
     // Update is called once per frame
@@ -59,10 +63,22 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void OpenUIGatherInfo()
+    public void OpenUIGatherInfo(Sprite s)
     {
-        //set stuff right
+        gethererImage.sprite = s;
         gatherInfoPanel.SetActive(true);
+    }
+
+    public void ChangeJob(int i)
+    {
+        foreach (var item in GameObject.FindGameObjectsWithTag("Gatherer"))
+        {
+            if (item.GetComponent<Gatherer>().selected == true)
+            {
+                item.GetComponent<Gatherer>().type = jobsList[i];
+                gethererImage.sprite = jobsList[i].jobSprite;
+            }
+        }
     }
 
     public void CoppleDropDown()
