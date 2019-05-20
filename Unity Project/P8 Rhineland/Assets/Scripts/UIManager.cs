@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public List<GathererType> jobsList = new List<GathererType>();
     public Dropdown jobDropdown;
     public GameObject gatherInfoPanel;
+    public Image ghatererPhoto;
 
     [Header("Data")]
     public GameObject selected;
@@ -52,9 +53,10 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void OpenUIGatherInfo()
+    public void OpenUIGatherInfo(Sprite s)
     {
-        //set stuff right
+        ghatererPhoto.sprite = s;
+
         gatherInfoPanel.SetActive(true);
     }
 

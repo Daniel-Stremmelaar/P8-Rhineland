@@ -84,19 +84,21 @@ public class CamraMove : MonoBehaviour
                 Debug.Log("Hit " + unitHit.transform.name);
                 unitHit.transform.gameObject.GetComponent<Gatherer>().selected = true;
                 unitHit.transform.gameObject.GetComponent<Gatherer>().OpenUI();
-
             }
             else
             {
                 Debug.Log("MIS CLICK");
-                
-                //hit. uIManager.gatherInfoPanel.SetActive(false);
-                //hit. selected false
-                foreach (GameObject g in GameObject.FindGameObjectsWithTag("Gatherer"))
-                {
-                    g.GetComponent<Gatherer>().selected = false;
-                }
             }
         }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Debug.Log("Deselect");
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Gatherer"))
+            {
+                g.GetComponent<Gatherer>().selected = false;
+            }
+            GameObject.FindWithTag("UIManager").GetComponent<UIManager>().gatherInfoPanel.SetActive(false);
+        }
     }
+
 }

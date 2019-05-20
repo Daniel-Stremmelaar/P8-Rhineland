@@ -17,4 +17,5 @@ MonoBehaviour:
   gatherTime: 2
   goldCost: 0
   type: 0
+  jobSprite: {fileID: 21300000, guid: a4d2f6c97bae186488d119c0f7ad0a20, type: 3}
   resource: 1

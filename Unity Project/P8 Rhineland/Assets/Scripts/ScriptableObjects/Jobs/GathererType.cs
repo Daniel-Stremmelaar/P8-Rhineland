@@ -13,6 +13,7 @@ public class GathererType : ScriptableObject
     [Header("Data")]
     public int goldCost;
     public int type;
+    public Sprite jobSprite;
 
     public enum resources { Wood, Stone, Planks, Berry, IronOre, GoldOre };
     public resources resource;

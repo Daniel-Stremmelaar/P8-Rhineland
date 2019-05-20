@@ -201,9 +201,7 @@ public class Gatherer : MonoBehaviour
     {
         if (selected == true)
         {
-            Debug.Log("TEST01");
-            ui.OpenUIGatherInfo();
-            Debug.Log("TEST02");
+            ui.OpenUIGatherInfo(type.jobSprite);
             
             //geef gode job door
            // ui.jobDropdown.
