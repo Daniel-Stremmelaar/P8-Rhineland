@@ -9,5 +9,8 @@ public class ResourceType : ScriptableObject
 
     public int quantity;
 
-    public List<GameObject> required = new List<GameObject>();
+    public ResourceType required;
+    public int amountNeeded;
+
+    public int index;
 }

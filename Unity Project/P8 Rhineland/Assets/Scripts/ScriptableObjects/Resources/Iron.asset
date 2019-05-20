@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: 
   quantity: 0
-  required: []
+  required: {fileID: 11400000, guid: 7a731723d9c097c46b4555c4338693cd, type: 2}
+  amountNeeded: 1
+  index: 12

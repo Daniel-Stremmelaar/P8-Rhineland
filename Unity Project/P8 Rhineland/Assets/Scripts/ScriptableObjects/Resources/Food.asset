@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Food
   m_EditorClassIdentifier: 
   quantity: 0
-  required: []
+  required: {fileID: 0}
+  amountNeeded: 0
+  index: 3

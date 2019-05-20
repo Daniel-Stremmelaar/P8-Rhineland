@@ -22,7 +22,7 @@ public class Building : MonoBehaviour
 
     [Header("Resources")]
     public ResourceManager r;
-    public List<Resources> creates = new List<Resources>();
+    public List<ResourceType> creates = new List<ResourceType>();
 
     void Start()
     {
@@ -45,9 +45,13 @@ public class Building : MonoBehaviour
             Maintain(type.maintainCost);
             time = timeReset;
 
-            foreach(Resources r in creates)
+            foreach(ResourceType resource in creates)
             {
-                //check to make
+                if(r.Check(resource.required.index, resource.required.amountNeeded))
+                {
+                    r.Spend(resource.required.index, resource.required.amountNeeded);
+                    r.Gain(resource.index, 1);
+                }
             }
         }
         time -= Time.deltaTime;

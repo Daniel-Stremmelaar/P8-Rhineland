@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Bread
   m_EditorClassIdentifier: 
   quantity: 0
-  required: []
+  required: {fileID: 11400000, guid: 5c41b4a94aff0194aba0cd6c25c7142d, type: 2}
+  amountNeeded: 1
+  index: 6
