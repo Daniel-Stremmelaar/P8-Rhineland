@@ -14,7 +14,6 @@ public class UIManager : MonoBehaviour
     public List<GameObject> panels = new List<GameObject>();
 
     [Header("Building Panel Elements")]
-    public Button hire;
     public Button repair;
     public Button sell;
 
@@ -26,14 +25,20 @@ public class UIManager : MonoBehaviour
 
     [Header("Data")]
     public GameObject selected;
+
+    [Header("Building Select")]
+    public Text type;
+    public Button recruit;
+    public GameObject selectedPanel;
     // Start is called before the first frame update
     void Start()
     {
         buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
         buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
         buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
+
+        recruit.onClick.AddListener(Recruit);
         /*
-        hire.onClick.AddListener(delegate { Hire(selected.GetComponent<Building>()); });
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
         */
@@ -46,11 +51,6 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void Hire(Building b)
-    {
-        b.Recruit(b.type.spawnType);
     }
 
     public void Repair(Building b)
@@ -101,6 +101,24 @@ public class UIManager : MonoBehaviour
             g.SetActive(false);
             panel.SetActive(true);
         }
+    }
+
+    public void SelectedPanel(GameObject g)
+    {
+        selected = g;
+        type.text = g.GetComponent<Building>().type.name;
+        selectedPanel.SetActive(true);
+    }
+
+    public void Deselect()
+    {
+        selected = null;
+        selectedPanel.SetActive(false);
+    }
+
+    public void Recruit()
+    {
+        selected.GetComponent<Building>().Recruit();
     }
     // copple list job to job gatherer
 

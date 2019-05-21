@@ -14,11 +14,12 @@ public class BuildingType : ScriptableObject
 
     [Header("Data")]
     public int hp;
-    public Gatherer spawnType;
+    public GathererType spawnType;
     public Vector3 spawnOffset;
     public Mesh mesh;
     public Material material;
     public enum recieves { wood, stone, food, gold, all, none };
     public recieves recieveType;
     public BuildingType upgrade;
+    public int colliderRadius;
 }

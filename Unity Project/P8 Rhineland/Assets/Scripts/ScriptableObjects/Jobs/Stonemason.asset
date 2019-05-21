@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879df1781faa794785efe74bc8e6d0b, type: 3}
   m_Name: Stonemason
   m_EditorClassIdentifier: 
-  carryCap: 2
+  carryCap: 5
   gatherRange: 3
-  gatherTime: 2
+  gatherTime: 1
   goldCost: 0
   type: 0
   jobSprite: {fileID: 21300000, guid: a4d2f6c97bae186488d119c0f7ad0a20, type: 3}

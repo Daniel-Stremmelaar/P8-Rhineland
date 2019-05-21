@@ -13,6 +13,9 @@ public class CamraMove : MonoBehaviour
     public float maxZoom;
     public float minZoom;
 
+    [Header("Selecting")]
+    public GameObject selected;
+
     UIManager uIManager;
     RaycastHit unitHit = new RaycastHit();
 
@@ -23,7 +26,7 @@ public class CamraMove : MonoBehaviour
 
     void Update()
     {
-        CameraMove();
+        //CameraMove();
         CameraZoom();
         ScelectUnit();
     }
@@ -85,8 +88,14 @@ public class CamraMove : MonoBehaviour
                 unitHit.transform.gameObject.GetComponent<Gatherer>().selected = true;
                 unitHit.transform.gameObject.GetComponent<Gatherer>().OpenUI();
             }
+            else if(unitHit.transform.tag == "Home")
+            {
+                selected = unitHit.transform.gameObject;
+                uIManager.SelectedPanel(unitHit.transform.gameObject);
+            }
             else
             {
+                uIManager.Deselect();
                 Debug.Log("MIS CLICK");
             }
         }

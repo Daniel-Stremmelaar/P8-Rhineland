@@ -16,9 +16,11 @@ public class Building : MonoBehaviour
     [Header("Data")]
     private Builder builder;
     private Collider c;
+    private Gatherer g;
     public int hp;
     public float time;
     public float timeReset;
+    public Gatherer spawn;
 
     [Header("Resources")]
     public ResourceManager r;
@@ -78,6 +80,7 @@ public class Building : MonoBehaviour
                 r.Spend(2, type.stoneCost);
                 r.Spend(1, type.plankCost);
                 r.Spend(12, type.ironCost);
+                GetComponent<SphereCollider>().radius = type.colliderRadius;
             }
             if (Input.GetButtonDown("Fire2"))
             {
@@ -114,12 +117,13 @@ public class Building : MonoBehaviour
         colliding.Remove(other.gameObject);
     }
 
-    public void Recruit(Gatherer g)
+    public void Recruit()
     {
-        if( r.Check(13, type.spawnType.type.goldCost) && r.CheckCap(15, 1))
+        if( r.Check(13, type.spawnType.goldCost) && r.CheckCap(15, 1))
         {
-            Instantiate(g, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
-            r.Spend(13, type.spawnType.type.goldCost);
+            g = Instantiate(spawn, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
+            g.type = type.spawnType;
+            r.Spend(13, type.spawnType.goldCost);
             r.resourcesCurrent[15] += 1;
         }
     }

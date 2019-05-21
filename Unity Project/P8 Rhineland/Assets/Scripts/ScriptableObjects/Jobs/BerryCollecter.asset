@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879df1781faa794785efe74bc8e6d0b, type: 3}
   m_Name: BerryCollecter
   m_EditorClassIdentifier: 
-  carryCap: 0
-  gatherRange: 0
-  gatherTime: 0
+  carryCap: 5
+  gatherRange: 3
+  gatherTime: 1
   goldCost: 0
   type: 0
-  resource: 0
+  jobSprite: {fileID: 0}
+  resource: 3

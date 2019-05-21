@@ -12,6 +12,7 @@ TagManager:
   - Builder
   - Gatherer
   - UIManager
+  - Berry
   layers:
   - Default
   - TransparentFX

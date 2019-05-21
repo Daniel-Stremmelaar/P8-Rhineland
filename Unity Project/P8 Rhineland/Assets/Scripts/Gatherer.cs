@@ -21,6 +21,9 @@ public class Gatherer : MonoBehaviour
     private bool gathering;
     private int gathered;
     public float timer;
+    private bool delivering;
+    private ResourceManager r;
+    private GameObject deliverPoint;
 
     [Header("Happiness and consumption")]
     public int foodMin;
@@ -46,6 +49,8 @@ public class Gatherer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
+        delivering = false;
         gathering = true;
         currentJob = state.search;
         agent = GetComponent<NavMeshAgent>();
@@ -54,12 +59,16 @@ public class Gatherer : MonoBehaviour
         happinessMod = 0.006f * happiness + 0.7f;
         consumeMod = 2 - happinessMod;
 
-        ui = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
+        ui = GameObject.FindWithTag("Builder").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(delivering == true)
+        {
+            Deliver();
+        }
         switch (currentJob)
         {
             case state.search:
@@ -146,13 +155,24 @@ public class Gatherer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Home" && gathered > 0 &&  collision.gameObject.GetComponent<Building>().r.CheckCap(type.type, gathered))
+        if(collision.gameObject.tag == "Home" && gathered > 0)
         {
-            type.Deliver(gathered, collision.gameObject);
+            delivering = true;
+            deliverPoint = collision.gameObject;
+        }
+    }
+
+    public void Deliver()
+    {
+        if(r.CheckCap(type.type, gathered))
+        {
+            type.Deliver(gathered, deliverPoint);
             gathered = 0;
             gathering = true;
             target = null;
             currentJob = state.search;
+            delivering = false;
+            deliverPoint = null;
         }
     }
 
