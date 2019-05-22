@@ -13,6 +13,8 @@ TagManager:
   - Gatherer
   - UIManager
   - Berry
+  - IronOre
+  - GoldOre
   layers:
   - Default
   - TransparentFX

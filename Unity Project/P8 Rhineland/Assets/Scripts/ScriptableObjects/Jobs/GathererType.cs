@@ -15,7 +15,7 @@ public class GathererType : ScriptableObject
     public int type;
     public Sprite jobSprite;
 
-    public enum resources { Wood, Stone, Planks, Berry, IronOre, GoldOre };
+    public enum resources { Wood, Stone, Berry, IronOre, GoldOre };
     public resources resource;
 
     public void Deliver(int i, GameObject g)
@@ -27,10 +27,6 @@ public class GathererType : ScriptableObject
         if(resource == resources.Stone)
         {
             type = 2;
-        }
-        if(resource == resources.Planks)
-        {
-            type = 1;
         }
         if(resource == resources.Berry)
         {
