@@ -18,4 +18,4 @@ MonoBehaviour:
   goldCost: 0
   type: 0
   jobSprite: {fileID: 0}
-  resource: 5
+  resource: 4

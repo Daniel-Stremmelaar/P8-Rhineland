@@ -16,6 +16,6 @@ MonoBehaviour:
   gatherRange: 3
   gatherTime: 1
   goldCost: 0
-  type: 0
+  type: 10
   jobSprite: {fileID: 0}
-  resource: 3
+  resource: 2

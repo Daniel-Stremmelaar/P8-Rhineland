@@ -35,7 +35,7 @@ public class Builder : MonoBehaviour
     {
         if(buildings[i] != null)
         {
-            holder = Instantiate(b, Camera.main.ScreenToViewportPoint(Input.mousePosition), Quaternion.identity);
+            holder = Instantiate(buildings[i].building, Camera.main.ScreenToViewportPoint(Input.mousePosition), Quaternion.identity).GetComponent<Building>();
             holder.placing = true;
             holder.type = buildings[i];
         }
