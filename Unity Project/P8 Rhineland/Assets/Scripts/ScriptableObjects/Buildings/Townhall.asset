@@ -25,5 +25,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 4
   upgrade: {fileID: 0}
-  colliderRadius: 0
+  colliderSize: {x: 7, y: 5, z: 10}
   creates: []
+  indexes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
+  amount: 100

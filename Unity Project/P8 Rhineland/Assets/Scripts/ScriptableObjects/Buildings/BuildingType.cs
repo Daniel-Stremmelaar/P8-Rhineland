@@ -21,8 +21,12 @@ public class BuildingType : ScriptableObject
     public enum recieves { wood, stone, food, gold, all, none };
     public recieves recieveType;
     public BuildingType upgrade;
-    public int colliderRadius;
+    public Vector3 colliderSize;
 
     [Header("Creates")]
     public List<ResourceType> creates = new List<ResourceType>();
+
+    [Header("Stores")]
+    public List<int> indexes = new List<int>();
+    public int amount;
 }

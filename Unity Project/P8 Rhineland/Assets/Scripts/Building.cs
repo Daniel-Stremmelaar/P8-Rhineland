@@ -83,7 +83,15 @@ public class Building : MonoBehaviour
                 r.Spend(2, type.stoneCost);
                 r.Spend(1, type.plankCost);
                 r.Spend(12, type.ironCost);
-                GetComponent<SphereCollider>().radius = type.colliderRadius;
+                GetComponent<BoxCollider>().size = type.colliderSize;
+                if(type.indexes.Count > 0)
+                {
+                    foreach(int i in type.indexes)
+                    {
+                        r.resourceCaps[i] += type.amount;
+                        r.UpdateUI();
+                    }
+                }
             }
             if (Input.GetButtonDown("Fire2"))
             {
@@ -163,6 +171,15 @@ public class Building : MonoBehaviour
         r.Gain(2, type.stoneCost / 10 * 3);
         r.Gain(1, type.plankCost / 10 * 3);
         r.Gain(12, type.ironCost/10 * 3);
+
+        if (type.indexes.Count > 0)
+        {
+            foreach (int i in type.indexes)
+            {
+                r.resourceCaps[i] -= type.amount;
+                r.UpdateUI();
+            }
+        }
 
         Destroy(gameObject);
     }
