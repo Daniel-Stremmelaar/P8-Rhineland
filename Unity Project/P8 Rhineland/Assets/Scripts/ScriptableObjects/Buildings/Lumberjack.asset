@@ -18,9 +18,14 @@ MonoBehaviour:
   ironCost: 0
   maintainCost: 0
   hp: 10
-  spawnType: {fileID: 0}
-  spawnOffset: {x: 0, y: 0, z: 0}
-  mesh: {fileID: 0}
-  material: {fileID: 0}
+  spawnType: {fileID: 11400000, guid: 276d42b56e205fc43b2e805142c8b82c, type: 2}
+  spawnOffset: {x: -5, y: 0, z: 0}
+  building: {fileID: 1363934553753138745, guid: 23a9d8ac68ffba04f832898d9e920198,
+    type: 3}
+  material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 0
   upgrade: {fileID: 0}
+  colliderSize: {x: 4, y: 3, z: 6}
+  creates: []
+  indexes: 00000000
+  amount: 50
