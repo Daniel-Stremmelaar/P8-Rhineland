@@ -42,8 +42,4 @@ public class MenuScript : MonoBehaviour
         startPanel.SetActive(true);
         optionsPanel.SetActive(false);
     }
-
-    //sound 
-    //screen whith and hight
-    //
 }

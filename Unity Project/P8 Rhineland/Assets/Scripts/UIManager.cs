@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Data")]
     public GameObject selected;
+    public GameObject escHolder;
+    public GameObject escOptionsHolder;
 
     [Header("Building Select")]
     public Text type;
@@ -44,13 +46,14 @@ public class UIManager : MonoBehaviour
         */
         CoppleDropDown();
         gatherInfoPanel.SetActive(false);
-        Debug.Log("DONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE STARTDONE THE START");
+        escHolder.SetActive(false);
+        escOptionsHolder.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        OpenEscMenu();
     }
 
     public void Repair(Building b)
@@ -120,25 +123,25 @@ public class UIManager : MonoBehaviour
     {
         selected.GetComponent<Building>().Recruit();
     }
-    // copple list job to job gatherer
-
-    /*
-    /// als elke gat eigen values heeft open het met de values     
     
-    
-    public void CoppleDropdownList()
+    public void OpenEscMenu()
     {
-        List<string> fillName = new List<string>();
-        foreach (var name in modelList[currIndex].alphasList)
+        if (Input.GetButtonDown("Escape"))
         {
-            fillName.Add(name.name);
-        }
-        foreach (var dropDown in alphaDorpdownList)
-        {
-            dropDown.ClearOptions();
-            dropDown.AddOptions(fillName);
-            dropDown.value = 5;
+            Time.timeScale = 0;
+            escHolder.SetActive(true);
         }
     }
-     */
+    public void InvertOptionsMenu()
+    {
+        escHolder.SetActive(escHolder.activeSelf);
+        escOptionsHolder.SetActive(escOptionsHolder.activeSelf);
+
+    }
+    public void Continue()
+    {
+        Time.timeScale = 1;
+        escHolder.SetActive(false);
+    }
+
 }
