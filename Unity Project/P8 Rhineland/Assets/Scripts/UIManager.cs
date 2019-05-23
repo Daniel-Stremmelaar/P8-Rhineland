@@ -38,16 +38,19 @@ public class UIManager : MonoBehaviour
         buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
         buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
         buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
+        ///
+        CoppleDropDown();
+        gatherInfoPanel.SetActive(false);
 
-        recruit.onClick.AddListener(Recruit);
+        escHolder.SetActive(false);
+        escOptionsHolder.SetActive(false);
+        Debug.Log("VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER ");
+        ///
+        recruit.onClick.AddListener(Recruit);        
         /*
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
         */
-        CoppleDropDown();
-        gatherInfoPanel.SetActive(false);
-        escHolder.SetActive(false);
-        escOptionsHolder.SetActive(false);
     }
 
     // Update is called once per frame
