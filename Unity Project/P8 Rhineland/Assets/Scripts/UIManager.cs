@@ -35,16 +35,16 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
-        buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
-        buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
-        ///
         CoppleDropDown();
         gatherInfoPanel.SetActive(false);
 
         escHolder.SetActive(false);
         escOptionsHolder.SetActive(false);
         Debug.Log("VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER ");
+        ///
+        buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
+        buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
+        buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
         ///
         recruit.onClick.AddListener(Recruit);        
         /*
@@ -118,8 +118,8 @@ public class UIManager : MonoBehaviour
 
     public void Deselect()
     {
-        selected = null;
-        selectedPanel.SetActive(false);
+        //selectedPanel.SetActive(false);
+        //selected = null;
     }
 
     public void Recruit()
@@ -135,11 +135,15 @@ public class UIManager : MonoBehaviour
             escHolder.SetActive(true);
         }
     }
-    public void InvertOptionsMenu()
+    public void OpenOptionsMenu()
     {
-        escHolder.SetActive(escHolder.activeSelf);
-        escOptionsHolder.SetActive(escOptionsHolder.activeSelf);
-
+        escHolder.SetActive(false);
+        escOptionsHolder.SetActive(true);
+    }
+    public void CloseOptionsMenu()
+    {
+        escHolder.SetActive(true);
+        escOptionsHolder.SetActive(false);
     }
     public void Continue()
     {
