@@ -168,6 +168,7 @@ public class Gatherer : MonoBehaviour
         {
             type.Deliver(gathered, deliverPoint);
             gathered = 0;
+            target.GetComponent<ResourcePoint>().current.Remove(this.gameObject.GetComponent<Gatherer>());
             gathering = true;
             target = null;
             currentJob = state.search;
