@@ -4631,6 +4631,8 @@ MonoBehaviour:
   gatherInfoPanel: {fileID: 0}
   gethererImage: {fileID: 0}
   selected: {fileID: 0}
+  escHolder: {fileID: 0}
+  escOptionsHolder: {fileID: 0}
   type: {fileID: 2039450269}
   recruit: {fileID: 393245889}
   selectedPanel: {fileID: 297506976}

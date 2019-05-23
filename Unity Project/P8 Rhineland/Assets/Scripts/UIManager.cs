@@ -144,4 +144,20 @@ public class UIManager : MonoBehaviour
         escHolder.SetActive(false);
     }
 
+    /*
+     food and happy niet af
+    /// 
+    recruit
+    buidling 
+    ghatering
+    jobswitch
+
+    ///
+    house tex
+    3 townhals //
+    charakter //
+
+     */
+
+
 }
