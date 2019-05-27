@@ -20,7 +20,12 @@ MonoBehaviour:
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  mesh: {fileID: 0}
+  building: {fileID: 4599188428190127417, guid: b5c283458b39b374f9bc80bb52074184,
+    type: 3}
   material: {fileID: 0}
   recieveType: 2
   upgrade: {fileID: 0}
+  colliderSize: {x: 0, y: 0, z: 0}
+  creates: []
+  indexes: 
+  amount: 0

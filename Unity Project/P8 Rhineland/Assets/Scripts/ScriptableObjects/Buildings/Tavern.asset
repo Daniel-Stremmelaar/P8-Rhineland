@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
-  m_Name: Farm
+  m_Name: Tavern
   m_EditorClassIdentifier: 
   woodCost: 150
-  stoneCost: 50
+  stoneCost: 100
   plankCost: 0
   ironCost: 0
   maintainCost: 0
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 3641575558726200607, guid: e288bca1d8e8b414c82c61b1c80f835d,
+  building: {fileID: 1738846131209818959, guid: ca502bf179e60a441ab3e551d2397446,
     type: 3}
   material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
-  recieveType: 5
+  recieveType: 0
   upgrade: {fileID: 0}
   colliderSize: {x: 0, y: 0, z: 0}
   creates: []
