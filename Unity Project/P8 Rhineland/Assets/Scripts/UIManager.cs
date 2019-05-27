@@ -75,6 +75,7 @@ public class UIManager : MonoBehaviour
         gatherInfoPanel.SetActive(true);
     }
 
+    //switch job
     public void ChangeJob(int i)
     {
         foreach (var item in GameObject.FindGameObjectsWithTag("Gatherer"))
@@ -100,6 +101,7 @@ public class UIManager : MonoBehaviour
         jobDropdown.AddOptions(fillName);
     }
 
+    //building select
     public void OpenPanel(GameObject panel)
     {
         foreach(GameObject g in panels)
@@ -116,10 +118,11 @@ public class UIManager : MonoBehaviour
         selectedPanel.SetActive(true);
     }
 
+    //Deselect
     public void Deselect()
     {
-        //selectedPanel.SetActive(false);
-        //selected = null;
+        selectedPanel.SetActive(false);
+        selected = null;
     }
 
     public void Recruit()
@@ -127,6 +130,7 @@ public class UIManager : MonoBehaviour
         selected.GetComponent<Building>().Recruit();
     }
     
+    //Esc menu
     public void OpenEscMenu()
     {
         if (Input.GetButtonDown("Escape"))
@@ -145,7 +149,7 @@ public class UIManager : MonoBehaviour
         escHolder.SetActive(true);
         escOptionsHolder.SetActive(false);
     }
-    public void Continue()
+    public void ContinueEscMenu()
     {
         Time.timeScale = 1;
         escHolder.SetActive(false);
@@ -154,13 +158,12 @@ public class UIManager : MonoBehaviour
     /*
      food and happy niet af
     /// 
-    recruit
-    buidling 
-    ghatering
-    jobswitch
+    recruit/
+    buidling /
+    ghatering 
+    jobswitch 
 
     ///
-    house tex
     3 townhals //
     charakter //
 

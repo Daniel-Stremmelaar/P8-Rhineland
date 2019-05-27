@@ -1266,6 +1266,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7481460218858030258, guid: 7f7e504d3ef71ad41ad8a20fba60ce04,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7e504d3ef71ad41ad8a20fba60ce04, type: 3}
 --- !u!114 &238271306
@@ -1391,7 +1396,7 @@ GameObject:
   - component: {fileID: 313147013}
   - component: {fileID: 313147012}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasTestSceneJorrit
   m_TagString: Builder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1962,7 +1967,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 313147012}
-        m_MethodName: Continue
+        m_MethodName: ContinueEscMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5309,7 +5314,7 @@ MonoBehaviour:
   camMoveSpeed: 10
   screenThickness: 30
   camZoomSpeed: 15
-  maxZoom: 90
+  maxZoom: 65
   minZoom: 15
   selected: {fileID: 0}
 --- !u!1 &1353019401
