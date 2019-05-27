@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3349207590893789532}
   - component: {fileID: 5990280291913767786}
   - component: {fileID: 8243430660564883}
-  - component: {fileID: 1842931724790421058}
   - component: {fileID: 8954189785709216720}
   - component: {fileID: 3960251318255890253}
+  - component: {fileID: -2379469481137830293}
   m_Layer: 0
   m_Name: Tavern
   m_TagString: Untagged
@@ -80,19 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1842931724790421058
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738846131209818959}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.159908, y: 8.309759, z: 6.6592455}
-  m_Center: {x: -0.2617867, y: 4.1548796, z: 0}
 --- !u!54 &8954189785709216720
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,3 +116,16 @@ MonoBehaviour:
   spawn: {fileID: 0}
   r: {fileID: 0}
   creates: []
+--- !u!65 &-2379469481137830293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738846131209818959}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.682142, y: 8.816731, z: 7.3659325}
+  m_Center: {x: -0.44824553, y: 4.4083657, z: 0.0013689995}
