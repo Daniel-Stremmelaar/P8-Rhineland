@@ -22,7 +22,7 @@ MonoBehaviour:
   spawnOffset: {x: 0, y: 0, z: 0}
   building: {fileID: 4599188428190127417, guid: b5c283458b39b374f9bc80bb52074184,
     type: 3}
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 2
   upgrade: {fileID: 0}
   colliderSize: {x: 0, y: 0, z: 0}

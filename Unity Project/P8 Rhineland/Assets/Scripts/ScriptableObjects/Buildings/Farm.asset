@@ -20,7 +20,7 @@ MonoBehaviour:
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 3641575558726200607, guid: e288bca1d8e8b414c82c61b1c80f835d,
+  building: {fileID: 3104898158767292220, guid: 48c91a6e9a7ceee4c944e72ad2653cb0,
     type: 3}
   material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 5
