@@ -41,7 +41,6 @@ public class UIManager : MonoBehaviour
 
         escHolder.SetActive(false);
         escOptionsHolder.SetActive(false);
-        Debug.Log("VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER VOORBIJ DE START VAN UIMANAGER ");
         ///
         buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
         buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });

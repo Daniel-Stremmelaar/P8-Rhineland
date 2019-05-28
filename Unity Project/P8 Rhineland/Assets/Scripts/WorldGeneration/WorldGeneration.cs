@@ -7,10 +7,13 @@ public class WorldGeneration : MonoBehaviour
     [Header("Nodes")]
     public GameObject woodNode;
     public GameObject stoneNode;
+    public GameObject mineNode;
 
     [Header("Amount")]
     public int woodNodeAmount;
     public int stoneAmount;
+    public int mineAmount;
+
     public LayerMask mask;
     RaycastHit hit;
     Vector3 newWorldPos;
@@ -43,6 +46,11 @@ public class WorldGeneration : MonoBehaviour
                     newWorldPos = new Vector3(xPos, yPos, zPos);
                    
                     Instantiate(woodNode, newWorldPos, Quaternion.identity);
+                    Debug.Log("PENIS");
+                }
+                else
+                {
+                    Debug.Log("HIT THE ELSE");
                 }
             }
         }
@@ -62,5 +70,22 @@ public class WorldGeneration : MonoBehaviour
                 }
             }
         }
+        //spawn mine
+        for (int i = 0; i < mineAmount; i++)
+        {
+            xPos = Random.Range(0, xSize);
+            zPos = Random.Range(0, zSize);
+            if (Physics.Raycast(new Vector3(xPos,500f,zPos),Vector3.down,out hit,Mathf.Infinity,mask))
+            {
+                if (hit.transform.tag == "Terrain")
+                {
+                    yPos = hit.point.y;
+                    newWorldPos = new Vector3(xPos, yPos, zPos);
+                   
+                    Instantiate(mineNode, newWorldPos, Quaternion.identity);
+                }
+            }
+        }
+        Debug.Log("NFIOWHFUIY YDYQUTR*YYTYRV*QG&RYUITR*#G&RYY#GRVYQ");
     }
 }
