@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     [Header("Building Select")]
     public Text type;
     public Button recruit;
+    public Button upgrade;
     public GameObject selectedPanel;
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,8 @@ public class UIManager : MonoBehaviour
         buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
         buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
         ///
-        recruit.onClick.AddListener(Recruit);        
+        recruit.onClick.AddListener(Recruit);
+        upgrade.onClick.AddListener(Upgrade);
         /*
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
@@ -128,6 +130,11 @@ public class UIManager : MonoBehaviour
     public void Recruit()
     {
         selected.GetComponent<Building>().Recruit();
+    }
+
+    public void Upgrade()
+    {
+        selected.GetComponent<Building>().Upgrade();
     }
     
     //Esc menu

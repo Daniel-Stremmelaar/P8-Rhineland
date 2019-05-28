@@ -22,6 +22,7 @@ public class BuildingType : ScriptableObject
     public recieves recieveType;
     public BuildingType upgrade;
     public Vector3 colliderSize;
+    public float timeReset;
 
     [Header("Creates")]
     public List<ResourceType> creates = new List<ResourceType>();

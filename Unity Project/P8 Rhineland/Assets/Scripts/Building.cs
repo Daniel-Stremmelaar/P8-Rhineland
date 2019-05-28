@@ -32,6 +32,7 @@ public class Building : MonoBehaviour
         builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
         c = GetComponent<Collider>();
         hp = type.hp;
+        timeReset = type.timeReset;
         foreach(ResourceType r in type.creates)
         {
             creates.Add(r);
@@ -97,6 +98,17 @@ public class Building : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    public void Upgrade()
+    {
+        if (type.upgrade != null)
+        {
+            hp += type.upgrade.hp - type.hp;
+            type = type.upgrade;
+            GetComponent<BoxCollider>().size = type.colliderSize;
+            timeReset = type.timeReset;
         }
     }
 
