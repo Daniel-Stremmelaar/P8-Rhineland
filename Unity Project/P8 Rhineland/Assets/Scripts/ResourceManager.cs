@@ -122,7 +122,7 @@ public class ResourceManager : MonoBehaviour
 
     public bool CheckCap(int index, int i)
     {
-        if(resourceCaps[index] - resourcesCurrent[index] > i)
+        if(resourceCaps[index] - resourcesCurrent[index] >= i)
         {
             return true;
         }
