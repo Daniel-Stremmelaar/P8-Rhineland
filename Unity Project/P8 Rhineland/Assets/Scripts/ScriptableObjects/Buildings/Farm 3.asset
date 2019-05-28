@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
   m_Name: Farm 3
   m_EditorClassIdentifier: 
-  woodCost: 200
-  stoneCost: 150
-  plankCost: 150
-  ironCost: 0
+  woodCost: 300
+  stoneCost: 300
+  plankCost: 200
+  ironCost: 150
   maintainCost: 0
   hp: 15
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 8663848862432153889, guid: 6970fded248ceba4fb61ba8ccbb6c9f9,
+  building: {fileID: 7141578219547360254, guid: 1190b7427eff3cf49afe21fce56c83cf,
     type: 3}
   material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 5

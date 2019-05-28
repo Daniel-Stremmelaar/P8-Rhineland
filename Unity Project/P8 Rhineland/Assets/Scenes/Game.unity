@@ -8281,7 +8281,8 @@ GameObject:
   - component: {fileID: 1598153689}
   - component: {fileID: 1598153688}
   - component: {fileID: 1598153687}
-  m_Layer: 0
+  - component: {fileID: 1598153690}
+  m_Layer: 9
   m_Name: Terrain
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -8350,6 +8351,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598153690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598153686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5aa61548e6b974cab5ec43fb8606fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodNode: {fileID: 7768219897045795712, guid: 866e64c49eb51984b8d37cf80900a6de,
+    type: 3}
+  stoneNode: {fileID: 2329922722334879204, guid: bc64a3486015b5e4d96979af351866e0,
+    type: 3}
+  woodNodeAmount: 75
+  stoneAmount: 75
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1609810260
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,7 +46,6 @@ public class WorldGeneration : MonoBehaviour
                     newWorldPos = new Vector3(xPos, yPos, zPos);
                    
                     Instantiate(woodNode, newWorldPos, Quaternion.identity);
-                    Debug.Log("PENIS");
                 }
                 else
                 {

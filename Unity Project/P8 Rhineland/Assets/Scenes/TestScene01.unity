@@ -1266,11 +1266,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7481460218858030258, guid: 7f7e504d3ef71ad41ad8a20fba60ce04,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7e504d3ef71ad41ad8a20fba60ce04, type: 3}
 --- !u!114 &238271306
@@ -3607,7 +3602,7 @@ PrefabInstance:
     - target: {fileID: 6641066159146945322, guid: c2125f59de34a5f4690ef005f372f65e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.047127
+      value: 30.4
       objectReference: {fileID: 0}
     - target: {fileID: 6641066159146945322, guid: c2125f59de34a5f4690ef005f372f65e,
         type: 3}
@@ -5149,7 +5144,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1832427786}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.6628666
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5522,11 +5517,8 @@ MonoBehaviour:
     type: 3}
   stoneNode: {fileID: 2329922722334879204, guid: bc64a3486015b5e4d96979af351866e0,
     type: 3}
-  mineNode: {fileID: 5786109051302525540, guid: 7f7e504d3ef71ad41ad8a20fba60ce04,
-    type: 3}
   woodNodeAmount: 100
   stoneAmount: 100
-  mineAmount: 25
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -6381,12 +6373,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012207031, y: -12}
   m_SizeDelta: {x: 823.7, y: 521.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &1683160772 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6641066159146945322, guid: c2125f59de34a5f4690ef005f372f65e,
-    type: 3}
-  m_PrefabInstance: {fileID: 816091129}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1704964113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7942,50 +7928,6 @@ MonoBehaviour:
   kernelSize: 5
   lightAngle: 1
   maxDepthBias: 0.001
---- !u!1 &2067494727
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2067494728}
-  - component: {fileID: 2067494729}
-  m_Layer: 9
-  m_Name: radius
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2067494728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067494727}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1683160772}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2067494729
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067494727}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 50, y: 1, z: 50}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2090389389
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class CamraMove : MonoBehaviour
 
     void Update()
     {
-        //CameraMove();
+        CameraMove();
         CameraZoom();
         ScelectUnit();
     }
@@ -95,12 +95,12 @@ public class CamraMove : MonoBehaviour
             }
             else
             {
-                uIManager.Deselect();
                 Debug.Log("MIS CLICK");
             }
         }
         if (Input.GetButtonDown("Fire2"))
         {
+            uIManager.Deselect();
             Debug.Log("Deselect");
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Gatherer"))
             {
