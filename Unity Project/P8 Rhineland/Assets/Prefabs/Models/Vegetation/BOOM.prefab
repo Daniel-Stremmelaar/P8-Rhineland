@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6561522370095353548}
   - component: {fileID: 2201345917339794378}
   - component: {fileID: 8415069715284169577}
+  - component: {fileID: -3516925640689317318}
   m_Layer: 0
   m_Name: BOOM
   m_TagString: Untagged
@@ -91,3 +92,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3516925640689317318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749236618696569626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6d715532e8d644a8eb6014a3d5c224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 100
+  current: []

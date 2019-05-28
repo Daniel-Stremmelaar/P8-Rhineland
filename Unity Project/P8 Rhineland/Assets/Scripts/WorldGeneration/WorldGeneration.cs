@@ -7,12 +7,12 @@ public class WorldGeneration : MonoBehaviour
     [Header("Nodes")]
     public GameObject woodNode;
     public GameObject stoneNode;
-    public GameObject mineNode;
+    //public GameObject mineNode;
 
     [Header("Amount")]
     public int woodNodeAmount;
     public int stoneAmount;
-    public int mineAmount;
+    //public int mineAmount;
 
     public LayerMask mask;
     RaycastHit hit;
@@ -71,7 +71,7 @@ public class WorldGeneration : MonoBehaviour
             }
         }
         //spawn mine
-        for (int i = 0; i < mineAmount; i++)
+        /*for (int i = 0; i < mineAmount; i++)
         {
             xPos = Random.Range(0, xSize);
             zPos = Random.Range(0, zSize);
@@ -85,7 +85,7 @@ public class WorldGeneration : MonoBehaviour
                     Instantiate(mineNode, newWorldPos, Quaternion.identity);
                 }
             }
-        }
-        Debug.Log("NFIOWHFUIY YDYQUTR*YYTYRV*QG&RYUITR*#G&RYY#GRVYQ");
+        }*/
+        
     }
 }
