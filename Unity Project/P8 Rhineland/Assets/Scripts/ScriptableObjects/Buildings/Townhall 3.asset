@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
-  m_Name: Townhall
+  m_Name: Townhall 3
   m_EditorClassIdentifier: 
-  woodCost: 250
-  stoneCost: 250
-  plankCost: 0
-  ironCost: 0
+  woodCost: 1000
+  stoneCost: 1000
+  plankCost: 500
+  ironCost: 250
   maintainCost: 0
-  hp: 10
+  hp: 30
   spawnType: {fileID: 11400000, guid: 7c52fbc67f867114d8cbd2232ef9d935, type: 2}
   spawnOffset: {x: -3, y: 0, z: 0}
-  building: {fileID: 7670359848382675257, guid: c2125f59de34a5f4690ef005f372f65e,
+  building: {fileID: 5030675336447522449, guid: f0188f865ec403349bae7e113e3bb685,
     type: 3}
   material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 4
-  upgrade: {fileID: 11400000, guid: bca8f66a78c1dfb429553e6796cc8bf6, type: 2}
+  upgrade: {fileID: 0}
   colliderSize: {x: 7, y: 5, z: 10}
   timeReset: 0
   creates: []

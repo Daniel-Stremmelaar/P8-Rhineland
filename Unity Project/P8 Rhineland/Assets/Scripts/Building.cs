@@ -105,10 +105,11 @@ public class Building : MonoBehaviour
     {
         if (type.upgrade != null)
         {
-            hp += type.upgrade.hp - type.hp;
-            type = type.upgrade;
-            GetComponent<BoxCollider>().size = type.colliderSize;
-            timeReset = type.timeReset;
+            GameObject g = Instantiate(type.upgrade.building, transform.position, Quaternion.identity);
+            g.GetComponent<Building>().type = type.upgrade;
+            g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
+            g.GetComponent<MeshRenderer>().material = type.upgrade.material;
+            Destroy(this.gameObject);
         }
     }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1067586171109654196}
   - component: {fileID: 6767883966844748365}
   - component: {fileID: 4836782341765442031}
+  - component: {fileID: -6804537994755438935}
   m_Layer: 0
   m_Name: Townhall lvl3
   m_TagString: Untagged
@@ -91,3 +92,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.3680096, y: 6.7565007, z: 10.833097}
   m_Center: {x: -1.4493637, y: 3.3782504, z: -1.4999999}
+--- !u!114 &-6804537994755438935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030675336447522449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc70a599110ed448831e75c85b28741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: {fileID: 0}
+  placing: 0
+  hp: 0
+  time: 0
+  timeReset: 0
+  spawn: {fileID: 1408175204202794320, guid: 6104b9328a688ba4196a41a1c7ea254a, type: 3}
+  r: {fileID: 0}
+  creates: []
