@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
-  m_Name: Farm
+  m_Name: Farm 2
   m_EditorClassIdentifier: 
-  woodCost: 150
-  stoneCost: 50
-  plankCost: 0
+  woodCost: 200
+  stoneCost: 150
+  plankCost: 150
   ironCost: 0
   maintainCost: 0
-  hp: 10
+  hp: 15
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 3104898158767292220, guid: 48c91a6e9a7ceee4c944e72ad2653cb0,
+  building: {fileID: 8663848862432153889, guid: 6970fded248ceba4fb61ba8ccbb6c9f9,
     type: 3}
   material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
   recieveType: 5
-  upgrade: {fileID: 11400000, guid: db5c18145af184b41be338aa65328374, type: 2}
+  upgrade: {fileID: 0}
   colliderSize: {x: 14, y: 4, z: 12}
   timeReset: 0
   creates: []
