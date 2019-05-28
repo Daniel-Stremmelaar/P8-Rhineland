@@ -85,6 +85,7 @@ public class Building : MonoBehaviour
                 r.Spend(1, type.plankCost);
                 r.Spend(12, type.ironCost);
                 GetComponent<BoxCollider>().size = type.colliderSize;
+                Destroy(GetComponent<Rigidbody>());
                 if(type.indexes.Count > 0)
                 {
                     foreach(int i in type.indexes)
