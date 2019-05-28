@@ -101,7 +101,7 @@ public class Building : MonoBehaviour
         }
     }
 
-    public void Upgrade()
+    public void Upgrade(UIManager u)
     {
         if (type.upgrade != null)
         {
@@ -109,6 +109,9 @@ public class Building : MonoBehaviour
             g.GetComponent<Building>().type = type.upgrade;
             g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
             g.GetComponent<MeshRenderer>().material = type.upgrade.material;
+
+            u.selected = g;
+            u.SelectedPanel(g);
             Destroy(this.gameObject);
         }
     }

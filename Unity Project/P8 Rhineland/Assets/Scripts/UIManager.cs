@@ -133,7 +133,7 @@ public class UIManager : MonoBehaviour
 
     public void Upgrade()
     {
-        selected.GetComponent<Building>().Upgrade();
+        selected.GetComponent<Building>().Upgrade(gameObject.GetComponent<UIManager>());
     }
     
     //Esc menu
