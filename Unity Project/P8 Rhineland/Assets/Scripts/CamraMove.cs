@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CamraMove : MonoBehaviour
 {
-    [Header("CamMove")]
-    public float camMoveSpeed;
-    public float screenThickness;
-
     [Header("CamZoom")]
     public float camZoomSpeed;
     public float maxZoom;
     public float minZoom;
+
+    public GameObject empty;
+    RaycastHit raycast;
 
     [Header("Selecting")]
     public GameObject selected;
@@ -22,47 +21,13 @@ public class CamraMove : MonoBehaviour
     private void Start()
     {
         uIManager = GameObject.FindWithTag("Builder").GetComponent<UIManager>();
+        CreateEmpty();
     }
 
     void Update()
     {
-        CameraMove();
         CameraZoom();
         ScelectUnit();
-    }
-
-    //cam movement
-    void CameraMove()
-    {
-        Vector3 currPos = transform.position;
-
-        //forward
-        if (Input.GetAxis("Vertical") > 0 || Input.mousePosition.y >= Screen.height - screenThickness)
-        {
-            currPos.z -= camMoveSpeed * Time.deltaTime;
-        }
-        //back
-        if (Input.GetAxis("Vertical") < 0 || Input.mousePosition.y <= screenThickness)
-        {
-            currPos.z += camMoveSpeed * Time.deltaTime;
-        }
-        if (Input.GetAxis("Horizontal") > 0 || Input.mousePosition.x >= Screen.width - screenThickness)
-        //right
-        {
-            currPos.x -= camMoveSpeed * Time.deltaTime;
-        }
-        //left
-        if (Input.GetAxis("Horizontal") < 0 || Input.mousePosition.x <= screenThickness)
-        {
-            currPos.x += camMoveSpeed * Time.deltaTime;
-        }
-
-        if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") != 0 || Input.GetButtonUp("Vertical") && Input.GetAxis("Vertical") != 0)
-        {
-            Input.ResetInputAxes();
-        }
-
-        transform.position = currPos;
     }
 
     //scrool wheel zoom in and out
@@ -74,6 +39,16 @@ public class CamraMove : MonoBehaviour
         f = Mathf.Clamp(f, minZoom, maxZoom);
 
         Camera.main.fieldOfView = f;
+    }
+
+    void CreateEmpty()
+    {
+        Physics.Raycast(transform.position, transform.forward, out raycast, 500f);
+        if (raycast.transform.tag == "Terrain")
+        {
+            GameObject g = Instantiate(empty,raycast.point,Quaternion.identity);
+            transform.SetParent(g.transform);
+        }
     }
 
     void ScelectUnit()

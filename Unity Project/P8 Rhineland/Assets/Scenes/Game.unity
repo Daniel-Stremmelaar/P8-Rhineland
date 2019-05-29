@@ -1017,7 +1017,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250740143}
-  m_LocalRotation: {x: 0, y: 0.8660254, z: -0.5, w: 0}
+  m_LocalRotation: {x: -0, y: 0.8660254, z: -0.5, w: 0}
   m_LocalPosition: {x: 26.59, y: 41, z: 54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1129,11 +1129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86cc24ba836eed45bc27c4713affb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camMoveSpeed: 10
-  screenThickness: 30
-  camZoomSpeed: 15
+  camZoomSpeed: 25
   maxZoom: 65
   minZoom: 15
+  empty: {fileID: 9082632985252205710, guid: b813d465fc52f68458c7fda60c242210, type: 3}
   selected: {fileID: 0}
 --- !u!1 &255198191
 GameObject:
@@ -8367,8 +8366,8 @@ MonoBehaviour:
     type: 3}
   stoneNode: {fileID: 2329922722334879204, guid: bc64a3486015b5e4d96979af351866e0,
     type: 3}
-  woodNodeAmount: 75
-  stoneAmount: 75
+  woodNodeAmount: 50
+  stoneAmount: 50
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -8531,7 +8530,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e437a5a895b37b449d121fc9ac2e985, type: 2}
   - {fileID: 11400000, guid: 221336366851a87439941febb7118cee, type: 2}
   - {fileID: 11400000, guid: 8ccf6c5819432ca49a45461f1356620f, type: 2}
-  - {fileID: 11400000, guid: 5d9d9ffbbb7569e47b9a91b831a3de8d, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: fef28134bd3a41d40a796227276d3a69, type: 2}
   - {fileID: 11400000, guid: f18b74ab81809b246b4ab24d85aaeeb1, type: 2}
   - {fileID: 11400000, guid: befdf111ea4090b4e98c4fa553817136, type: 2}
