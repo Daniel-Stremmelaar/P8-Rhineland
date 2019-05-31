@@ -70,7 +70,8 @@ public class CamraMove : MonoBehaviour
             }
             else
             {
-                Debug.Log("MIS CLICK");
+                Debug.Log(unitHit.transform.tag + "  misKlick");
+                //spawnt niet met een tag
             }
         }
         if (Input.GetButtonDown("Fire2"))
