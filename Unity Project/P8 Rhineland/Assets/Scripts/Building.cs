@@ -151,6 +151,7 @@ public class Building : MonoBehaviour
         {
             g = Instantiate(spawn, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
             g.type = type.spawnType;
+            g.tag = "Gatherer";
             r.Spend(13, type.spawnType.goldCost);
             r.resourcesCurrent[15] += 1;
         }
