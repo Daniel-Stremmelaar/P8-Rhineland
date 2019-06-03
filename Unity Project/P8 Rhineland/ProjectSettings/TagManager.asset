@@ -15,6 +15,7 @@ TagManager:
   - Berry
   - IronOre
   - GoldOre
+  - TownHall
   layers:
   - Default
   - TransparentFX

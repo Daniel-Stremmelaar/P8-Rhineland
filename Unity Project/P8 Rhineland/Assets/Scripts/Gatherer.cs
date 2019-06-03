@@ -113,7 +113,7 @@ public class Gatherer : MonoBehaviour
             target = other.gameObject;
             target.GetComponent<ResourcePoint>().current.Add(this.gameObject.GetComponent<Gatherer>());
         }
-        if(other.tag == "Home")
+        if(other.tag == "Home" || other.tag == "TownHall")
         {
             home = other.gameObject;
         }
@@ -155,7 +155,7 @@ public class Gatherer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Home" && gathered > 0)
+        if(collision.gameObject.tag == "Home" && gathered > 0 || collision.gameObject.tag == "TownHall" && gathered > 0)
         {
             delivering = true;
             deliverPoint = collision.gameObject;

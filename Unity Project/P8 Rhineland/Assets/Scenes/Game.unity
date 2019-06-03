@@ -8557,6 +8557,7 @@ MonoBehaviour:
   - {fileID: 2097553932}
   green: {fileID: 2100000, guid: 826ae7407bd9da7448b523aedd1fd124, type: 2}
   red: {fileID: 2100000, guid: 7bef8567b5c29624d84d346e13942a87, type: 2}
+  townHallList: []
 --- !u!4 &1617780286
 Transform:
   m_ObjectHideFlags: 0

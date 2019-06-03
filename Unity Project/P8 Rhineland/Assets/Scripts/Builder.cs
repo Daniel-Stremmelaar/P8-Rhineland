@@ -11,6 +11,7 @@ public class Builder : MonoBehaviour
     public List<Button> buttons = new List<Button>();
     public Material green;
     public Material red;
+    public List<GameObject> townHallList = new List<GameObject>();
 
     void Start()
     {

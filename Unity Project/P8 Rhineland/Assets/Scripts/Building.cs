@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Building : MonoBehaviour
     public float time;
     public float timeReset;
     public Gatherer spawn;
+    public GameObject radiusSprite;
 
     [Header("Resources")]
     public ResourceManager r;
@@ -68,6 +70,10 @@ public class Building : MonoBehaviour
             c.isTrigger = true;
 
             CheckCollision();
+            if (gameObject.tag != "TownHall")
+            {
+                CheckTownHall();
+            }
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
@@ -93,6 +99,10 @@ public class Building : MonoBehaviour
                         r.resourceCaps[i] += type.amount;
                         r.UpdateUI();
                     }
+                }
+                if (gameObject.tag == "TownHall")
+                {
+                    builder.townHallList.Add(gameObject);
                 }
             }
             if (Input.GetButtonDown("Fire2"))
@@ -133,6 +143,26 @@ public class Building : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material = builder.red;
         }
+    }
+
+    void CheckTownHall()
+    {
+        //townHallArray = GameObject.FindGameObjectsWithTag("TownHall");
+        foreach (GameObject closeTown in builder.townHallList)
+        {
+            if (Vector3.Distance(transform.position,closeTown.transform.position) <= closeTown.GetComponent<Building>().type.townHallradius)
+            {
+                placeable = true;
+                gameObject.GetComponent<Renderer>().material = builder.green;
+                break;
+            }
+            else
+            {
+                placeable = false;
+                gameObject.GetComponent<Renderer>().material = builder.red;
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

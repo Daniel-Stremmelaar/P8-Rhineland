@@ -23,6 +23,7 @@ public class BuildingType : ScriptableObject
     public BuildingType upgrade;
     public Vector3 colliderSize;
     public float timeReset;
+    public float townHallradius;
 
     [Header("Creates")]
     public List<ResourceType> creates = new List<ResourceType>();
