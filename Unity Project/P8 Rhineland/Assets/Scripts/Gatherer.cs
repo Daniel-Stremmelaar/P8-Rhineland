@@ -26,6 +26,7 @@ public class Gatherer : MonoBehaviour
     private GameObject deliverPoint;
 
     [Header("Happiness and consumption")]
+    private bool eating;
     public int foodMin;
     public int foodMax;
     public int food;
@@ -49,6 +50,8 @@ public class Gatherer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        consume = 0;
+        food = foodMax;
         r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
         delivering = false;
         gathering = true;
@@ -65,7 +68,10 @@ public class Gatherer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(delivering == true)
+        HappinessInfluence();
+        FoodConsumption();
+
+        if (delivering == true)
         {
             Deliver();
         }
@@ -80,9 +86,13 @@ public class Gatherer : MonoBehaviour
                     {
                         currentJob = state.gather;
                     }
-                    else
+                    else if(eating == false)
                     {
                         currentJob = state.deliver;
+                    }
+                    else if(gathering == false && eating == true)
+                    {
+                        currentJob = state.eat;
                     }
                     trigger.radius = type.gatherRange;
                 }
@@ -100,10 +110,9 @@ public class Gatherer : MonoBehaviour
 
             case state.eat:
                 //eat behavior
+                agent.destination = target.transform.position;
                 break;
         }
-        FoodConsumption();
-        HappinessInfluence();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -117,13 +126,17 @@ public class Gatherer : MonoBehaviour
         {
             home = other.gameObject;
         }
+        if(other.tag == "Tavern")
+        {
+            target = other.gameObject;
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if(currentJob == state.gather && other.gameObject.tag == type.resource.ToString())
         {
-            timer += Time.deltaTime;
+            timer += Time.deltaTime * happinessMod;
             if(timer >= type.gatherTime)
             {
                 gathered += 1;
@@ -160,6 +173,15 @@ public class Gatherer : MonoBehaviour
             delivering = true;
             deliverPoint = collision.gameObject;
         }
+        if(collision.gameObject.tag == "Tavern")
+        {
+            consume = r.Eat(consume);
+            food = foodMax - consume;
+            //if r.eat > x gain unhappy
+            target = null;
+            currentJob = state.search;
+            eating = false;
+        }
     }
 
     public void Deliver()
@@ -179,22 +201,8 @@ public class Gatherer : MonoBehaviour
 
     public void HappinessInfluence()
     {
-        happinessTimer -= Time.deltaTime * happinessMod;
-        if (happinessTimer <= 0)
-        {
-            if (happiness >= 0 && happiness <= 30)
-            {
-                happiness -= 1;
-                //Debug.Log("onder 30");
-                ///movespeed
-            }
-            if (happiness >= 31 && happiness <= 60)
-            {
-                happiness -= 1;
-                //Debug.Log("midden");
-            }
-            happinessTimer = happinessTimerReset;
-        }
+        happinessMod = 0.006f * happiness + 0.7f;
+        consumeMod = 2 - happinessMod;
     }
 
     public void FoodConsumption()
@@ -205,6 +213,7 @@ public class Gatherer : MonoBehaviour
             if (food > foodMin)
             {
                 food -= 1;
+                consume += 1;
             }
             else
             {
@@ -212,6 +221,12 @@ public class Gatherer : MonoBehaviour
                 //if 0 -- kill pop
             }
             consumeTimer = consumeTimerReset;
+        }
+        if(food < foodMax / 2)
+        {
+            eating = true;
+            target = null;
+            currentJob = state.search;
         }
     }
 
