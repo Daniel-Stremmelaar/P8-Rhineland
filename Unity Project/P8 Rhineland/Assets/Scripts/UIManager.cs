@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
     public Button recruit;
     public Button upgrade;
     public GameObject selectedPanel;
+    public GameObject extraFoodUi;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,7 @@ public class UIManager : MonoBehaviour
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
         */
+        extraFoodUi.SetActive(false);
     }
 
     // Update is called once per frame

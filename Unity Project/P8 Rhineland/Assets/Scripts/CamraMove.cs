@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CamraMove : MonoBehaviour
 {
@@ -96,6 +97,22 @@ public class CamraMove : MonoBehaviour
             }
             GameObject.FindWithTag("Builder").GetComponent<UIManager>().gatherInfoPanel.SetActive(false);
         }
+        if (IsOverUi() == true)
+        {
+            Debug.Log(unitHit + "  UNIT HIT");
+            if (unitHit.transform.tag == "FoodUi")
+            {
+                uIManager.extraFoodUi.SetActive(true);
+            }
+            else
+            {
+                uIManager.extraFoodUi.SetActive(false);
+            }
+        }
     }
 
+    bool IsOverUi()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+    }
 }

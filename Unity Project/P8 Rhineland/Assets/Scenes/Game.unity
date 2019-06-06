@@ -5166,7 +5166,6 @@ GameObject:
   - component: {fileID: 955466607}
   - component: {fileID: 955466609}
   - component: {fileID: 955466608}
-  - component: {fileID: 955466610}
   m_Layer: 5
   m_Name: FoodText
   m_TagString: FoodUi
@@ -5235,19 +5234,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955466606}
   m_CullTransparentMesh: 0
---- !u!114 &955466610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955466606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe2725a5ede3984689cd2893b933931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodInfo: {fileID: 1698893138}
 --- !u!1 &965079846
 GameObject:
   m_ObjectHideFlags: 0
@@ -9024,6 +9010,7 @@ MonoBehaviour:
   recruit: {fileID: 393245889}
   upgrade: {fileID: 1328381768}
   selectedPanel: {fileID: 297506976}
+  extraFoodUi: {fileID: 1698893138}
 --- !u!114 &1617780285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9621,7 +9608,7 @@ GameObject:
   - component: {fileID: 1698893140}
   m_Layer: 5
   m_Name: FoodAmount
-  m_TagString: Untagged
+  m_TagString: FoodUi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9646,7 +9633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 390.05, y: -237.7}
+  m_AnchoredPosition: {x: 695, y: -167}
   m_SizeDelta: {x: -1619.9, y: 325.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698893140
