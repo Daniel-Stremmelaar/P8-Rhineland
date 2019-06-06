@@ -15,12 +15,18 @@ public class CamraMove : MonoBehaviour
     [Header("Selecting")]
     public GameObject selected;
 
+    [Header("Sound")]
+    public AudioClip click01;
+    public List<AudioClip> unitSound = new List<AudioClip>();
+
     UIManager uIManager;
+    SoundManager soundManager;
     RaycastHit unitHit = new RaycastHit();
 
     private void Start()
     {
         uIManager = GameObject.FindWithTag("Builder").GetComponent<UIManager>();
+        soundManager = GameObject.FindWithTag("Builder").GetComponent<SoundManager>();
         CreateEmpty();
     }
 
@@ -59,12 +65,18 @@ public class CamraMove : MonoBehaviour
         {
             if (unitHit.transform.tag == "Gatherer")
             {
+                int i = Random.Range(0, unitSound.Count);
+
+                soundManager.Play2DSound(unitSound[i]);
+
                 Debug.Log("Hit " + unitHit.transform.name);
                 unitHit.transform.gameObject.GetComponent<Gatherer>().selected = true;
                 unitHit.transform.gameObject.GetComponent<Gatherer>().OpenUI();
             }
-            else if(unitHit.transform.tag == "Home")
+            else if(unitHit.transform.tag == "Home" || unitHit.transform.tag == "TownHall")
             {
+                soundManager.Play2DSound(click01);
+
                 selected = unitHit.transform.gameObject;
                 uIManager.SelectedPanel(unitHit.transform.gameObject);
             }

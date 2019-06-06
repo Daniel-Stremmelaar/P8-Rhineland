@@ -16,6 +16,7 @@ TagManager:
   - IronOre
   - GoldOre
   - TownHall
+  - FoodUi
   layers:
   - Default
   - TransparentFX

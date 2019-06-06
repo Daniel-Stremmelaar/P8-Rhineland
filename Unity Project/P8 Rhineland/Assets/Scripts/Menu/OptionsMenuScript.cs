@@ -8,7 +8,7 @@ public class OptionsMenuScript : MonoBehaviour
 {
     [Header("Audio")]
     public AudioMixer audioMixer;
-    public Slider masterVolume, ambientNoise, effectNoise;
+    public Slider masterVolume, ambientNoise, effectNoise,backNoise;
 
     [Header("Res")]
     public Dropdown dropDownRes;
@@ -66,6 +66,10 @@ public class OptionsMenuScript : MonoBehaviour
     public void CoppleEffectNoiseVolume(float amount)
     {
         audioMixer.SetFloat("EffectNiose", amount);
+    }
+    public void CoppleBackGroundNoiseVolume(float amount)
+    {
+        audioMixer.SetFloat("BackGroundNiose", amount);
     }
 
     public void SetGraphics(int dropDown)
