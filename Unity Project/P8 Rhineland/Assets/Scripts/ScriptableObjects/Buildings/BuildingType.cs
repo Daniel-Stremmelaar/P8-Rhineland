@@ -25,6 +25,10 @@ public class BuildingType : ScriptableObject
     public float timeReset;
     public float townHallradius;
 
+    [Header("Sound")]
+    public AudioClip buildingSound;
+    public AudioSource buildingSourceSound;
+
     [Header("Creates")]
     public List<ResourceType> creates = new List<ResourceType>();
 

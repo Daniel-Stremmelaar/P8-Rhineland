@@ -84,7 +84,6 @@ public class CamraMove : MonoBehaviour
             else
             {
                 Debug.Log(unitHit.transform.tag + "  misKlick");
-                //spawnt niet met een tag
             }
         }
         if (Input.GetButtonDown("Fire2"))

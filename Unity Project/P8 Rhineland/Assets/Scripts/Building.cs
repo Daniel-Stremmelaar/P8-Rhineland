@@ -24,8 +24,6 @@ public class Building : MonoBehaviour
     public Gatherer spawn;
     public GameObject radiusSprite;
 
-    public AudioClip buildingSound;
-    public AudioSource buildingSourceSound;
     SoundManager soundManager;
 
     [Header("Resources")]
@@ -89,8 +87,8 @@ public class Building : MonoBehaviour
             {
                 placing = false;
                 //c.enabled = true;
-                GameObject g = Instantiate(buildingSourceSound.gameObject, transform.position, transform.rotation);
-                Destroy(g, buildingSourceSound.clip.length);
+                GameObject g = Instantiate(type.buildingSourceSound.gameObject, transform.position, transform.rotation);
+                Destroy(g, type.buildingSourceSound.clip.length);
 
                 c.isTrigger = false;
                 gameObject.GetComponent<Renderer>().material = type.material;
