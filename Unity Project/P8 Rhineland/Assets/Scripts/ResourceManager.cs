@@ -37,6 +37,15 @@ public class ResourceManager : MonoBehaviour
             Gain(2, 100);
             Gain(12, 100);
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Gain(13, 100);
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Gain(4, 100);
+            Gain(7, 100);
+        }
 
         time -= Time.deltaTime;
         if (time <= 0)
