@@ -15,7 +15,9 @@ MonoBehaviour:
   carryCap: 5
   gatherRange: 3
   gatherTime: 1
-  goldCost: 0
+  goldCost: 50
   type: 0
   jobSprite: {fileID: 0}
+  foodMax: 100
+  foodMin: 0
   resource: 3

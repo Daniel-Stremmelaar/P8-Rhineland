@@ -32,5 +32,5 @@ MonoBehaviour:
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}
   creates: []
-  indexes: 
-  amount: 0
+  indexes: 0000000001000000020000000a0000000b0000000c0000000d000000
+  amount: 250

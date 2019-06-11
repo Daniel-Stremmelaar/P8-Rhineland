@@ -50,6 +50,8 @@ public class Gatherer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foodMax = type.foodMax;
+        foodMin = type.foodMin;
         consume = 0;
         food = foodMax;
         r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
