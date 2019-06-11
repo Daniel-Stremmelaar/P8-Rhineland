@@ -129,6 +129,11 @@ public class Building : MonoBehaviour
             g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
             g.GetComponent<MeshRenderer>().material = type.upgrade.material;
 
+            if (gameObject.tag == "TownHall")
+            {
+                Debug.Log("nejkwvfyqvyfqufbuqfbfihbqhfqhbfqhbfhfbhfbfhbfhf");
+            }
+
             u.selected = g;
             u.SelectedPanel(g);
             Destroy(this.gameObject);
@@ -158,7 +163,7 @@ public class Building : MonoBehaviour
         //townHallArray = GameObject.FindGameObjectsWithTag("TownHall");
         foreach (GameObject closeTown in builder.townHallList)
         {
-            if (Vector3.Distance(transform.position,closeTown.transform.position) <= closeTown.GetComponent<Building>().type.townHallradius)
+            if (Vector3.Distance(transform.position, closeTown.transform.position) <= closeTown.GetComponent<Building>().type.townHallradius)
             {
                 placeable = true;
                 gameObject.GetComponent<Renderer>().material = builder.green;

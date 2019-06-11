@@ -95,14 +95,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 0}
   placing: 0
-  hp: 0
+  hp: 10
   time: 0
   timeReset: 0
   spawn: {fileID: 1408175204202794320, guid: 6104b9328a688ba4196a41a1c7ea254a, type: 3}
   radiusSprite: {fileID: 894756933184849097}
-  buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
-  buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
-    type: 3}
   r: {fileID: 0}
   creates: []
 --- !u!65 &1167942974037635765
