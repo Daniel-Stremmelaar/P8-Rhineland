@@ -212,8 +212,12 @@ public class Building : MonoBehaviour
 
     public void Repair(BuildingType t)
     {
-        if( r.Check(0, t.woodCost/10) && r.Check(2, type.stoneCost/10) && r.Check(1, type.plankCost/10) && r.Check(12, type.ironCost / 10))
+        if( hp < type.hp && r.Check(0, t.woodCost/10) && r.Check(2, type.stoneCost/10) && r.Check(1, type.plankCost/10) && r.Check(12, type.ironCost / 10))
         {
+            r.Spend(0, t.woodCost / 10);
+            r.Spend(2, type.stoneCost / 10);
+            r.Spend(1, type.plankCost / 10);
+            r.Spend(12, type.ironCost / 10);
             hp = type.hp;
         }
     }

@@ -49,10 +49,8 @@ public class UIManager : MonoBehaviour
         ///
         recruit.onClick.AddListener(Recruit);
         upgrade.onClick.AddListener(Upgrade);
-        /*
-        repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
-        */
+        repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         extraFoodUi.SetActive(false);
     }
 
@@ -69,7 +67,7 @@ public class UIManager : MonoBehaviour
 
     public void Sell(Building b)
     {
-
+        b.Sell(b.type);
     }
 
     public void OpenUIGatherInfo(Sprite s)
