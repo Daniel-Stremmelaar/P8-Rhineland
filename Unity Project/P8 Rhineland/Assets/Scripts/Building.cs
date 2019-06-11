@@ -25,6 +25,7 @@ public class Building : MonoBehaviour
     public GameObject radiusSprite;
 
     SoundManager soundManager;
+    UIManager u;
 
     [Header("Resources")]
     public ResourceManager r;
@@ -32,6 +33,7 @@ public class Building : MonoBehaviour
 
     void Start()
     {
+        u = GameObject.FindGameObjectWithTag("Builder").GetComponent<UIManager>();
         r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
         builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
         c = GetComponent<Collider>();
@@ -224,12 +226,23 @@ public class Building : MonoBehaviour
 
     public void Sell(BuildingType t)
     {
-        if(r.CheckCap(0, type.woodCost / 10 * 3) && r.CheckCap(2, type.stoneCost / 10 * 3) && r.CheckCap(1, type.plankCost / 10 * 3) && r.CheckCap(12, type.ironCost / 10 * 3))
-        r.Gain(0, type.woodCost / 10 * 3);
-        r.Gain(2, type.stoneCost / 10 * 3);
-        r.Gain(1, type.plankCost / 10 * 3);
-        r.Gain(12, type.ironCost/10 * 3);
-
+        if(r.CheckCap(0, type.woodCost / 10 * 3))
+        {
+            r.Gain(0, type.woodCost / 10 * 3);
+        }
+        if(r.CheckCap(2, type.stoneCost / 10 * 3))
+        {
+            r.Gain(2, type.stoneCost / 10 * 3);
+        }
+        if (r.CheckCap(1, type.plankCost / 10 * 3))
+        {
+            r.Gain(1, type.plankCost / 10 * 3);
+        }
+        if(r.CheckCap(12, type.ironCost / 10 * 3))
+        {
+            r.Gain(12, type.ironCost / 10 * 3);
+        }
+        
         if (type.indexes.Count > 0)
         {
             foreach (int i in type.indexes)
@@ -238,7 +251,7 @@ public class Building : MonoBehaviour
                 r.UpdateUI();
             }
         }
-
+        u.Deselect();
         Destroy(gameObject);
     }
 }
