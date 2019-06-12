@@ -98,7 +98,7 @@ public class Gatherer : MonoBehaviour
                     {
                         currentJob = state.deliver;
                     }
-                    else if(gathering == false && eating == true)
+                    else if(eating == true)
                     {
                         currentJob = state.eat;
                     }
