@@ -38,13 +38,13 @@ public class WorldGeneration : MonoBehaviour
         {
             xPos = Random.Range(0, xSize);
             zPos = Random.Range(0, zSize);
-            if (Physics.Raycast(new Vector3(xPos,500f,zPos),Vector3.down,out hit,Mathf.Infinity,mask))
+            if (Physics.Raycast(new Vector3(xPos, 500f, zPos), Vector3.down, out hit, Mathf.Infinity, mask))
             {
                 if (hit.transform.tag == "Terrain")
                 {
                     yPos = hit.point.y;
                     newWorldPos = new Vector3(xPos, yPos, zPos);
-                   
+
                     Instantiate(woodNode, newWorldPos, Quaternion.identity);
                 }
                 else
@@ -58,13 +58,13 @@ public class WorldGeneration : MonoBehaviour
         {
             xPos = Random.Range(0, xSize);
             zPos = Random.Range(0, zSize);
-            if (Physics.Raycast(new Vector3(xPos,500f,zPos),Vector3.down,out hit,Mathf.Infinity,mask))
+            if (Physics.Raycast(new Vector3(xPos, 500f, zPos), Vector3.down, out hit, Mathf.Infinity, mask))
             {
                 if (hit.transform.tag == "Terrain")
                 {
                     yPos = hit.point.y;
                     newWorldPos = new Vector3(xPos, yPos, zPos);
-                   
+
                     Instantiate(stoneNode, newWorldPos, Quaternion.identity);
                 }
             }
@@ -85,6 +85,6 @@ public class WorldGeneration : MonoBehaviour
                 }
             }
         }*/
-        
+
     }
 }

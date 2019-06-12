@@ -95,12 +95,12 @@ public class ResourceManager : MonoBehaviour
     //Fix bug: shows food resources instead of wanted resources
     public void UpdateUI()
     {
-        resourceTexts[0].text = resourceTypes[0].name + ": " + resourcesCurrent[0].ToString() + "/" + resourceCaps[0].ToString();
-        resourceTexts[1].text = resourceTypes[1].name + ": " + resourcesCurrent[1].ToString() + "/" + resourceCaps[1].ToString();
-        resourceTexts[2].text = resourceTypes[2].name + ": " + resourcesCurrent[2].ToString() + "/" + resourceCaps[2].ToString();
-        resourceTexts[4].text = resourceTypes[12].name + ": " + resourcesCurrent[12].ToString() + "/" + resourceCaps[12].ToString();
-        resourceTexts[5].text = resourceTypes[13].name + ": " + resourcesCurrent[13].ToString() + "/" + resourceCaps[13].ToString();
-        resourceTexts[7].text = resourceTypes[15].name + ": " + resourcesCurrent[15].ToString() + "/" + resourceCaps[15].ToString();
+        resourceTexts[0].text = resourcesCurrent[0].ToString() + "/" + resourceCaps[0].ToString();
+        resourceTexts[1].text = resourcesCurrent[1].ToString() + "/" + resourceCaps[1].ToString();
+        resourceTexts[2].text = resourcesCurrent[2].ToString() + "/" + resourceCaps[2].ToString();
+        resourceTexts[4].text = resourcesCurrent[12].ToString() + "/" + resourceCaps[12].ToString();
+        resourceTexts[5].text = resourcesCurrent[13].ToString() + "/" + resourceCaps[13].ToString();
+        resourceTexts[7].text = resourcesCurrent[15].ToString() + "/" + resourceCaps[15].ToString();
     }
 
     public void Spend(int index, int i)
