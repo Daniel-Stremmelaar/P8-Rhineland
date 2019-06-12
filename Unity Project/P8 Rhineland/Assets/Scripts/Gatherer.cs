@@ -30,6 +30,9 @@ public class Gatherer : MonoBehaviour
     public int foodMin;
     public int foodMax;
     public int food;
+    public int eatPoint;
+    public int satiated;
+    public int starving;
     public int consume;
 
     public float happinessTimer;
@@ -54,6 +57,9 @@ public class Gatherer : MonoBehaviour
         foodMin = type.foodMin;
         consume = 0;
         food = foodMax;
+        eatPoint = food / 2;
+        starving = foodMax / 4;
+        satiated = (foodMax / 4) * 3;
         r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
         delivering = false;
         gathering = true;
@@ -84,11 +90,11 @@ public class Gatherer : MonoBehaviour
                 trigger.radius += triggerGrow;
                 if(target != null && home != null)
                 {
-                    if(gathering == true)
+                    if(gathering == true && eating == false)
                     {
                         currentJob = state.gather;
                     }
-                    else if(eating == false)
+                    else if(gathering == false && eating == false)
                     {
                         currentJob = state.deliver;
                     }
@@ -119,7 +125,7 @@ public class Gatherer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == type.resource.ToString())
+        if(other.tag == type.resource.ToString() && eating == false)
         {
             target = other.gameObject;
             target.GetComponent<ResourcePoint>().current.Add(this.gameObject.GetComponent<Gatherer>());
@@ -128,7 +134,7 @@ public class Gatherer : MonoBehaviour
         {
             home = other.gameObject;
         }
-        if(other.tag == "Tavern")
+        if(other.tag == "Tavern" && eating == true)
         {
             target = other.gameObject;
         }
@@ -157,15 +163,6 @@ public class Gatherer : MonoBehaviour
                 }
             }
         }
-
-        /*if(currentJob == state.deliver && gameObject.tag == "Home")
-        {
-            type.Deliver(gathered, other.gameObject);
-            gathered = 0;
-            gathering = true;
-            target = null;
-            currentJob = state.search;
-        }*/
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -179,7 +176,7 @@ public class Gatherer : MonoBehaviour
         {
             consume = r.Eat(consume);
             food = foodMax - consume;
-            //if r.eat > x gain unhappy
+            eatPoint = food / 2;
             target = null;
             currentJob = state.search;
             eating = false;
@@ -217,14 +214,22 @@ public class Gatherer : MonoBehaviour
                 food -= 1;
                 consume += 1;
             }
-            else
+            else if(food < 1)
             {
                 Debug.Log("NO FOOD IN POP");
-                //if 0 -- kill pop
+                Destroy(gameObject);
+            }
+            if (consume > satiated)
+            {
+                happiness += 1;
+            }
+            else if (consume < starving)
+            {
+                happiness -= 2;
             }
             consumeTimer = consumeTimerReset;
         }
-        if(food < foodMax / 2)
+        if(food < eatPoint)
         {
             eating = true;
             target = null;
