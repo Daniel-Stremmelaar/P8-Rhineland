@@ -24,11 +24,15 @@ public class CamraMove : MonoBehaviour
     SoundManager soundManager;
     RaycastHit unitHit = new RaycastHit();
 
+    private void Awake()
+    {
+        CreateEmpty();
+    }
+
     private void Start()
     {
         uIManager = GameObject.FindWithTag("Builder").GetComponent<UIManager>();
         soundManager = GameObject.FindWithTag("Builder").GetComponent<SoundManager>();
-        CreateEmpty();
     }
 
     void Update()

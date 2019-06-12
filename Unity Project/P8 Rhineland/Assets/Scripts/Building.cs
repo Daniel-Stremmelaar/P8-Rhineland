@@ -7,12 +7,17 @@ public class Building : MonoBehaviour
 {
     [Header("Info")]
     public BuildingType type;
+    CamMoveEmpty camMoveEmpty;
 
     [Header("Placing")]
     private RaycastHit hit;
     private List<GameObject> colliding = new List<GameObject>();
     public bool placing;
     private bool placeable;
+
+    [Header("Rotate")]
+    float rotSpeed = 50f;
+    Vector3 rotVector;
 
     [Header("Data")]
     private Builder builder;
@@ -44,11 +49,14 @@ public class Building : MonoBehaviour
             creates.Add(r);
         }
         soundManager = GameObject.FindWithTag("Builder").GetComponent<SoundManager>();
+        camMoveEmpty = GameObject.FindWithTag("Respawn").GetComponent<CamMoveEmpty>();
+        rotVector.y += 1f;
     }
 
     void Update()
     {
-        if(hp <= 0)
+        RotateObject();
+        if (hp <= 0)
         {
             Destroy(gameObject);
         }
@@ -129,11 +137,6 @@ public class Building : MonoBehaviour
             g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
             g.GetComponent<MeshRenderer>().material = type.upgrade.material;
 
-            if (gameObject.tag == "TownHall")
-            {
-                Debug.Log("nejkwvfyqvyfqufbuqfbfihbqhfqhbfqhbfhfbhfbfhbfhf");
-            }
-
             u.selected = g;
             u.SelectedPanel(g);
             Destroy(this.gameObject);
@@ -160,13 +163,13 @@ public class Building : MonoBehaviour
 
     void CheckTownHall()
     {
-        //townHallArray = GameObject.FindGameObjectsWithTag("TownHall");
         foreach (GameObject closeTown in builder.townHallList)
         {
             if (Vector3.Distance(transform.position, closeTown.transform.position) <= closeTown.GetComponent<Building>().type.townHallradius)
             {
-                placeable = true;
-                gameObject.GetComponent<Renderer>().material = builder.green;
+                //placeable = true;
+                //gameObject.GetComponent<Renderer>().material = builder.green;
+                CheckCollision();
                 break;
             }
             else
@@ -175,7 +178,28 @@ public class Building : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material = builder.red;
             }
         }
+    }
 
+    void RotateObject()
+    {
+        if (placing == true)
+        {
+            camMoveEmpty.mayRot = false;
+            if (Input.GetButton("TurnLeft"))
+            {
+                //rotate left
+                transform.Rotate(rotVector * Time.deltaTime * rotSpeed);
+            }
+            if (Input.GetButton("TurnRight"))
+            {
+                //rotate right
+                transform.Rotate(-rotVector * Time.deltaTime * rotSpeed);
+            }
+        }
+        else
+        {
+            camMoveEmpty.mayRot = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
