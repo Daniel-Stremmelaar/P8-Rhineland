@@ -1923,7 +1923,7 @@ Animator:
   m_GameObject: {fileID: 5092575502606403779}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4e54ea4ee5283944c82812e24aa091af, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8aebe6e8a100d843b66cd457db30023, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1966,6 +1966,9 @@ MonoBehaviour:
   foodMin: 0
   foodMax: 100
   food: 50
+  eatPoint: 0
+  satiated: 0
+  starving: 0
   consume: 0
   happinessTimer: 5
   happinessTimerReset: 5
@@ -1973,6 +1976,7 @@ MonoBehaviour:
   consumeTimerReset: 5
   happiness: 50
   selected: 0
+  animator: {fileID: 0}
 --- !u!135 &4712736963076148423
 SphereCollider:
   m_ObjectHideFlags: 0

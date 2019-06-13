@@ -48,6 +48,7 @@ public class Gatherer : MonoBehaviour
 
     [Header("Selection")]
     public bool selected = false;
+    Animator animator;
     UIManager ui;
 
     // Start is called before the first frame update
@@ -71,6 +72,7 @@ public class Gatherer : MonoBehaviour
         consumeMod = 2 - happinessMod;
 
         ui = GameObject.FindWithTag("Builder").GetComponent<UIManager>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -120,6 +122,14 @@ public class Gatherer : MonoBehaviour
                 //eat behavior
                 agent.destination = target.transform.position;
                 break;
+        }
+        if (agent.destination != transform.position)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
         }
     }
 
