@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
         buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
         buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
         buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
+        buttons[3].onClick.AddListener(delegate { OpenPanel(panels[3]); });
         ///
         recruit.onClick.AddListener(Recruit);
         upgrade.onClick.AddListener(Upgrade);
