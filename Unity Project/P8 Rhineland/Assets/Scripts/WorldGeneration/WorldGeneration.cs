@@ -5,8 +5,8 @@ using UnityEngine;
 public class WorldGeneration : MonoBehaviour
 {
     [Header("Nodes")]
-    public GameObject woodNode;
-    public GameObject stoneNode;
+    public List<GameObject> woodList = new List<GameObject>();
+    public List<GameObject> stoneList = new List<GameObject>();
     //public GameObject mineNode;
 
     [Header("Amount")]
@@ -45,11 +45,9 @@ public class WorldGeneration : MonoBehaviour
                     yPos = hit.point.y;
                     newWorldPos = new Vector3(xPos, yPos, zPos);
 
-                    Instantiate(woodNode, newWorldPos, Quaternion.identity);
-                }
-                else
-                {
-                    Debug.Log("HIT THE ELSE");
+                    int r = Random.Range(0, woodList.Count);
+                    Debug.Log(r + "     I AM PASST THIS DEBUG WOOD NODE");
+                    Instantiate(woodList[r], newWorldPos, Quaternion.identity);
                 }
             }
         }
@@ -65,7 +63,8 @@ public class WorldGeneration : MonoBehaviour
                     yPos = hit.point.y;
                     newWorldPos = new Vector3(xPos, yPos, zPos);
 
-                    Instantiate(stoneNode, newWorldPos, Quaternion.identity);
+                    int r = Random.Range(0, stoneList.Count);
+                    Instantiate(stoneList[r], newWorldPos, Quaternion.identity);
                 }
             }
         }
