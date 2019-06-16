@@ -2806,8 +2806,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camZoomSpeed: 25
-  maxZoom: 65
+  maxZoom: 50
   minZoom: 15
+  f: 0
   empty: {fileID: 5832710187284122583, guid: fbb6f7174f057324dbec40471251a041, type: 3}
   selected: {fileID: 0}
   click01: {fileID: 8300000, guid: f21ccad6fb8f82d4badccfe0d92571fa, type: 3}

@@ -9,6 +9,7 @@ public class CamraMove : MonoBehaviour
     public float camZoomSpeed;
     public float maxZoom;
     public float minZoom;
+    public float f;
 
     public GameObject empty;
     RaycastHit raycast;
@@ -44,7 +45,7 @@ public class CamraMove : MonoBehaviour
     //scrool wheel zoom in and out
     void CameraZoom()
     {
-        float f = Camera.main.fieldOfView;
+        f = Camera.main.fieldOfView;
 
         f += -Input.GetAxis("Mouse ScrollWheel") * camZoomSpeed;
         f = Mathf.Clamp(f, minZoom, maxZoom);
