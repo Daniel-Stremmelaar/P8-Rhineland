@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2165997052402942575}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 57.606865, y: 0, z: 64.60562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2165997052402942575}
-  m_Mesh: {fileID: -3153871684613515245, guid: 2ea4e3e6d15533a479150cfc861fbe0b, type: 3}
+  m_Mesh: {fileID: -3153871684613515245, guid: 70fc821882c238148a0d0d3ef2dc5256, type: 3}
 --- !u!23 &446978807322605235
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5047535304154193246, guid: 2ea4e3e6d15533a479150cfc861fbe0b, type: 3}
+  - {fileID: 2100000, guid: 858d5d27517c9a446bf2b609de4ac279, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,5 +127,6 @@ MonoBehaviour:
   time: 0
   timeReset: 0
   spawn: {fileID: 0}
+  radiusSprite: {fileID: 0}
   r: {fileID: 0}
   creates: []
