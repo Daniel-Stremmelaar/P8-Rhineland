@@ -69,10 +69,10 @@ public class CamraMove : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            soundManager.Play2DSound(click01);
             if (unitHit.transform.tag == "Gatherer")
             {
                 int i = Random.Range(0, unitSound.Count);
-
                 soundManager.Play2DSound(unitSound[i]);
 
                 Debug.Log("Hit " + unitHit.transform.name);
@@ -81,7 +81,6 @@ public class CamraMove : MonoBehaviour
             }
             else if(unitHit.transform.tag == "Home" || unitHit.transform.tag == "TownHall")
             {
-                soundManager.Play2DSound(click01);
 
                 selected = unitHit.transform.gameObject;
                 uIManager.SelectedPanel(unitHit.transform.gameObject);
