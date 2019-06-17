@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 6143088379306150381}
   - component: {fileID: 2890084912806802395}
   - component: {fileID: 8874111623809945378}
-  - component: {fileID: 2513199987682612162}
   - component: {fileID: 6938490254673032260}
-  - component: {fileID: 6664207051188815311}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Farm_lvl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,22 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &2513199987682612162
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7141578219547360254}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &6938490254673032260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107,26 +89,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.248604, y: 4.784479, z: 12.043498}
-  m_Center: {x: 2.2438815, y: 1.9077606, z: 2.6413274}
---- !u!114 &6664207051188815311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7141578219547360254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc70a599110ed448831e75c85b28741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 0e437a5a895b37b449d121fc9ac2e985, type: 2}
-  placing: 0
-  hp: 10
-  time: 0
-  timeReset: 0
-  spawn: {fileID: 1457856473980359745, guid: 754d3dd2ece6f2d4982e5b49b5b7ed18, type: 3}
-  radiusSprite: {fileID: 0}
-  r: {fileID: 0}
-  creates: []
+  m_Size: {x: 25.459103, y: 4.784479, z: 23.089003}
+  m_Center: {x: 10.588051, y: 1.9077606, z: 8.164097}
