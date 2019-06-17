@@ -165,19 +165,4 @@ public class UIManager : MonoBehaviour
     {
         extraFoodUi.SetActive(b);
     }
-    /*
-     food and happy niet af
-    /// 
-    recruit/
-    buidling /
-    ghatering 
-    jobswitch 
-
-    ///
-    3 townhals //
-    charakter //
-
-     */
-
-
 }

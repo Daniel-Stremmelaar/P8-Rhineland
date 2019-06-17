@@ -23,10 +23,15 @@ public class CamMoveEmpty : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, 200f), camraMove.f, Mathf.Clamp(transform.position.z, 0f, 200f));
+
+    }
+    private void FixedUpdate()
+    {
         if (mayRot == true)
         {
             CameraRotation();
         }
+
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             MoveCamera();

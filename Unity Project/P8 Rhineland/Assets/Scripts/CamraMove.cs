@@ -85,15 +85,10 @@ public class CamraMove : MonoBehaviour
                 selected = unitHit.transform.gameObject;
                 uIManager.SelectedPanel(unitHit.transform.gameObject);
             }
-            else
-            {
-                Debug.Log(unitHit.transform.tag + "  misKlick");
-            }
         }
         if (Input.GetButtonDown("Fire2"))
         {
             uIManager.Deselect();
-            Debug.Log("Deselect");
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Gatherer"))
             {
                 g.GetComponent<Gatherer>().selected = false;
