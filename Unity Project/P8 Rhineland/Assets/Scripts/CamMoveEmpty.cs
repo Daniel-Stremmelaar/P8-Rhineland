@@ -8,14 +8,21 @@ public class CamMoveEmpty : MonoBehaviour
     public float camMoveSpeed;
     public float screenThickness;
     Vector3 move;
+    CamraMove camraMove;
 
     [Header("CamRotate")]
     public float rotateSpeed;
     public Vector3 vector;
     public bool mayRot = true;
 
+    private void Start()
+    {
+        camraMove = gameObject.GetComponentInChildren<CamraMove>();
+    }
+
     void Update()
     {
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, 200f), camraMove.f, Mathf.Clamp(transform.position.z, 0f, 200f));
         if (mayRot == true)
         {
             CameraRotation();

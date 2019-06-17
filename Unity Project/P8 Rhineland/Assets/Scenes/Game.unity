@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17782636, g: 0.2634582, b: 0.39038184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2806,8 +2806,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camZoomSpeed: 25
-  maxZoom: 65
+  maxZoom: 50
   minZoom: 15
+  f: 0
   empty: {fileID: 5832710187284122583, guid: fbb6f7174f057324dbec40471251a041, type: 3}
   selected: {fileID: 0}
   click01: {fileID: 8300000, guid: f21ccad6fb8f82d4badccfe0d92571fa, type: 3}
@@ -12487,10 +12488,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5aa61548e6b974cab5ec43fb8606fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodNode: {fileID: 7768219897045795712, guid: 866e64c49eb51984b8d37cf80900a6de,
-    type: 3}
-  stoneNode: {fileID: 2329922722334879204, guid: bc64a3486015b5e4d96979af351866e0,
-    type: 3}
+  woodList:
+  - {fileID: 7768219897045795712, guid: 866e64c49eb51984b8d37cf80900a6de, type: 3}
+  - {fileID: 787765270855830370, guid: 785bd37f6b3081447a7667c0d68063c3, type: 3}
+  - {fileID: 7638130377701030060, guid: 0b3efc326e123a24898f2352ed15fd3b, type: 3}
+  stoneList:
+  - {fileID: 2329922722334879204, guid: bc64a3486015b5e4d96979af351866e0, type: 3}
+  - {fileID: 9179399836947628481, guid: df890e859bea40b4c96a5adf155e10be, type: 3}
+  - {fileID: 3794509359395295705, guid: 6b15bc87209df4b4eb7705760ec0a296, type: 3}
   woodNodeAmount: 50
   stoneAmount: 50
   mask:

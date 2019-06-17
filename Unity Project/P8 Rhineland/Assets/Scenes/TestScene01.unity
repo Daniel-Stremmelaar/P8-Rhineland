@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0.2726409, g: 0.39523438, b: 0.6538148, a: 1}
+  m_IndirectSpecularColor: {r: 0.1798097, g: 0.1798097, b: 0.1798097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4217,6 +4217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 0}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!4 &954474959
 Transform:
   m_ObjectHideFlags: 0
@@ -5146,7 +5151,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1832427786}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.6628666
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5238,6 +5243,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   volumeAnchorOverride: {fileID: 0}
   antialiasing: 0
+  SMAAQuality: 2
   dithering: 0
   stopNaNs: 0
   physicalParameters:
@@ -5383,7 +5389,8 @@ MonoBehaviour:
   camZoomSpeed: 15
   maxZoom: 65
   minZoom: 15
-  empty: {fileID: 0}
+  f: 0
+  empty: {fileID: 5832710187284122583, guid: fbb6f7174f057324dbec40471251a041, type: 3}
   selected: {fileID: 0}
   click01: {fileID: 0}
   unitSound: []
@@ -5600,10 +5607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5aa61548e6b974cab5ec43fb8606fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodNode: {fileID: 7768219897045795712, guid: 866e64c49eb51984b8d37cf80900a6de,
-    type: 3}
-  stoneNode: {fileID: 2329922722334879204, guid: bc64a3486015b5e4d96979af351866e0,
-    type: 3}
+  woodList: []
+  stoneList: []
   woodNodeAmount: 100
   stoneAmount: 100
   mask:
