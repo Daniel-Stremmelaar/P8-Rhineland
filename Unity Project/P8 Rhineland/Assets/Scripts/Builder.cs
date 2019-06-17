@@ -30,7 +30,6 @@ public class Builder : MonoBehaviour
         buttons[12].onClick.AddListener(delegate { Build(12); });
         buttons[13].onClick.AddListener(delegate { Build(13); });
         buttons[14].onClick.AddListener(delegate { Build(14); });
-        buttons[15].onClick.AddListener(delegate { Build(15); });
     }
 
     public void Build(int i)
