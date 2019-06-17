@@ -46,7 +46,6 @@ public class WorldGeneration : MonoBehaviour
                     newWorldPos = new Vector3(xPos, yPos, zPos);
 
                     int r = Random.Range(0, woodList.Count);
-                    Debug.Log(r + "     I AM PASST THIS DEBUG WOOD NODE");
                     Instantiate(woodList[r], newWorldPos, Quaternion.identity);
                 }
             }
