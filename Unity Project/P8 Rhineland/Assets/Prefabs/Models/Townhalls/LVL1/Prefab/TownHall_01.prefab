@@ -67,7 +67,7 @@ MonoBehaviour:
   hp: 10
   time: 0
   timeReset: 0
-  spawn: {fileID: 1457856473980359745, guid: 754d3dd2ece6f2d4982e5b49b5b7ed18, type: 3}
+  spawn: {fileID: 278007646902574370, guid: 91cd14d66c105e643af08c70b37c1c38, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
   creates: []

@@ -5,14 +5,14 @@ using UnityEngine;
 public class WorldGeneration : MonoBehaviour
 {
     [Header("Nodes")]
+    public GameObject berryNode;
     public List<GameObject> woodList = new List<GameObject>();
     public List<GameObject> stoneList = new List<GameObject>();
-    //public GameObject mineNode;
 
     [Header("Amount")]
     public int woodNodeAmount;
     public int stoneAmount;
-    //public int mineAmount;
+    public int berryAmount;
 
     public LayerMask mask;
     RaycastHit hit;
@@ -67,8 +67,8 @@ public class WorldGeneration : MonoBehaviour
                 }
             }
         }
-        //spawn mine
-        /*for (int i = 0; i < mineAmount; i++)
+        //spawn Berry
+        for (int i = 0; i < berryAmount; i++)
         {
             xPos = Random.Range(0, xSize);
             zPos = Random.Range(0, zSize);
@@ -79,10 +79,10 @@ public class WorldGeneration : MonoBehaviour
                     yPos = hit.point.y;
                     newWorldPos = new Vector3(xPos, yPos, zPos);
                    
-                    Instantiate(mineNode, newWorldPos, Quaternion.identity);
+                    Instantiate(berryNode, newWorldPos, Quaternion.identity);
                 }
             }
-        }*/
+        }
 
     }
 }

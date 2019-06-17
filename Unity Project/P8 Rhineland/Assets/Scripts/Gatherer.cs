@@ -123,7 +123,7 @@ public class Gatherer : MonoBehaviour
                 agent.destination = target.transform.position;
                 break;
         }
-        if (agent.destination != transform.position)
+        if (transform.position != agent.destination)
         {
             animator.SetBool("IsWalking", true);
         }

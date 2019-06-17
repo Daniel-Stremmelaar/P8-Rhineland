@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3237926583914433108}
   - component: {fileID: 444289129980701053}
   - component: {fileID: 3081373743108435920}
+  - component: {fileID: 7524433826427678278}
   m_Layer: 0
   m_Name: TownHall_03
   m_TagString: TownHall
@@ -66,10 +67,47 @@ MonoBehaviour:
   hp: 20
   time: 0
   timeReset: 0
-  spawn: {fileID: 1457856473980359745, guid: 754d3dd2ece6f2d4982e5b49b5b7ed18, type: 3}
+  spawn: {fileID: 278007646902574370, guid: 91cd14d66c105e643af08c70b37c1c38, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
   creates: []
+--- !u!23 &7524433826427678278
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924220984266946631}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 3237926583914433108}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &2954355269186568825
 GameObject:
   m_ObjectHideFlags: 0
