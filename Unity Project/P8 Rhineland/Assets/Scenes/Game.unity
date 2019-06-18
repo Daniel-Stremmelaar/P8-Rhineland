@@ -13055,7 +13055,7 @@ MonoBehaviour:
   red: {fileID: 2100000, guid: 7bef8567b5c29624d84d346e13942a87, type: 2}
   townHallList: []
   built: []
-  mayBuild: 
+  mayBuild: 000000000000000000000000000000
 --- !u!4 &1617780286
 Transform:
   m_ObjectHideFlags: 0

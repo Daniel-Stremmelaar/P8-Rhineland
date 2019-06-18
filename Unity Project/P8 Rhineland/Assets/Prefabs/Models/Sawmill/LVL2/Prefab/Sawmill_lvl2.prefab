@@ -110,7 +110,7 @@ MonoBehaviour:
   hp: 0
   time: 0
   timeReset: 0
-  spawn: {fileID: 0}
+  spawn: {fileID: 1424182635260041413, guid: f8a6a10407085a044b16c1d4a3a594bf, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
   creates: []
