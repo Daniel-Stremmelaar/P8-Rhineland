@@ -42,6 +42,7 @@ public class Builder : MonoBehaviour
         for (int i = 0; i<mayBuild.Count; i++)
         {
             mayBuild[i] = false;
+            buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
         for (int i = 0; i < buildings.Count; i++)
         {
@@ -50,10 +51,12 @@ public class Builder : MonoBehaviour
                 if (g.GetComponent<Building>().type == buildings[i].required && mayBuild[i] == false)
                 {
                     mayBuild[i] = true;
+                    buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 }
                 else if (buildings [i].required == null && mayBuild[i] == false)
                 {
                     mayBuild[i] = true;
+                    buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
         }
