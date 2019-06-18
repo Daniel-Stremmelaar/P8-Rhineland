@@ -47,11 +47,11 @@ public class Builder : MonoBehaviour
         {
             foreach(GameObject g in built)
             {
-                if(g.GetComponent<Building>().type == buildings[i].required)
+                if (g.GetComponent<Building>().type == buildings[i].required && mayBuild[i] == false)
                 {
                     mayBuild[i] = true;
                 }
-                else if (buildings [i].required == null)
+                else if (buildings [i].required == null && mayBuild[i] == false)
                 {
                     mayBuild[i] = true;
                 }
