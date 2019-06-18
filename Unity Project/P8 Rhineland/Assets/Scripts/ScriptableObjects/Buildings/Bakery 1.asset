@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
-  m_Name: Bakery
+  m_Name: Bakery 1
   m_EditorClassIdentifier: 
-  woodCost: 200
-  stoneCost: 200
-  plankCost: 200
-  ironCost: 100
+  woodCost: 250
+  stoneCost: 250
+  plankCost: 250
+  ironCost: 150
   maintainCost: 0
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 9134076327512336533, guid: f8e56c4f16da3fb43a4197f07c617379,
+  building: {fileID: 1077132588686035834, guid: aac3e0bf29a110a4c9b7de8194ac0587,
     type: 3}
-  material: {fileID: 2100000, guid: 6096d1d518597824f8e2582332c1b08d, type: 2}
+  material: {fileID: 2100000, guid: 294f6b51c93bae642b0ad24b1bbeaaec, type: 2}
   recieveType: 5
-  upgrade: {fileID: 11400000, guid: 96805765ca1bdff43a1650e3351c892b, type: 2}
+  upgrade: {fileID: 0}
   colliderSize: {x: 0, y: 0, z: 0}
   timeReset: 0
   townHallradius: 0

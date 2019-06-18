@@ -22,12 +22,13 @@ MonoBehaviour:
   spawnOffset: {x: 0, y: 0, z: 0}
   building: {fileID: 5786109051302525540, guid: 7f7e504d3ef71ad41ad8a20fba60ce04,
     type: 3}
-  material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
+  material: {fileID: 2100000, guid: 3bb1910016da3094f83312eef124ff6e, type: 2}
   recieveType: 5
   upgrade: {fileID: 0}
   colliderSize: {x: 0, y: 0, z: 0}
   timeReset: 0
   townHallradius: 0
+  required: {fileID: 0}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}

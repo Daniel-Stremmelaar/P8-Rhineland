@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
-  m_Name: Bakery
+  m_Name: Sawmill 1
   m_EditorClassIdentifier: 
-  woodCost: 200
-  stoneCost: 200
-  plankCost: 200
-  ironCost: 100
+  woodCost: 400
+  stoneCost: 500
+  plankCost: 0
+  ironCost: 0
   maintainCost: 0
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 9134076327512336533, guid: f8e56c4f16da3fb43a4197f07c617379,
+  building: {fileID: 3649769424657838573, guid: e337bdaae17f86c47ac83f4e65fc317b,
     type: 3}
-  material: {fileID: 2100000, guid: 6096d1d518597824f8e2582332c1b08d, type: 2}
+  material: {fileID: 2100000, guid: 7fe54eb558f0f164696fac69d2f2b93d, type: 2}
   recieveType: 5
-  upgrade: {fileID: 11400000, guid: 96805765ca1bdff43a1650e3351c892b, type: 2}
+  upgrade: {fileID: 0}
   colliderSize: {x: 0, y: 0, z: 0}
   timeReset: 0
   townHallradius: 0
-  required: {fileID: 11400000, guid: 221336366851a87439941febb7118cee, type: 2}
+  required: {fileID: 11400000, guid: bf60da745dc3bb4458033d7eaa85d653, type: 2}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}

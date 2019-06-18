@@ -20,14 +20,15 @@ MonoBehaviour:
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 3359754441855003998, guid: af7f655376d858f488bfdcdce6fca0ac,
+  building: {fileID: 1086103855045061580, guid: ca5c948bf330d104faa723abe5466533,
     type: 3}
-  material: {fileID: 2100000, guid: 9a9b566449194f94ea6bed8c3d6a5806, type: 2}
+  material: {fileID: 2100000, guid: 7406ac80d6ac41c49b2db6c96e0859df, type: 2}
   recieveType: 5
   upgrade: {fileID: 0}
   colliderSize: {x: 0, y: 0, z: 0}
   timeReset: 0
   townHallradius: 0
+  required: {fileID: 0}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}

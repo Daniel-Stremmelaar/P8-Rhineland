@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
-  m_Name: Bakery
+  m_Name: House 1
   m_EditorClassIdentifier: 
   woodCost: 200
-  stoneCost: 200
-  plankCost: 200
-  ironCost: 100
+  stoneCost: 150
+  plankCost: 0
+  ironCost: 0
   maintainCost: 0
   hp: 10
-  spawnType: {fileID: 0}
-  spawnOffset: {x: 0, y: 0, z: 0}
-  building: {fileID: 9134076327512336533, guid: f8e56c4f16da3fb43a4197f07c617379,
+  spawnType: {fileID: 11400000, guid: 7c52fbc67f867114d8cbd2232ef9d935, type: 2}
+  spawnOffset: {x: 3, y: 0, z: 0}
+  building: {fileID: 5946916694777321332, guid: 78e4227303f8b604293d7a6186645500,
     type: 3}
-  material: {fileID: 2100000, guid: 6096d1d518597824f8e2582332c1b08d, type: 2}
+  material: {fileID: 2100000, guid: c5d8bd1fcf90bde4e90e7c152d892af5, type: 2}
   recieveType: 5
-  upgrade: {fileID: 11400000, guid: 96805765ca1bdff43a1650e3351c892b, type: 2}
-  colliderSize: {x: 0, y: 0, z: 0}
+  upgrade: {fileID: 0}
+  colliderSize: {x: 4, y: 5, z: 7}
   timeReset: 0
   townHallradius: 0
-  required: {fileID: 11400000, guid: 221336366851a87439941febb7118cee, type: 2}
+  required: {fileID: 0}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}
   creates: []
-  indexes: 
-  amount: 0
+  indexes: 0f000000
+  amount: 5
