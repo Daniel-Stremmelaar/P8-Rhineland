@@ -108,6 +108,7 @@ public class Building : MonoBehaviour
                 r.Spend(12, type.ironCost);
                 GetComponent<BoxCollider>().size = type.colliderSize;
                 Destroy(GetComponent<Rigidbody>());
+                builder.built.Add(this.gameObject);
                 if(type.indexes.Count > 0)
                 {
                     foreach(int i in type.indexes)
@@ -281,6 +282,7 @@ public class Building : MonoBehaviour
             }
         }
         u.Deselect();
+        builder.built.Remove(this.gameObject);
         Destroy(gameObject);
     }
 }

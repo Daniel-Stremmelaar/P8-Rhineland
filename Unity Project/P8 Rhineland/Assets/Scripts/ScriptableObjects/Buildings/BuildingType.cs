@@ -24,6 +24,7 @@ public class BuildingType : ScriptableObject
     public Vector3 colliderSize;
     public float timeReset;
     public float townHallradius;
+    public BuildingType required;
 
     [Header("Sound")]
     public AudioClip buildingSound;
