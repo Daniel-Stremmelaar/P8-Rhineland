@@ -22,10 +22,12 @@ public class ResourceManager : MonoBehaviour
     private int average;
     private int count;
     public int index;
+    private Builder builder;
 
     private void Start()
     {
         UpdateUI();
+        builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
     }
 
     private void Update()
@@ -108,6 +110,7 @@ public class ResourceManager : MonoBehaviour
         resourcesCurrent[index] -= i;
 
         UpdateUI();
+        builder.CheckBuildable();
     }
 
     public void Gain(int index, int i)
@@ -115,6 +118,7 @@ public class ResourceManager : MonoBehaviour
         resourcesCurrent[index] += i;
 
         UpdateUI();
+        builder.CheckBuildable();
     }
 
     public bool Check(int index, int i)

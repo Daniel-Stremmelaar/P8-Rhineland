@@ -37,26 +37,33 @@ public class Builder : MonoBehaviour
         buttons[14].onClick.AddListener(delegate { Build(14); });
     }
 
-    private void Update()
+    public void CheckBuildable()
     {
-        for (int i = 0; i<mayBuild.Count; i++)
+        for (int i = 0; i < mayBuild.Count; i++)
         {
             mayBuild[i] = false;
-            buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        if(built.Count < 1)
+        {
+            mayBuild[9] = true;
         }
         for (int i = 0; i < buildings.Count; i++)
         {
             foreach(GameObject g in built)
             {
-                if (g.GetComponent<Building>().type == buildings[i].required && mayBuild[i] == false)
+                Debug.Log("Foreach");
+                if (buildings[i].required == null)
                 {
+                    Debug.Log("Some req");
                     mayBuild[i] = true;
-                    buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                    //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 }
-                else if (buildings [i].required == null && mayBuild[i] == false)
+                else if (g.GetComponent<Building>().type == buildings[i].required)
                 {
+                    Debug.Log("No req");
                     mayBuild[i] = true;
-                    buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                    //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
         }
