@@ -13035,7 +13035,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5a6b47dec561c541b1adb990fb4befe, type: 2}
   - {fileID: 11400000, guid: c1c7a3a41bb08a942b26f770d459e623, type: 2}
   - {fileID: 11400000, guid: 2f5facbd2ea9b9a40a711674d7434836, type: 2}
-  - {fileID: 0}
   buttons:
   - {fileID: 55158483}
   - {fileID: 683692350}
@@ -13052,7 +13051,6 @@ MonoBehaviour:
   - {fileID: 2011723977}
   - {fileID: 529362082}
   - {fileID: 608231090}
-  - {fileID: 0}
   green: {fileID: 2100000, guid: 826ae7407bd9da7448b523aedd1fd124, type: 2}
   red: {fileID: 2100000, guid: 7bef8567b5c29624d84d346e13942a87, type: 2}
   townHallList: []
