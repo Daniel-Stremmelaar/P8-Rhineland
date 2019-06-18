@@ -53,12 +53,12 @@ public class CamMoveEmpty : MonoBehaviour
         if (Input.GetButton("TurnLeft"))
         {
             //rotate left
-            transform.Rotate(vector * Time.deltaTime * rotateSpeed);
+            transform.Rotate(-vector * Time.deltaTime * rotateSpeed);
         }
         if (Input.GetButton("TurnRight"))
         {
             //rotate right
-            transform.Rotate(-vector * Time.deltaTime * rotateSpeed);
+            transform.Rotate(vector * Time.deltaTime * rotateSpeed);
         }
     }
 }
