@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2700596743495076155}
-  - component: {fileID: 1612451820917384689}
   - component: {fileID: 7509965830877698539}
+  - component: {fileID: 1623967711}
   m_Layer: 0
   m_Name: BerryNode01
   m_TagString: Berry
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232551188847212268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.41, y: 0.5, z: 43.88}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 289005826777543587}
@@ -39,19 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1612451820917384689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232551188847212268}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.96, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7509965830877698539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +53,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1000
   current: []
+--- !u!135 &1623967711
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232551188847212268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.968338
+  m_Center: {x: 1.4499998, y: 0, z: -0.37745667}
 --- !u!1 &293376672576204358
 GameObject:
   m_ObjectHideFlags: 0
