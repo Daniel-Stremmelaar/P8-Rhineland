@@ -82,11 +82,11 @@ public class Building : MonoBehaviour
             //c.enabled = false;
             c.isTrigger = true;
 
-            CheckCollision();
             if (gameObject.tag != "TownHall")
             {
                 CheckTownHall();
             }
+            CheckCollision();
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
