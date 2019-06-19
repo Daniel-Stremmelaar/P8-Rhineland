@@ -9,12 +9,12 @@ public class OnMouseInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public UIManager uIManager;
     public Builder builder;
     int index;
+    public List<Text> texts = new List<Text>();
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         uIManager.buildingInfoHolder.SetActive(true);
-        Debug.Log(transform.GetChild(0).name);
-        //kijk in lijst welke hij is
+
         if (!transform.GetChild(0).GetComponent<Button>())
         {
             transform.GetChild(1);
@@ -29,12 +29,11 @@ public class OnMouseInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     break;
                 }
             }
-
+            texts[0].text = builder.buildings[index].name;
+            texts[1].text = builder.buildings[index].woodCost.ToString();
+            texts[2].text = builder.buildings[index].stoneCost.ToString();
+            texts[3].text = builder.buildings[index].ironCost.ToString();
         }
-
-
-        //krijg de waardes
-        //set de waardes gelijk in de ui
     }
 
     public void OnPointerExit(PointerEventData eventData)
