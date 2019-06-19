@@ -5,6 +5,18 @@ using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
+    [Header("Starting Resources")]
+    public int wood;
+    public int stone;
+    public int planks;
+    public int iron;
+    public int gold;
+    public int wheat;
+    public int flour;
+    public int bread;
+    public int berry;
+    public int storeCap;
+
     [Header("Tracking")]
     public List<ResourceType> resourceTypes = new List<ResourceType>();
     public List<int> resourcesCurrent = new List<int>();
@@ -26,6 +38,19 @@ public class ResourceManager : MonoBehaviour
 
     private void Start()
     {
+        Gain(0, wood);
+        Gain(1, planks);
+        Gain(2, stone);
+        Gain(4, wheat);
+        Gain(5, flour);
+        Gain(6, bread);
+        Gain(7, berry);
+        Gain(12, iron);
+        Gain(13, gold);
+        for (int i = 0; i < resourceCaps.Count; i++)
+        {
+            resourceCaps[i] = storeCap;
+        }
         UpdateUI();
         builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
     }
