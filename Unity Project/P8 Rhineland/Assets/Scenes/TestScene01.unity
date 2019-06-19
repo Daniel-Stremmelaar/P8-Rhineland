@@ -2387,6 +2387,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d28d2b8ae3b0934ab9859d81a33658a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wood: 0
+  stone: 0
+  planks: 0
+  iron: 0
+  gold: 0
+  wheat: 0
+  flour: 0
+  bread: 0
+  berry: 0
+  storeCap: 0
   resourceTypes:
   - {fileID: 11400000, guid: 08937cff94519bf429091806d97e8d09, type: 2}
   - {fileID: 11400000, guid: cb7d0e1b444a8d94e8f60baee0bfdfd2, type: 2}
@@ -5323,11 +5333,18 @@ MonoBehaviour:
   selected: {fileID: 0}
   escHolder: {fileID: 307980760}
   escOptionsHolder: {fileID: 1045058154}
+  onMouseOverFood: {fileID: 1301132076}
+  buildingInfoHolder: {fileID: 1205291767}
   type: {fileID: 1893923954}
   recruit: {fileID: 1572626320}
   upgrade: {fileID: 900694840}
   selectedPanel: {fileID: 26775499}
   extraFoodUi: {fileID: 1977689780}
+  speed1: {fileID: 0}
+  speed2: {fileID: 0}
+  speed3: {fileID: 0}
+  fast: 0
+  superFast: 0
 --- !u!114 &883168538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6641,7 +6658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67015578f9bc70347b360194808e424b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingInfoHolder: {fileID: 1205291767}
+  uIManager: {fileID: 883168537}
+  builder: {fileID: 883168538}
 --- !u!114 &994522663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9640,6 +9658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301132075}
+  - component: {fileID: 1301132076}
   m_Layer: 5
   m_Name: FoodResource
   m_TagString: Untagged
@@ -9668,6 +9687,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1301132076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301132074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd03ee606ad2b4ea1a15bb8eea9093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodUiHolder: {fileID: 1977689780}
 --- !u!1 &1301772339
 GameObject:
   m_ObjectHideFlags: 0
@@ -11916,7 +11948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67015578f9bc70347b360194808e424b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingInfoHolder: {fileID: 1205291767}
+  uIManager: {fileID: 883168537}
+  builder: {fileID: 883168538}
 --- !u!114 &1581559110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15450,7 +15483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67015578f9bc70347b360194808e424b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingInfoHolder: {fileID: 1205291767}
+  uIManager: {fileID: 883168537}
+  builder: {fileID: 883168538}
 --- !u!114 &2037505271
 MonoBehaviour:
   m_ObjectHideFlags: 0
