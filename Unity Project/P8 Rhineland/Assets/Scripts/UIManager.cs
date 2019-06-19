@@ -91,6 +91,8 @@ public class UIManager : MonoBehaviour
             {
                 item.GetComponent<Gatherer>().type = jobsList[i];
                 gethererImage.sprite = jobsList[i].jobSprite;
+                item.GetComponent<MeshFilter>().mesh = jobsList[i].mesh;
+                item.GetComponent<Renderer>().material = jobsList[i].mat;
             }
         }
     }

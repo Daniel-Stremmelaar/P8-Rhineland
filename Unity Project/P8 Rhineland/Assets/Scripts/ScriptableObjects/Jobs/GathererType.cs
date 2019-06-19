@@ -16,6 +16,8 @@ public class GathererType : ScriptableObject
     public Sprite jobSprite;
     public int foodMax;
     public int foodMin;
+    public Mesh mesh;
+    public Material mat;
 
     public enum resources { Wood, Stone, Berry, IronOre, GoldOre };
     public resources resource;
