@@ -82,11 +82,11 @@ public class Building : MonoBehaviour
             //c.enabled = false;
             c.isTrigger = true;
 
+            CheckCollision();
             if (gameObject.tag != "TownHall")
             {
                 CheckTownHall();
             }
-            CheckCollision();
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
@@ -101,7 +101,17 @@ public class Building : MonoBehaviour
                 Destroy(g, type.buildingSourceSound.clip.length);
 
                 c.isTrigger = false;
-                gameObject.GetComponent<Renderer>().material = type.material;
+                if (gameObject.tag != "TownHall")
+                {
+                    gameObject.GetComponent<Renderer>().material = type.material;
+                }
+                else
+                {
+                    foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
+                    {
+                        rend.material = type.material;
+                    }
+                }
                 r.Spend(0, type.woodCost);
                 r.Spend(2, type.stoneCost);
                 r.Spend(1, type.plankCost);
@@ -149,18 +159,48 @@ public class Building : MonoBehaviour
     private void CheckCollision()
     {
         placeable = true;
-        gameObject.GetComponent<Renderer>().material = builder.green;
+        if (gameObject.tag != "TownHall")
+        {
+            gameObject.GetComponent<Renderer>().material = builder.green;
+        }
+        else
+        {
+            foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
+            {
+                rend.material = builder.green;
+            }
+        }
         foreach (GameObject g in colliding)
         {
             if(g.tag != "Terrain")
             {
                 placeable = false;
-                gameObject.GetComponent<Renderer>().material = builder.red;
+                if(gameObject.tag != "TownHall")
+                {
+                    gameObject.GetComponent<Renderer>().material = builder.red;
+                }
+                else
+                {
+                    foreach(Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
+                    {
+                        rend.material = builder.red;
+                    }
+                }
             }
         }
         if(!r.Check(0, type.woodCost) || !r.Check(2, type.stoneCost) || !r.Check(1, type.plankCost) || !r.Check(12, type.ironCost))
         {
-            gameObject.GetComponent<Renderer>().material = builder.red;
+            if (gameObject.tag != "TownHall")
+            {
+                gameObject.GetComponent<Renderer>().material = builder.red;
+            }
+            else
+            {
+                foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
+                {
+                    rend.material = builder.red;
+                }
+            }
         }
     }
 

@@ -285,11 +285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4345152051579704712}
     m_Modifications:
-    - target: {fileID: 8674189678221183095, guid: 4d3a995db183e2840929da6c065dfeb9,
-        type: 3}
-      propertyPath: m_Name
-      value: Area Building
-      objectReference: {fileID: 0}
     - target: {fileID: 2257736937386634365, guid: 4d3a995db183e2840929da6c065dfeb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -344,6 +339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674189678221183095, guid: 4d3a995db183e2840929da6c065dfeb9,
+        type: 3}
+      propertyPath: m_Name
+      value: Area Building
       objectReference: {fileID: 0}
     - target: {fileID: 3055353521507681948, guid: 4d3a995db183e2840929da6c065dfeb9,
         type: 3}
