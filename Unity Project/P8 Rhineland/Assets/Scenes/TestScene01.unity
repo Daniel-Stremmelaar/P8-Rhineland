@@ -1098,6 +1098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 221779123}
+  - component: {fileID: 221779124}
   m_Layer: 5
   m_Name: StoneResource
   m_TagString: Untagged
@@ -1126,6 +1127,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &221779124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221779122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &235451667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,6 +1583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298956876}
+  - component: {fileID: 298956877}
   m_Layer: 5
   m_Name: CommunitieResource
   m_TagString: Untagged
@@ -1596,6 +1612,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &298956877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298956875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &307980760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +1875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338563783}
+  - component: {fileID: 338563784}
   m_Layer: 5
   m_Name: GoldCoinsResource
   m_TagString: Untagged
@@ -1873,6 +1904,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &338563784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338563782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &340382751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2593,85 @@ RectTransform:
   m_AnchoredPosition: {x: -181, y: 45}
   m_SizeDelta: {x: 396.6, y: 49.6}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &497552197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497552198}
+  - component: {fileID: 497552200}
+  - component: {fileID: 497552199}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &497552198
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497552197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1154531336}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.7, y: 0.13}
+  m_SizeDelta: {x: 263.51, y: 49.41}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &497552199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497552197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 43
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 59
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &497552200
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497552197}
+  m_CullTransparentMesh: 0
 --- !u!1 &500649898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,7 +3134,7 @@ GameObject:
   - component: {fileID: 597852249}
   - component: {fileID: 597852248}
   m_Layer: 5
-  m_Name: WoodText
+  m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3086,6 +3210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600314837}
+  - component: {fileID: 600314838}
   m_Layer: 5
   m_Name: GoldOreResource
   m_TagString: Untagged
@@ -3114,6 +3239,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &600314838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600314836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &608303588
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,7 +3265,7 @@ GameObject:
   - component: {fileID: 608303591}
   - component: {fileID: 608303590}
   m_Layer: 5
-  m_Name: StoneText
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3241,7 +3380,7 @@ GameObject:
   - component: {fileID: 618248255}
   - component: {fileID: 618248254}
   m_Layer: 5
-  m_Name: IronOreText
+  m_Name: IronOre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4245,7 +4384,7 @@ GameObject:
   - component: {fileID: 727078625}
   - component: {fileID: 727078624}
   m_Layer: 5
-  m_Name: GoldCoinsText
+  m_Name: GoldCoins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5335,7 +5474,7 @@ MonoBehaviour:
   escOptionsHolder: {fileID: 1045058154}
   onMouseOverFood: {fileID: 1301132076}
   buildingInfoHolder: {fileID: 1205291767}
-  hoverOverResource: {fileID: 0}
+  hoverOverResource: {fileID: 1037199341}
   type: {fileID: 1893923954}
   recruit: {fileID: 1572626320}
   upgrade: {fileID: 900694840}
@@ -5915,7 +6054,7 @@ GameObject:
   - component: {fileID: 908255792}
   - component: {fileID: 908255791}
   m_Layer: 5
-  m_Name: IronText
+  m_Name: Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6787,6 +6926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1019962006}
+  - component: {fileID: 1019962007}
   m_Layer: 5
   m_Name: HappinessResource
   m_TagString: Untagged
@@ -6815,6 +6955,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1019962007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019962005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &1031315035
 GameObject:
   m_ObjectHideFlags: 0
@@ -6935,6 +7089,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031315035}
   m_CullTransparentMesh: 0
+--- !u!1 &1037199341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1037199342}
+  m_Layer: 5
+  m_Name: InfoResourceMouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1037199342
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037199341}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1154531336}
+  m_Father: {fileID: 1663856131}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -392.5, y: 332.3001}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1045058154
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,7 +7315,7 @@ GameObject:
   - component: {fileID: 1069247568}
   - component: {fileID: 1069247567}
   m_Layer: 5
-  m_Name: HappinessText
+  m_Name: Happiness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7877,7 +8067,7 @@ GameObject:
   - component: {fileID: 1154531338}
   - component: {fileID: 1154531337}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: InfoResourceMouseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7890,17 +8080,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154531335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1663856131}
-  m_RootOrder: 10
+  m_Children:
+  - {fileID: 497552198}
+  m_Father: {fileID: 1037199342}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 643.8, y: -362.12}
-  m_SizeDelta: {x: -1287.5, y: -724.24}
+  m_AnchoredPosition: {x: -85.5, y: -127.30005}
+  m_SizeDelta: {x: 169, y: 51.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154531337
 MonoBehaviour:
@@ -9662,7 +9853,7 @@ GameObject:
   - component: {fileID: 1299816333}
   - component: {fileID: 1299816332}
   m_Layer: 5
-  m_Name: PlanksText
+  m_Name: Planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9871,7 +10062,7 @@ GameObject:
   - component: {fileID: 1302430186}
   - component: {fileID: 1302430185}
   m_Layer: 5
-  m_Name: GoldOreText
+  m_Name: GoldOre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11684,8 +11875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIManager: {fileID: 0}
-  resourceManager: {fileID: 0}
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &1543681164
 GameObject:
   m_ObjectHideFlags: 0
@@ -12618,7 +12809,7 @@ RectTransform:
   - {fileID: 1636951834}
   - {fileID: 590226048}
   - {fileID: 1205291768}
-  - {fileID: 1154531336}
+  - {fileID: 1037199342}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13671,6 +13862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760405018}
+  - component: {fileID: 1760405019}
   m_Layer: 5
   m_Name: IronOreResource
   m_TagString: Untagged
@@ -13699,6 +13891,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1760405019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760405017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &1768226951
 GameObject:
   m_ObjectHideFlags: 0
@@ -14320,6 +14526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861727198}
+  - component: {fileID: 1861727199}
   m_Layer: 5
   m_Name: PlanksResource
   m_TagString: Untagged
@@ -14348,6 +14555,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1861727199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861727197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 883168537}
+  resourceManager: {fileID: 472431563}
 --- !u!1 &1877031223
 GameObject:
   m_ObjectHideFlags: 0
