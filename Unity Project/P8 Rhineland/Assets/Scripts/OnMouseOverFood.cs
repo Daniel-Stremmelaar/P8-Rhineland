@@ -5,15 +5,16 @@ using UnityEngine.EventSystems;
 
 public class OnMouseOverFood : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public GameObject foodUiHolder;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("KANKER CHINEES");
+        foodUiHolder.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("");
+        foodUiHolder.SetActive(false);
     }
 
 }

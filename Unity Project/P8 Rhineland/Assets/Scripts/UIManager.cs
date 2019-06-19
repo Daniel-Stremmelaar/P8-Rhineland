@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     public GameObject selected;
     public GameObject escHolder;
     public GameObject escOptionsHolder;
+    public OnMouseOverFood onMouseOverFood;
+    public GameObject buildingInfoHolder;
 
     [Header("Building Select")]
     public Text type;
@@ -53,6 +55,9 @@ public class UIManager : MonoBehaviour
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         extraFoodUi.SetActive(false);
+        ///
+        buildingInfoHolder.SetActive(false);
+        onMouseOverFood.foodUiHolder.SetActive(false);
     }
 
     // Update is called once per frame

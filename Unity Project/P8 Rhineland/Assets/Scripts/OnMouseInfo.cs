@@ -5,22 +5,17 @@ using UnityEngine.EventSystems;
 
 public class OnMouseInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject buildingInfoHolder;
-
-    private void Start()
-    {
-        buildingInfoHolder.SetActive(false);
-    }
+    public UIManager uIManager;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("KANKER CHINEES");
-        buildingInfoHolder.SetActive(true);
+        uIManager.buildingInfoHolder.SetActive(true);
+        Debug.Log(gameObject.name + " hahahaha");
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("KANKER CHINEES V2");
-        buildingInfoHolder.SetActive(false);
+        uIManager.buildingInfoHolder.SetActive(false);
     }
 }
