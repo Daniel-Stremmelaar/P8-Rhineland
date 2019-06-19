@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     public GameObject escOptionsHolder;
     public OnMouseOverFood onMouseOverFood;
     public GameObject buildingInfoHolder;
+    public GameObject hoverOverResource;
 
     [Header("Building Select")]
     public Text type;
@@ -70,12 +71,14 @@ public class UIManager : MonoBehaviour
         ///
         buildingInfoHolder.SetActive(false);
         onMouseOverFood.foodUiHolder.SetActive(false);
+        //hoverOverResource.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         OpenEscMenu();
+        hoverOverResource.transform.position = Input.mousePosition;
     }
 
     public void Repair(Building b)

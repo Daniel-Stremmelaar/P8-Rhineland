@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17782636, g: 0.2634582, b: 0.39038184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2387,16 +2387,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d28d2b8ae3b0934ab9859d81a33658a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: 0
-  stone: 0
-  planks: 0
-  iron: 0
-  gold: 0
-  wheat: 0
-  flour: 0
-  bread: 0
-  berry: 0
-  storeCap: 0
+  wood: 50
+  stone: 50
+  planks: 50
+  iron: 50
+  gold: 50
+  wheat: 50
+  flour: 50
+  bread: 50
+  berry: 50
+  storeCap: 50
   resourceTypes:
   - {fileID: 11400000, guid: 08937cff94519bf429091806d97e8d09, type: 2}
   - {fileID: 11400000, guid: cb7d0e1b444a8d94e8f60baee0bfdfd2, type: 2}
@@ -5335,6 +5335,7 @@ MonoBehaviour:
   escOptionsHolder: {fileID: 1045058154}
   onMouseOverFood: {fileID: 1301132076}
   buildingInfoHolder: {fileID: 1205291767}
+  hoverOverResource: {fileID: 0}
   type: {fileID: 1893923954}
   recruit: {fileID: 1572626320}
   upgrade: {fileID: 900694840}
@@ -7863,6 +7864,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140341047}
+  m_CullTransparentMesh: 0
+--- !u!1 &1154531335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1154531336}
+  - component: {fileID: 1154531338}
+  - component: {fileID: 1154531337}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1154531336
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154531335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1663856131}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 643.8, y: -362.12}
+  m_SizeDelta: {x: -1287.5, y: -724.24}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1154531337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154531335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1154531338
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154531335}
   m_CullTransparentMesh: 0
 --- !u!1 &1158992222
 GameObject:
@@ -11568,6 +11643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541678743}
+  - component: {fileID: 1541678744}
   m_Layer: 5
   m_Name: WoodResource
   m_TagString: Untagged
@@ -11596,6 +11672,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1541678744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541678742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec60a2693cd74aa4d8c7e71605718fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 0}
+  resourceManager: {fileID: 0}
 --- !u!1 &1543681164
 GameObject:
   m_ObjectHideFlags: 0
@@ -12528,6 +12618,7 @@ RectTransform:
   - {fileID: 1636951834}
   - {fileID: 590226048}
   - {fileID: 1205291768}
+  - {fileID: 1154531336}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
