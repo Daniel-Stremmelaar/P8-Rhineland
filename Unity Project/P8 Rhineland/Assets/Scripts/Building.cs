@@ -137,9 +137,11 @@ public class Building : MonoBehaviour
             g.GetComponent<Building>().type = type.upgrade;
             g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
             g.GetComponent<MeshRenderer>().material = type.upgrade.material;
+            builder.built.Add(g.gameObject);
 
             u.selected = g;
             u.SelectedPanel(g);
+            builder.built.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
     }
