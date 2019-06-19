@@ -45,7 +45,6 @@ public class Builder : MonoBehaviour
         {
             mayBuild[i] = false;
             buttons[i].interactable = false;
-            //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
         if(r.Check(0, buildings[9].woodCost) && r.Check(2, buildings[9].stoneCost) && r.Check(1, buildings[9].plankCost) && r.Check(12, buildings[9].ironCost))
         {
@@ -65,7 +64,6 @@ public class Builder : MonoBehaviour
                 {
                     mayBuild[i] = true;
                     buttons[i].interactable = true;
-                    //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
         }
