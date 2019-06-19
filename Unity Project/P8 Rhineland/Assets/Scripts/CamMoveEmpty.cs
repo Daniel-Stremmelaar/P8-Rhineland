@@ -23,7 +23,6 @@ public class CamMoveEmpty : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, 200f), camraMove.f, Mathf.Clamp(transform.position.z, 0f, 300f));
-
     }
     private void FixedUpdate()
     {

@@ -134,6 +134,7 @@ public class Building : MonoBehaviour
             }
             if (Input.GetButtonDown("Fire2"))
             {
+                camMoveEmpty.mayRot = true;
                 Destroy(gameObject);
             }
         }

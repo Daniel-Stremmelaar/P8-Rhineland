@@ -17,6 +17,8 @@ public class CamraMove : MonoBehaviour
     [Header("Selecting")]
     public GameObject selected;
 
+    public List<GameObject> ui = new List<GameObject>();
+
     [Header("Sound")]
     public AudioClip click01;
     public List<AudioClip> unitSound = new List<AudioClip>();
@@ -94,6 +96,13 @@ public class CamraMove : MonoBehaviour
                 g.GetComponent<Gatherer>().selected = false;
             }
             GameObject.FindWithTag("Builder").GetComponent<UIManager>().gatherInfoPanel.SetActive(false);
+            for (int i = 0; i < ui.Count; i++)
+            {
+                if (ui[i].activeSelf == true)
+                {
+                    ui[i].SetActive(false);
+                }
+            }
         }
     }
 
