@@ -227,6 +227,7 @@ public class Gatherer : MonoBehaviour
             else if(food < 1)
             {
                 Debug.Log("NO FOOD IN POP");
+                r.villagers.Remove(this.gameObject.GetComponent<Gatherer>());
                 Destroy(gameObject);
             }
             if (consume > satiated)

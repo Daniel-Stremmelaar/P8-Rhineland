@@ -264,6 +264,7 @@ public class Building : MonoBehaviour
             g.tag = "Gatherer";
             r.Spend(13, type.spawnType.goldCost);
             r.resourcesCurrent[15] += 1;
+            r.villagers.Add(g);
         }
     }
 

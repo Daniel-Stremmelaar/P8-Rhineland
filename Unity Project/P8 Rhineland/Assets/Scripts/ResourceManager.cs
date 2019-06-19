@@ -89,7 +89,7 @@ public class ResourceManager : MonoBehaviour
             {
                 average /= count;
                 average = Mathf.RoundToInt(average);
-                resourceTexts[14].text = "Happiness: " + average.ToString();
+                resourceTexts[8].text = "Happiness: " + average.ToString();
             }
             else
             {
