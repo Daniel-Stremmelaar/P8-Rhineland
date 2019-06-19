@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class OnMouseInfo : MonoBehaviour
+public class OnMouseInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject buildingInfoHolder;
 
@@ -11,14 +12,15 @@ public class OnMouseInfo : MonoBehaviour
         buildingInfoHolder.SetActive(false);
     }
 
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("KANKER CHINEES");
         buildingInfoHolder.SetActive(true);
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("KANKER CHINEES V2");
         buildingInfoHolder.SetActive(false);
     }
 }

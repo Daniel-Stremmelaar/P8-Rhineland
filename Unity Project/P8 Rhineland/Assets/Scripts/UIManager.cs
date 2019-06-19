@@ -161,6 +161,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         escHolder.SetActive(false);
     }
+    //foodui
     public void OpenAndCloseExtraFoodUi(bool b)
     {
         extraFoodUi.SetActive(b);
