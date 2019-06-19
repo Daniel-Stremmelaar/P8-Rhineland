@@ -57,12 +57,12 @@ public class Builder : MonoBehaviour
                 if (buildings[i].required == null)
                 {
                     mayBuild[i] = true;
-                    //buttons[i].interactable = true;
+                    buttons[i].interactable = true;
                 }
                 else if (g.GetComponent<Building>().type == buildings[i].required)
                 {
                     mayBuild[i] = true;
-                    //buttons[i].interactable = true;
+                    buttons[i].interactable = true;
                     //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
