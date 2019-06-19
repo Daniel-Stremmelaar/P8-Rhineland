@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 9134076327512336533, guid: f8e56c4f16da3fb43a4197f07c617379,
         type: 3}
       propertyPath: m_Name
-      value: Baker_lvl1
+      value: Baker_lvl1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9134076327512336533, guid: f8e56c4f16da3fb43a4197f07c617379,
         type: 3}
@@ -72,5 +72,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -563413227348488447, guid: f8e56c4f16da3fb43a4197f07c617379, type: 3}
+    - {fileID: 1288135983491108069, guid: f8e56c4f16da3fb43a4197f07c617379, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f8e56c4f16da3fb43a4197f07c617379, type: 3}

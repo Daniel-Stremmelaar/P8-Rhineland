@@ -63,7 +63,7 @@ public class WorldGeneration : MonoBehaviour
                     newWorldPos = new Vector3(xPos, yPos, zPos);
 
                     int r = Random.Range(0, stoneList.Count);
-                    Instantiate(stoneList[r], newWorldPos, Quaternion.identity);
+                    Instantiate(stoneList[r], newWorldPos, Quaternion.LookRotation(hit.normal)*Quaternion.Euler(90,0,0));
                 }
             }
         }

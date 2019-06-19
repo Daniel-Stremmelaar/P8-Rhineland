@@ -42,27 +42,27 @@ public class Builder : MonoBehaviour
         for (int i = 0; i < mayBuild.Count; i++)
         {
             mayBuild[i] = false;
+            buttons[i].interactable = false;
             //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
         if(built.Count < 1)
         {
             mayBuild[9] = true;
+            buttons[9].interactable = true;
         }
         for (int i = 0; i < buildings.Count; i++)
         {
             foreach(GameObject g in built)
             {
-                Debug.Log("Foreach");
                 if (buildings[i].required == null)
                 {
-                    Debug.Log("Some req");
                     mayBuild[i] = true;
-                    //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                    //buttons[i].interactable = true;
                 }
                 else if (g.GetComponent<Building>().type == buildings[i].required)
                 {
-                    Debug.Log("No req");
                     mayBuild[i] = true;
+                    //buttons[i].interactable = true;
                     //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
