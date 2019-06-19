@@ -17,9 +17,11 @@ public class Builder : MonoBehaviour
     [Header("Locks")]
     public List<GameObject> built = new List<GameObject>();
     public List<bool> mayBuild = new List<bool>();
+    private ResourceManager r;
 
     void Start()
     {
+        r = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceManager>();
         buttons[0].onClick.AddListener(delegate { Build(0); });
         buttons[1].onClick.AddListener(delegate { Build(1); });
         buttons[2].onClick.AddListener(delegate { Build(2); });
@@ -45,7 +47,7 @@ public class Builder : MonoBehaviour
             buttons[i].interactable = false;
             //buttons[i].gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
-        if(built.Count < 1)
+        if(r.Check(0, buildings[9].woodCost) && r.Check(2, buildings[9].stoneCost) && r.Check(1, buildings[9].plankCost) && r.Check(12, buildings[9].ironCost))
         {
             mayBuild[9] = true;
             buttons[9].interactable = true;
@@ -54,12 +56,12 @@ public class Builder : MonoBehaviour
         {
             foreach(GameObject g in built)
             {
-                if (buildings[i].required == null)
+                if (buildings[i].required == null && r.Check(0, buildings[i].woodCost) && r.Check(2, buildings[i].stoneCost) && r.Check(1, buildings[i].plankCost) && r.Check(12, buildings[i].ironCost))
                 {
                     mayBuild[i] = true;
                     buttons[i].interactable = true;
                 }
-                else if (g.GetComponent<Building>().type == buildings[i].required)
+                else if (g.GetComponent<Building>().type == buildings[i].required && r.Check(0, buildings[i].woodCost) && r.Check(2, buildings[i].stoneCost) && r.Check(1, buildings[i].plankCost) && r.Check(12, buildings[i].ironCost))
                 {
                     mayBuild[i] = true;
                     buttons[i].interactable = true;
