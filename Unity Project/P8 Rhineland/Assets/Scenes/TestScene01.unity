@@ -3134,7 +3134,7 @@ GameObject:
   - component: {fileID: 597852249}
   - component: {fileID: 597852248}
   m_Layer: 5
-  m_Name: WoodText
+  m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3265,7 +3265,7 @@ GameObject:
   - component: {fileID: 608303591}
   - component: {fileID: 608303590}
   m_Layer: 5
-  m_Name: StoneText
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3380,7 +3380,7 @@ GameObject:
   - component: {fileID: 618248255}
   - component: {fileID: 618248254}
   m_Layer: 5
-  m_Name: IronOreText
+  m_Name: IronOre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4384,7 +4384,7 @@ GameObject:
   - component: {fileID: 727078625}
   - component: {fileID: 727078624}
   m_Layer: 5
-  m_Name: GoldCoinsText
+  m_Name: GoldCoins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6054,7 +6054,7 @@ GameObject:
   - component: {fileID: 908255792}
   - component: {fileID: 908255791}
   m_Layer: 5
-  m_Name: IronText
+  m_Name: Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7315,7 +7315,7 @@ GameObject:
   - component: {fileID: 1069247568}
   - component: {fileID: 1069247567}
   m_Layer: 5
-  m_Name: HappinessText
+  m_Name: Happiness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9853,7 +9853,7 @@ GameObject:
   - component: {fileID: 1299816333}
   - component: {fileID: 1299816332}
   m_Layer: 5
-  m_Name: PlanksText
+  m_Name: Planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10062,7 +10062,7 @@ GameObject:
   - component: {fileID: 1302430186}
   - component: {fileID: 1302430185}
   m_Layer: 5
-  m_Name: GoldOreText
+  m_Name: GoldOre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

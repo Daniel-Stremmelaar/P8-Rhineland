@@ -23,6 +23,7 @@ public class OnMouseOverResource : MonoBehaviour, IPointerEnterHandler, IPointer
                 break;
             }
         }
+        
         uIManager.hoverOverResource.GetComponentInChildren<Text>().text = resourceManager.resourceTexts[index].name;
     }
 
