@@ -38,6 +38,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Start()
     {
+        builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
         Gain(0, wood);
         Gain(1, planks);
         Gain(2, stone);
@@ -52,7 +53,6 @@ public class ResourceManager : MonoBehaviour
             resourceCaps[i] = storeCap;
         }
         UpdateUI();
-        builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
     }
 
     private void Update()
