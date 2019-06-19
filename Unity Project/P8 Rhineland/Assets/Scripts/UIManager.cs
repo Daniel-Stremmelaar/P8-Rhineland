@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -38,12 +39,13 @@ public class UIManager : MonoBehaviour
     public GameObject selectedPanel;
     public GameObject extraFoodUi;
 
-    [Header("Time Change")]
+    [Header("Game Management")]
     public Button speed1;
     public Button speed2;
     public Button speed3;
     public int fast;
     public int superFast;
+    public Button reset;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +74,7 @@ public class UIManager : MonoBehaviour
         buildingInfoHolder.SetActive(false);
         onMouseOverFood.foodUiHolder.SetActive(false);
         hoverOverResource.SetActive(false);
+        reset.onClick.AddListener(ResetGame);
     }
 
     // Update is called once per frame
@@ -187,5 +190,10 @@ public class UIManager : MonoBehaviour
     public void OpenAndCloseExtraFoodUi(bool b)
     {
         extraFoodUi.SetActive(b);
+    }
+
+    private void ResetGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
