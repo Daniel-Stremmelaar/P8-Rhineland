@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
         ///
         buildingInfoHolder.SetActive(false);
         onMouseOverFood.foodUiHolder.SetActive(false);
-        //hoverOverResource.SetActive(false);
+        hoverOverResource.SetActive(false);
     }
 
     // Update is called once per frame

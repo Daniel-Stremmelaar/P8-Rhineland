@@ -13,28 +13,21 @@ public class OnMouseOverResource : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        uIManager.buildingInfoHolder.SetActive(true);
+        uIManager.hoverOverResource.SetActive(true);
 
-        if (!transform.GetChild(0).GetComponent<Button>())
+        for (int i = 0; i < resourceManager.resourceTexts.Count; i++)
         {
-            transform.GetChild(1);
-        }
-        else
-        {
-            for (int i = 0; i < resourceManager.resourceTexts.Count; i++)
+            if (transform.GetChild(1).name == resourceManager.resourceTexts[i].name)
             {
-                if (transform.GetChild(0).name == resourceManager.resourceTexts[i].name)
-                {
-                    index = i;
-                    break;
-                }
+                index = i;
+                break;
             }
-            //Text.text = builder.buildings[index].name;
         }
+        uIManager.hoverOverResource.GetComponentInChildren<Text>().text = resourceManager.resourceTexts[index].name;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        uIManager.buildingInfoHolder.SetActive(false);
+        uIManager.hoverOverResource.SetActive(false);
     }
 }
