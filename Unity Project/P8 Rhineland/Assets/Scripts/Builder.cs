@@ -74,7 +74,7 @@ public class Builder : MonoBehaviour
     {
         if (buildings[i] != null && mayBuild[i] == true)
         {
-            holder = Instantiate(buildings[i].building, Camera.main.ScreenToViewportPoint(Input.mousePosition), Quaternion.LookRotation(hit.normal)).GetComponent<Building>();
+            holder = Instantiate(buildings[i].building, Camera.main.ScreenToViewportPoint(Input.mousePosition), Quaternion.identity).GetComponent<Building>();
             holder.placing = true;
             holder.type = buildings[i];
         }

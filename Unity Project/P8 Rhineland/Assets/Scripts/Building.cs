@@ -142,7 +142,7 @@ public class Building : MonoBehaviour
     {
         if (type.upgrade != null)
         {
-            GameObject g = Instantiate(type.upgrade.building, transform.position, Quaternion.identity);
+            GameObject g = Instantiate(type.upgrade.building, transform.position, transform.rotation);
             g.GetComponent<Building>().type = type.upgrade;
             g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
             g.GetComponent<MeshRenderer>().material = type.upgrade.material;
