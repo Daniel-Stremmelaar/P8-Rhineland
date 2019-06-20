@@ -25,7 +25,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: f6483f2a6a7627a4cb7b8add96800799, type: 2}
   recieveType: 1
   upgrade: {fileID: 0}
-  colliderSize: {x: 0, y: 0, z: 0}
+  colliderSize: {x: 3.9, y: 3.9, z: 3.9}
   timeReset: 5
   townHallradius: 0
   required: {fileID: 0}
