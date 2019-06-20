@@ -198,6 +198,7 @@ public class UIManager : MonoBehaviour
 
     private void ResetGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 }
