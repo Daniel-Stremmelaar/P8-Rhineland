@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 //select an event
 public class RandomEventsManager : MonoBehaviour
 {
+    [Header("Manage")]
     public List<RandomEventScriptableObject> events = new List<RandomEventScriptableObject>();
 
     bool mayDoRandom = true;
@@ -12,11 +13,21 @@ public class RandomEventsManager : MonoBehaviour
     public int maxTimer;
     public float timer;
 
-    void Start()
-    {
-        
-    }
+    public UIManager uIManager;
+    public ResourceManager resourceManager;
+    [Header("UI")]
+    public GameObject randomEventPanel;
+    public GameObject randomName;
+    public GameObject randomDis;
+    public GameObject randomAddOrRemove;
 
+    private void Start()
+    {
+        randomEventPanel.SetActive(false);
+        randomName.SetActive(false);
+        randomDis.SetActive(false);
+        randomAddOrRemove.SetActive(false);
+    }
     void Update()
     {
         if (mayDoRandom == true)
@@ -30,57 +41,222 @@ public class RandomEventsManager : MonoBehaviour
     IEnumerator RandomTimer(float f)
     {
         yield return new WaitForSeconds(f);
-        
+
         int t = Random.Range(0, events.Count);
         RandomEventScriptableObject refe = events[t];
 
-        foreach (RandomEventScriptableObject.AddSlot type in refe.addValues)
-        {
-            int addValue = type.add ? type.amount : -type.amount;
+        int index = Random.Range(0, refe.addValues.Length);
+        RandomEventScriptableObject.AddSlot eventSlot = refe.addValues[index];
 
-            switch (type.material)
-            {
-                case RandomEventScriptableObject.MaterialType.Stone:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Wood:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Planks:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.IronOre:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.GoldOre:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Iron:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Gold:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Wheat:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Flour:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Bread:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Berry:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Happiness:
-                    //add or remove
-                    break;
-                case RandomEventScriptableObject.MaterialType.Population:
-                    //add or remove
-                    break;
-            }
+        int addValue = eventSlot.add ? eventSlot.amount : -eventSlot.amount;
+
+        switch (eventSlot.material)
+        {
+            case RandomEventScriptableObject.MaterialType.Wood:
+                //add or remove
+                //resourceManager.resourcesCurrent[0] += addValue;
+                resourceManager.Gain(0, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Planks:
+                //resourceManager.resourcesCurrent[1] += addValue;
+                resourceManager.Gain(1, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Stone:
+                //resourceManager.resourcesCurrent[2] += addValue;
+                resourceManager.Gain(2, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Wheat:
+                //resourceManager.resourcesCurrent[4] += addValue;
+                resourceManager.Gain(4, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Flour:
+                //resourceManager.resourcesCurrent[5] += addValue;
+                resourceManager.Gain(5, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Bread:
+                //resourceManager.resourcesCurrent[6] += addValue;
+                resourceManager.Gain(6, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Berry:
+                //resourceManager.resourcesCurrent[7] += addValue;
+                resourceManager.Gain(7, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.IronOre:
+                //resourceManager.resourcesCurrent[10] += addValue;
+                resourceManager.Gain(10, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.GoldOre:
+                //resourceManager.resourcesCurrent[11] += addValue;
+                resourceManager.Gain(11, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Iron:
+                //resourceManager.resourcesCurrent[12] += addValue;
+                resourceManager.Gain(12, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Gold:
+                //resourceManager.resourcesCurrent[13] += addValue;
+                resourceManager.Gain(13, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Happiness:
+                //resourceManager.resourcesCurrent[14] += addValue;
+                resourceManager.Gain(14, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
+            case RandomEventScriptableObject.MaterialType.Population:
+                //resourceManager.resourcesCurrent[15] += addValue;
+                resourceManager.Gain(15, addValue);
+
+                randomEventPanel.SetActive(true);
+                randomName.SetActive(true);
+                randomDis.SetActive(true);
+                randomAddOrRemove.SetActive(true);
+
+                randomName.GetComponent<Text>().text = eventSlot.eventName;
+                randomDis.GetComponent<Text>().text = eventSlot.description;
+                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
+
+                StartCoroutine(CloseUi());
+                break;
         }
         mayDoRandom = true;
+    }
+    IEnumerator CloseUi()
+    {
+        yield return new WaitForSeconds(10);
+        randomEventPanel.SetActive(false);
+        randomName.SetActive(false);
+        randomDis.SetActive(false);
+        randomAddOrRemove.SetActive(false);
     }
 }
