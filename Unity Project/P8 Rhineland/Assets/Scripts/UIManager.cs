@@ -38,6 +38,8 @@ public class UIManager : MonoBehaviour
     public Button upgrade;
     public GameObject selectedPanel;
     public GameObject extraFoodUi;
+    public GameObject goldOreUi;
+    public GameObject ironOreUi;
 
     [Header("Game Management")]
     public Button speed1;
@@ -54,6 +56,8 @@ public class UIManager : MonoBehaviour
 
         escHolder.SetActive(false);
         escOptionsHolder.SetActive(false);
+        goldOreUi.SetActive(false);
+        ironOreUi.SetActive(false);
         /*
         speed1.onClick.AddListener(delegate { Time.timeScale = 1; });
         speed2.onClick.AddListener(delegate { Time.timeScale = fast; });
