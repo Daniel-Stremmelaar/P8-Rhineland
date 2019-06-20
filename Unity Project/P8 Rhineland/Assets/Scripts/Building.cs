@@ -13,9 +13,7 @@ public class Building : MonoBehaviour
     private RaycastHit hit;
     private List<GameObject> colliding = new List<GameObject>();
     public bool placing;
-    public LayerMask mask;
     private bool placeable;
-    RaycastHit hitT;
 
     [Header("Rotate")]
     float rotSpeed = 50f;
@@ -98,17 +96,8 @@ public class Building : MonoBehaviour
             if (Input.GetButtonDown("Fire1") && placeable == true && r.Check(0, type.woodCost) && r.Check(2, type.stoneCost) && r.Check(1, type.plankCost) && r.Check(12, type.ironCost))
             {
                 placing = false;
-                if (Physics.Raycast(transform.position, Vector3.down, out hitT, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore))
-                {
-                    GameObject g = Instantiate(type.buildingSourceSound.gameObject, transform.position, Quaternion.LookRotation(hitT.normal));
-                    Destroy(g, type.buildingSourceSound.clip.length);
-                    if (hitT.transform.tag == "Terrain")
-                    {
-                        print("hit");
-                    }
-                    Debug.DrawRay(transform.position, Vector3.down, Color.green, Mathf.Infinity);
-                }
-
+                GameObject g = Instantiate(type.buildingSourceSound.gameObject, transform.position, Quaternion.Euler(0,0,0));
+                Destroy(g, type.buildingSourceSound.clip.length);
                 c.isTrigger = false;
                 if (gameObject.tag != "TownHall")
                 {

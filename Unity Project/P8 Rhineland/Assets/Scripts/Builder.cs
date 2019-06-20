@@ -13,6 +13,7 @@ public class Builder : MonoBehaviour
     public Material green;
     public Material red;
     public List<GameObject> townHallList = new List<GameObject>();
+    RaycastHit hit;
 
     [Header("Locks")]
     public List<GameObject> built = new List<GameObject>();
@@ -46,14 +47,14 @@ public class Builder : MonoBehaviour
             mayBuild[i] = false;
             buttons[i].interactable = false;
         }
-        if(r.Check(0, buildings[9].woodCost) && r.Check(2, buildings[9].stoneCost) && r.Check(1, buildings[9].plankCost) && r.Check(12, buildings[9].ironCost))
+        if (r.Check(0, buildings[9].woodCost) && r.Check(2, buildings[9].stoneCost) && r.Check(1, buildings[9].plankCost) && r.Check(12, buildings[9].ironCost))
         {
             mayBuild[9] = true;
             buttons[9].interactable = true;
         }
         for (int i = 0; i < buildings.Count; i++)
         {
-            foreach(GameObject g in built)
+            foreach (GameObject g in built)
             {
                 if (buildings[i].required == null && r.Check(0, buildings[i].woodCost) && r.Check(2, buildings[i].stoneCost) && r.Check(1, buildings[i].plankCost) && r.Check(12, buildings[i].ironCost))
                 {
@@ -71,11 +72,26 @@ public class Builder : MonoBehaviour
 
     public void Build(int i)
     {
-        if(buildings[i] != null && mayBuild[i] == true)
+        if (buildings[i] != null && mayBuild[i] == true)
         {
-            holder = Instantiate(buildings[i].building, Camera.main.ScreenToViewportPoint(Input.mousePosition), Quaternion.identity).GetComponent<Building>();
+            holder = Instantiate(buildings[i].building, Camera.main.ScreenToViewportPoint(Input.mousePosition), Quaternion.LookRotation(hit.normal)).GetComponent<Building>();
             holder.placing = true;
             holder.type = buildings[i];
+        }
+    }
+    void Update()
+    {
+        if (holder != null)
+        {
+            if (Physics.Raycast(holder.gameObject.transform.position, Vector3.down, out hit, Mathf.Infinity))
+            {
+                if (hit.transform.tag == "Terrain")
+                {
+                    //Vector3 newRot = hit.normal;
+                    holder.gameObject.transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal);
+                }
+            }
+            //Debug.DrawRay(holder.gameObject.transform.position, hit.normal, Color.green, Mathf.Infinity);
         }
     }
 }

@@ -26,7 +26,7 @@ MonoBehaviour:
   recieveType: 0
   upgrade: {fileID: 0}
   colliderSize: {x: 4, y: 3, z: 6}
-  timeReset: 0
+  timeReset: 5
   townHallradius: 0
   required: {fileID: 0}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
