@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03aa66ba8ed7480448ff741715b2b364, type: 3}
-  m_Name: House 1
+  m_Name: House 2
   m_EditorClassIdentifier: 
   woodCost: 200
   stoneCost: 150
@@ -20,11 +20,11 @@ MonoBehaviour:
   hp: 10
   spawnType: {fileID: 11400000, guid: 7c52fbc67f867114d8cbd2232ef9d935, type: 2}
   spawnOffset: {x: 3, y: 0, z: 0}
-  building: {fileID: 5946916694777321332, guid: 78e4227303f8b604293d7a6186645500,
+  building: {fileID: 5946916694777321332, guid: 74a66d1c7dcf6ad44831cd8598c7614b,
     type: 3}
-  material: {fileID: 2100000, guid: c5d8bd1fcf90bde4e90e7c152d892af5, type: 2}
+  material: {fileID: 2100000, guid: 89880fa4f415ac44db3e7675b4c686b8, type: 2}
   recieveType: 6
-  upgrade: {fileID: 11400000, guid: d3f4005707d957e47bb7564be6ecc3f6, type: 2}
+  upgrade: {fileID: 0}
   colliderSize: {x: 4, y: 5, z: 7}
   timeReset: 0
   townHallradius: 0
