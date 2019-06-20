@@ -88,7 +88,7 @@ public class Builder : MonoBehaviour
                 if (hit.transform.tag == "Terrain")
                 {
                     //Vector3 newRot = hit.normal;
-                    holder.gameObject.transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal);
+                    holder.gameObject.transform.rotation = Quaternion.Lerp(holder.gameObject.transform.rotation, Quaternion.FromToRotation(transform.up, hit.normal), Time.deltaTime * 20);
                 }
             }
             //Debug.DrawRay(holder.gameObject.transform.position, hit.normal, Color.green, Mathf.Infinity);
