@@ -16,7 +16,7 @@ MonoBehaviour:
   stoneCost: 100
   plankCost: 0
   ironCost: 0
-  maintainCost: 0
+  maintainCost: 5
   hp: 10
   spawnType: {fileID: 0}
   spawnOffset: {x: 0, y: 0, z: 0}
@@ -25,8 +25,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 3ce2aa647e53ce94e823f93eef0a5804, type: 2}
   recieveType: 0
   upgrade: {fileID: 0}
-  colliderSize: {x: 0, y: 0, z: 0}
-  timeReset: 0
+  colliderSize: {x: 11, y: 9, z: 7.5}
+  timeReset: 5
   townHallradius: 0
   required: {fileID: 0}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}

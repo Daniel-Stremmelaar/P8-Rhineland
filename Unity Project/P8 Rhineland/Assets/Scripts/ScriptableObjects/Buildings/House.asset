@@ -16,7 +16,7 @@ MonoBehaviour:
   stoneCost: 100
   plankCost: 0
   ironCost: 0
-  maintainCost: 0
+  maintainCost: 5
   hp: 10
   spawnType: {fileID: 11400000, guid: 7c52fbc67f867114d8cbd2232ef9d935, type: 2}
   spawnOffset: {x: 3, y: 0, z: 0}

@@ -25,8 +25,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 20ecb6df06d47fd4c82c1307f8c02f1b, type: 2}
   recieveType: 4
   upgrade: {fileID: 0}
-  colliderSize: {x: 7, y: 5, z: 10}
-  timeReset: 0
+  colliderSize: {x: 7.4, y: 6.8, z: 10.9}
+  timeReset: 5
   townHallradius: 40
   required: {fileID: 0}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}

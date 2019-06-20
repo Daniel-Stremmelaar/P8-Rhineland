@@ -94,6 +94,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 8ccf6c5819432ca49a45461f1356620f, type: 2}
   placing: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
   hp: 0
   time: 0
   timeReset: 0
@@ -129,4 +132,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.040903635, y: 0.06938915, z: 0.05409241}
-  m_Center: {x: 0.0033355625, y: -0.0000000037252896, z: 0.027046198}
+  m_Center: {x: 0, y: 0, z: 0}
