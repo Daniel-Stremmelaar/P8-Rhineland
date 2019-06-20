@@ -68,7 +68,7 @@ public class Building : MonoBehaviour
 
             foreach (ResourceType resource in creates)
             {
-                if (r.Check(resource.required.index, resource.required.amountNeeded))
+                if (r.Check(resource.required.index, resource.required.amountNeeded) && r.CheckCap(resource.index, 1))
                 {
                     r.Spend(resource.required.index, resource.required.amountNeeded);
                     r.Gain(resource.index, 1);
@@ -147,9 +147,17 @@ public class Building : MonoBehaviour
             g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
             g.GetComponent<MeshRenderer>().material = type.upgrade.material;
             builder.built.Add(g.gameObject);
+            if(g.gameObject.tag == "TownHall")
+            {
+                builder.townHallList.Add(g.gameObject);
+            }
 
             u.selected = g;
             u.SelectedPanel(g);
+            if (this.gameObject.tag == "TownHall")
+            {
+                builder.townHallList.Remove(g.gameObject);
+            }
             builder.built.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
