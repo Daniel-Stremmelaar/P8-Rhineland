@@ -219,22 +219,7 @@ public class RandomEventsManager : MonoBehaviour
 
                 StartCoroutine(CloseUi());
                 break;
-            case RandomEventScriptableObject.MaterialType.Happiness:
-                //resourceManager.resourcesCurrent[14] += addValue;
-                resourceManager.Gain(14, addValue);
-
-                randomEventPanel.SetActive(true);
-                randomName.SetActive(true);
-                randomDis.SetActive(true);
-                randomAddOrRemove.SetActive(true);
-
-                randomName.GetComponent<Text>().text = eventSlot.eventName;
-                randomDis.GetComponent<Text>().text = eventSlot.description;
-                randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
-
-                StartCoroutine(CloseUi());
-                break;
-            case RandomEventScriptableObject.MaterialType.Population:
+            /*case RandomEventScriptableObject.MaterialType.Population:
                 //resourceManager.resourcesCurrent[15] += addValue;
                 resourceManager.Gain(15, addValue);
 
@@ -248,7 +233,7 @@ public class RandomEventsManager : MonoBehaviour
                 randomAddOrRemove.GetComponent<Text>().text = eventSlot.amount.ToString();
 
                 StartCoroutine(CloseUi());
-                break;
+                break;*/
         }
         mayDoRandom = true;
     }
