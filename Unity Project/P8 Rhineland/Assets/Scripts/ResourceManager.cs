@@ -133,6 +133,8 @@ public class ResourceManager : MonoBehaviour
         resourceTexts[10].text = resourcesCurrent[4].ToString() + "/" + resourceCaps[4].ToString();
         resourceTexts[11].text = resourcesCurrent[5].ToString() + "/" + resourceCaps[5].ToString();
         resourceTexts[12].text = resourcesCurrent[6].ToString() + "/" + resourceCaps[6].ToString();
+        resourceTexts[13].text = resourcesCurrent[10].ToString() + "/" + resourceCaps[10].ToString();
+        resourceTexts[14].text = resourcesCurrent[11].ToString() + "/" + resourceCaps[11].ToString();
     }
 
     public void Spend(int index, int i)
