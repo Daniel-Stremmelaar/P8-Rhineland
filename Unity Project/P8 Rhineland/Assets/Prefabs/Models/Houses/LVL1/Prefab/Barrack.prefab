@@ -94,9 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: befdf111ea4090b4e98c4fa553817136, type: 2}
   placing: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
   hp: 10
   time: 0
   timeReset: 10
