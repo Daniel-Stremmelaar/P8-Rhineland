@@ -156,7 +156,7 @@ public class Building : MonoBehaviour
             u.SelectedPanel(g);
             if (this.gameObject.tag == "TownHall")
             {
-                builder.townHallList.Remove(g.gameObject);
+                builder.townHallList.Remove(this.gameObject);
             }
             builder.built.Remove(this.gameObject);
             Destroy(this.gameObject);
