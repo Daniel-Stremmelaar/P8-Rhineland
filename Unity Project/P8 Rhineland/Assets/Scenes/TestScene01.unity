@@ -9854,11 +9854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d28d2b8ae3b0934ab9859d81a33658a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: 800
-  stone: 350
+  wood: 1000
+  stone: 500
   planks: 0
   iron: 0
-  gold: 50
+  gold: 500
   wheat: 0
   flour: 0
   bread: 0
@@ -11120,6 +11120,7 @@ MonoBehaviour:
   townHallList: []
   built: []
   mayBuild: 000000000000000000000000000000
+  r: {fileID: 0}
 --- !u!4 &1512878598
 Transform:
   m_ObjectHideFlags: 0

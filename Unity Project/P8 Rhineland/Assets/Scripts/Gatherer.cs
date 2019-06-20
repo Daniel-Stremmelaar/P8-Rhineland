@@ -142,7 +142,10 @@ public class Gatherer : MonoBehaviour
         }
         if(other.tag == "Home" || other.tag == "TownHall")
         {
-            home = other.gameObject;
+            if(type.resource.ToString() == other.GetComponent<Building>().type.recieveType.ToString() || other.GetComponent<Building>().type.recieveType.ToString() == "All")
+            {
+                home = other.gameObject;
+            }
         }
         if(other.tag == "Tavern" && eating == true)
         {

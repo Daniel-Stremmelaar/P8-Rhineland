@@ -23,7 +23,7 @@ MonoBehaviour:
   building: {fileID: 3649769424657838573, guid: e337bdaae17f86c47ac83f4e65fc317b,
     type: 3}
   material: {fileID: 2100000, guid: 7fe54eb558f0f164696fac69d2f2b93d, type: 2}
-  recieveType: 5
+  recieveType: 6
   upgrade: {fileID: 0}
   colliderSize: {x: 9.7, y: 9.3, z: 10.3}
   timeReset: 3

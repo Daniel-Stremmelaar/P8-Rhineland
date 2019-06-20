@@ -280,6 +280,7 @@ public class Building : MonoBehaviour
             if (hp <= 0)
             {
                 //Debug.Log("Destroyed  " + gameObject.name);
+                builder.built.Remove(this.gameObject);
                 Destroy(gameObject);
             }
         }

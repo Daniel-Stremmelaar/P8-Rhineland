@@ -24,7 +24,7 @@ MonoBehaviour:
     type: 3}
   material: {fileID: -2803960598736456906, guid: 913c2a6f78c28df4e9bac7bee67941de,
     type: 3}
-  recieveType: 5
+  recieveType: 6
   upgrade: {fileID: 0}
   colliderSize: {x: 0, y: 0, z: 0}
   timeReset: 0

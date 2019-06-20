@@ -18,7 +18,7 @@ public class BuildingType : ScriptableObject
     public Vector3 spawnOffset;
     public GameObject building;
     public Material material;
-    public enum recieves { wood, stone, food, gold, all, none };
+    public enum recieves { Wood, Stone, Berry, GoldOre, IronOre, All, None };
     public recieves recieveType;
     public BuildingType upgrade;
     public Vector3 colliderSize;

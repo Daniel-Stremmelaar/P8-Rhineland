@@ -18,7 +18,7 @@ public class Builder : MonoBehaviour
     [Header("Locks")]
     public List<GameObject> built = new List<GameObject>();
     public List<bool> mayBuild = new List<bool>();
-    private ResourceManager r;
+    public ResourceManager r;
 
     void Start()
     {
