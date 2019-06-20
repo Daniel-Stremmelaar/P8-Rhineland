@@ -64,9 +64,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 0}
   placing: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 16
   hp: 20
   time: 0
   timeReset: 0
@@ -408,6 +405,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055353521507681948, guid: 4d3a995db183e2840929da6c065dfeb9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055353521507681948, guid: 4d3a995db183e2840929da6c065dfeb9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055353521507681948, guid: 4d3a995db183e2840929da6c065dfeb9,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d3a995db183e2840929da6c065dfeb9, type: 3}
