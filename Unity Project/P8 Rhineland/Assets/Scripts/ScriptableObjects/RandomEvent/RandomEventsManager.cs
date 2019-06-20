@@ -12,6 +12,7 @@ public class RandomEventsManager : MonoBehaviour
     public int minTimer;
     public int maxTimer;
     public float timer;
+    public float wait;
 
     public UIManager uIManager;
     public ResourceManager resourceManager;
@@ -253,7 +254,7 @@ public class RandomEventsManager : MonoBehaviour
     }
     IEnumerator CloseUi()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(wait);
         randomEventPanel.SetActive(false);
         randomName.SetActive(false);
         randomDis.SetActive(false);

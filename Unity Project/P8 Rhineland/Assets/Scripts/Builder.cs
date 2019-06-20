@@ -88,7 +88,9 @@ public class Builder : MonoBehaviour
                 if (hit.transform.tag == "Terrain")
                 {
                     //Vector3 newRot = hit.normal;
+                    //float lastY = holder.gameObject.transform.eulerAngles.y;
                     holder.gameObject.transform.rotation = Quaternion.Lerp(holder.gameObject.transform.rotation, Quaternion.FromToRotation(transform.up, hit.normal), Time.deltaTime * 20);
+                    //holder.gameObject.transform.eulerAngles = new Vector3(holder.gameObject.transform.eulerAngles.x,lastY,holder.gameObject.transform.eulerAngles.z);
                 }
             }
             //Debug.DrawRay(holder.gameObject.transform.position, hit.normal, Color.green, Mathf.Infinity);

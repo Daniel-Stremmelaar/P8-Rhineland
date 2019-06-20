@@ -13388,9 +13388,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a7313f321494fcb45a134a93a4477933, type: 2}
   - {fileID: 11400000, guid: 77616acab44f70c4ea3f16895615d000, type: 2}
   - {fileID: 11400000, guid: db92d5fbe64e58e46978fb4e51e2026b, type: 2}
-  minTimer: 5
-  maxTimer: 10
+  minTimer: 180
+  maxTimer: 340
   timer: 0
+  wait: 6
+  uIManager: {fileID: 0}
   resourceManager: {fileID: 1645079559}
   randomEventPanel: {fileID: 1297560182}
   randomName: {fileID: 362000124}

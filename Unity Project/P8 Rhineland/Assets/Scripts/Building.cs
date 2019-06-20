@@ -231,6 +231,7 @@ public class Building : MonoBehaviour
             {
                 //rotate left
                 transform.Rotate(rotVector * Time.deltaTime * rotSpeed);
+                
             }
             if (Input.GetButton("TurnRight"))
             {
