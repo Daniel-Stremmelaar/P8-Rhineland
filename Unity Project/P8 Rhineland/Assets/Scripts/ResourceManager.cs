@@ -93,7 +93,7 @@ public class ResourceManager : MonoBehaviour
             }
             else
             {
-                print("Divide by 0");
+                //print("Divide by 0");
             }
 
             //Update food UI
@@ -112,7 +112,7 @@ public class ResourceManager : MonoBehaviour
             }
             else
             {
-                print("Divide by 0");
+                //print("Divide by 0");
             }
 
             time = timer;

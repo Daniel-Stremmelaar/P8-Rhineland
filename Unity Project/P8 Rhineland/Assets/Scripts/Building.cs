@@ -13,7 +13,9 @@ public class Building : MonoBehaviour
     private RaycastHit hit;
     private List<GameObject> colliding = new List<GameObject>();
     public bool placing;
+    public LayerMask mask;
     private bool placeable;
+    RaycastHit hitT;
 
     [Header("Rotate")]
     float rotSpeed = 50f;
@@ -44,7 +46,7 @@ public class Building : MonoBehaviour
         c = GetComponent<Collider>();
         hp = type.hp;
         timeReset = type.timeReset;
-        foreach(ResourceType r in type.creates)
+        foreach (ResourceType r in type.creates)
         {
             creates.Add(r);
         }
@@ -61,14 +63,14 @@ public class Building : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(time <= 0)
+        if (time <= 0)
         {
             Maintain(type.maintainCost);
             time = timeReset;
 
-            foreach(ResourceType resource in creates)
+            foreach (ResourceType resource in creates)
             {
-                if(r.Check(resource.required.index, resource.required.amountNeeded))
+                if (r.Check(resource.required.index, resource.required.amountNeeded))
                 {
                     r.Spend(resource.required.index, resource.required.amountNeeded);
                     r.Gain(resource.index, 1);
@@ -77,7 +79,7 @@ public class Building : MonoBehaviour
         }
         time -= Time.deltaTime;
 
-        if(placing == true)
+        if (placing == true)
         {
             //c.enabled = false;
             c.isTrigger = true;
@@ -96,9 +98,16 @@ public class Building : MonoBehaviour
             if (Input.GetButtonDown("Fire1") && placeable == true && r.Check(0, type.woodCost) && r.Check(2, type.stoneCost) && r.Check(1, type.plankCost) && r.Check(12, type.ironCost))
             {
                 placing = false;
-                //c.enabled = true;
-                GameObject g = Instantiate(type.buildingSourceSound.gameObject, transform.position, transform.rotation);
-                Destroy(g, type.buildingSourceSound.clip.length);
+                if (Physics.Raycast(transform.position, Vector3.down, out hitT, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore))
+                {
+                    GameObject g = Instantiate(type.buildingSourceSound.gameObject, transform.position, Quaternion.LookRotation(hitT.normal));
+                    Destroy(g, type.buildingSourceSound.clip.length);
+                    if (hitT.transform.tag == "Terrain")
+                    {
+                        print("hit");
+                    }
+                    Debug.DrawRay(transform.position, Vector3.down, Color.green, Mathf.Infinity);
+                }
 
                 c.isTrigger = false;
                 if (gameObject.tag != "TownHall")
@@ -119,9 +128,9 @@ public class Building : MonoBehaviour
                 GetComponent<BoxCollider>().size = type.colliderSize;
                 Destroy(GetComponent<Rigidbody>());
                 builder.built.Add(this.gameObject);
-                if(type.indexes.Count > 0)
+                if (type.indexes.Count > 0)
                 {
-                    foreach(int i in type.indexes)
+                    foreach (int i in type.indexes)
                     {
                         r.resourceCaps[i] += type.amount;
                         r.UpdateUI();
@@ -173,23 +182,23 @@ public class Building : MonoBehaviour
         }
         foreach (GameObject g in colliding)
         {
-            if(g.tag != "Terrain")
+            if (g.tag != "Terrain")
             {
                 placeable = false;
-                if(gameObject.tag != "TownHall")
+                if (gameObject.tag != "TownHall")
                 {
                     gameObject.GetComponent<Renderer>().material = builder.red;
                 }
                 else
                 {
-                    foreach(Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
+                    foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
                     {
                         rend.material = builder.red;
                     }
                 }
             }
         }
-        if(!r.Check(0, type.woodCost) || !r.Check(2, type.stoneCost) || !r.Check(1, type.plankCost) || !r.Check(12, type.ironCost))
+        if (!r.Check(0, type.woodCost) || !r.Check(2, type.stoneCost) || !r.Check(1, type.plankCost) || !r.Check(12, type.ironCost))
         {
             if (gameObject.tag != "TownHall")
             {
@@ -258,7 +267,7 @@ public class Building : MonoBehaviour
 
     public void Recruit()
     {
-        if( r.Check(13, type.spawnType.goldCost) && r.CheckCap(15, 1))
+        if (r.Check(13, type.spawnType.goldCost) && r.CheckCap(15, 1))
         {
             g = Instantiate(spawn, gameObject.transform.position + type.spawnOffset, Quaternion.identity);
             g.type = type.spawnType;
@@ -271,7 +280,7 @@ public class Building : MonoBehaviour
 
     public void Maintain(int i)
     {
-        if(r.Check(13, i))
+        if (r.Check(13, i))
         {
             r.Spend(13, i);
         }
@@ -288,7 +297,7 @@ public class Building : MonoBehaviour
 
     public void Repair(BuildingType t)
     {
-        if( hp < type.hp && r.Check(0, t.woodCost/10) && r.Check(2, type.stoneCost/10) && r.Check(1, type.plankCost/10) && r.Check(12, type.ironCost / 10))
+        if (hp < type.hp && r.Check(0, t.woodCost / 10) && r.Check(2, type.stoneCost / 10) && r.Check(1, type.plankCost / 10) && r.Check(12, type.ironCost / 10))
         {
             r.Spend(0, t.woodCost / 10);
             r.Spend(2, type.stoneCost / 10);
@@ -300,11 +309,11 @@ public class Building : MonoBehaviour
 
     public void Sell(BuildingType t)
     {
-        if(r.CheckCap(0, type.woodCost / 10 * 3))
+        if (r.CheckCap(0, type.woodCost / 10 * 3))
         {
             r.Gain(0, type.woodCost / 10 * 3);
         }
-        if(r.CheckCap(2, type.stoneCost / 10 * 3))
+        if (r.CheckCap(2, type.stoneCost / 10 * 3))
         {
             r.Gain(2, type.stoneCost / 10 * 3);
         }
@@ -312,11 +321,11 @@ public class Building : MonoBehaviour
         {
             r.Gain(1, type.plankCost / 10 * 3);
         }
-        if(r.CheckCap(12, type.ironCost / 10 * 3))
+        if (r.CheckCap(12, type.ironCost / 10 * 3))
         {
             r.Gain(12, type.ironCost / 10 * 3);
         }
-        
+
         if (type.indexes.Count > 0)
         {
             foreach (int i in type.indexes)

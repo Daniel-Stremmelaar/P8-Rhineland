@@ -64,6 +64,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 0}
   placing: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 16
   hp: 20
   time: 0
   timeReset: 0
