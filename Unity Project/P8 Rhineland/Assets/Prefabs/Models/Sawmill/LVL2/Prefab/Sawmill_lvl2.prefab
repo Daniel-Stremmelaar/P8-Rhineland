@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4093746484091736289}
   m_Layer: 0
   m_Name: Sawmill_lvl2
-  m_TagString: Untagged
+  m_TagString: Home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,9 +107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 8a9bb256065ce314eaf77bdf09d6c8bf, type: 2}
   placing: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
   hp: 0
   time: 0
   timeReset: 0

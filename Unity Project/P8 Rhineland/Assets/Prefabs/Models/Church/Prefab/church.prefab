@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1554363982359541201}
   m_Layer: 0
   m_Name: church
-  m_TagString: Untagged
+  m_TagString: Home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,5 +127,6 @@ MonoBehaviour:
   time: 0
   timeReset: 0
   spawn: {fileID: 0}
+  radiusSprite: {fileID: 0}
   r: {fileID: 0}
   creates: []

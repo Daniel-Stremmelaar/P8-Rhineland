@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9066682247585698413}
   m_Layer: 0
   m_Name: Baker_lvl2
-  m_TagString: Untagged
+  m_TagString: Home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,9 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 8ccf6c5819432ca49a45461f1356620f, type: 2}
   placing: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
   hp: 0
   time: 0
   timeReset: 0
