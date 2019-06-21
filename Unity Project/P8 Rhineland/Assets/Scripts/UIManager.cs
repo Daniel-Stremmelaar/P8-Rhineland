@@ -59,11 +59,11 @@ public class UIManager : MonoBehaviour
         escOptionsHolder.SetActive(false);
         goldOreUi.SetActive(false);
         ironOreUi.SetActive(false);
-        /*
+        
         speed1.onClick.AddListener(delegate { Time.timeScale = 1; });
         speed2.onClick.AddListener(delegate { Time.timeScale = fast; });
         speed3.onClick.AddListener(delegate { Time.timeScale = superFast; });
-        */    
+        
         ///
         buttons[0].onClick.AddListener(delegate { OpenPanel(panels[0]); });
         buttons[1].onClick.AddListener(delegate { OpenPanel(panels[1]); });
