@@ -921,6 +921,7 @@ GameObject:
   - component: {fileID: -2661062859350448330}
   - component: {fileID: -4385456756423347176}
   - component: {fileID: -5203113591099556904}
+  - component: {fileID: -2627210008129338530}
   m_Layer: 0
   m_Name: LowBaker
   m_TagString: Gatherer
@@ -1050,6 +1051,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!136 &-2627210008129338530
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5293278092725437307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.31
+  m_Height: 1.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5689656116127401491
 GameObject:
   m_ObjectHideFlags: 0

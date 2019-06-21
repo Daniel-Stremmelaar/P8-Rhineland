@@ -32,7 +32,7 @@ MonoBehaviour:
   required: {fileID: 11400000, guid: 0e437a5a895b37b449d121fc9ac2e985, type: 2}
   healthBarHolder: {fileID: 1871992208997374930, guid: ac2636ce669b6ca4bbc659c5f771aac2,
     type: 3}
-  heathbarSpawnOfzet: {x: 0, y: 2, z: 0}
+  heathbarSpawnOfzet: {x: 0, y: 7, z: 0}
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}

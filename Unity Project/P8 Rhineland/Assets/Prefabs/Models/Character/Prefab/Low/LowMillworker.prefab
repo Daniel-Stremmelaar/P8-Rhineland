@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 17611051334029236}
   - component: {fileID: -381599822149849213}
   - component: {fileID: -4534855130101076719}
+  - component: {fileID: -2944422578416612755}
   m_Layer: 0
   m_Name: LowMillworker
   m_TagString: Gatherer
@@ -202,6 +203,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!136 &-2944422578416612755
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107706358424593296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.31
+  m_Height: 1.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &514633630576625784
 GameObject:
   m_ObjectHideFlags: 0
