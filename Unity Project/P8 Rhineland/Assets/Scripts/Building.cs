@@ -150,11 +150,13 @@ public class Building : MonoBehaviour
                 {
                     builder.townHallList.Add(gameObject);
                 }
+                builder.CheckBuildable();
             }
             if (Input.GetButtonDown("Fire2"))
             {
                 camMoveEmpty.mayRot = true;
                 Destroy(gameObject);
+                builder.CheckBuildable();
             }
         }
     }
