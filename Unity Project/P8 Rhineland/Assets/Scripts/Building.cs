@@ -62,41 +62,44 @@ public class Building : MonoBehaviour
     void Update()
     {
         RotateObject();
-        if (hp <= 0)
+        if (placing != true)
         {
-            Destroy(gameObject);
-        }
-
-        if (time <= 0)
-        {
-            Maintain(type.maintainCost);
-
-            type.healthBarHolder.GetComponentInChildren<Slider>().value = hp;
-
-            time = timeReset;
-        }
-        time -= Time.deltaTime;
-
-        if(time2 <= 0)
-        {
-            if (creates.Count > 0)
+            if (hp <= 0)
             {
-                foreach (ResourceType resource in creates)
+                Destroy(gameObject);
+            }
+
+            if (time <= 0)
+            {
+                Maintain(type.maintainCost);
+
+                type.healthBarHolder.GetComponentInChildren<Slider>().value = hp;
+
+                time = timeReset;
+            }
+            time -= Time.deltaTime;
+
+            if (time2 <= 0)
+            {
+                if (creates.Count > 0)
                 {
-                    if (resource.required != null && r.CheckCap(resource.index, 1))
+                    foreach (ResourceType resource in creates)
                     {
-                        r.Gain(resource.index, 1);
-                    }
-                    else if (r.Check(resource.required.index, resource.required.amountNeeded) && r.CheckCap(resource.index, 1))
-                    {
-                        r.Spend(resource.required.index, resource.required.amountNeeded);
-                        r.Gain(resource.index, 1);
+                        if (resource.required != null && r.CheckCap(resource.index, 1))
+                        {
+                            r.Gain(resource.index, 1);
+                        }
+                        else if (r.Check(resource.required.index, resource.required.amountNeeded) && r.CheckCap(resource.index, 1))
+                        {
+                            r.Spend(resource.required.index, resource.required.amountNeeded);
+                            r.Gain(resource.index, 1);
+                        }
                     }
                 }
+                time2 = timeReset2;
             }
-            time2 = timeReset2;
+            time2 -= Time.deltaTime;
         }
-        time2 -= Time.deltaTime;
 
         if (placing == true)
         {
@@ -117,7 +120,7 @@ public class Building : MonoBehaviour
             if (Input.GetButtonDown("Fire1") && placeable == true && r.Check(0, type.woodCost) && r.Check(2, type.stoneCost) && r.Check(1, type.plankCost) && r.Check(12, type.ironCost))
             {
                 placing = false;
-                GameObject g = Instantiate(type.buildingSourceSound.gameObject, transform.position, Quaternion.Euler(0,0,0));
+                GameObject g = Instantiate(type.buildingSourceSound.gameObject, transform.position, Quaternion.Euler(0, 0, 0));
                 Destroy(g, type.buildingSourceSound.clip.length);
                 c.isTrigger = false;
                 if (gameObject.tag != "TownHall")
@@ -170,9 +173,11 @@ public class Building : MonoBehaviour
             g.GetComponent<BoxCollider>().size = type.upgrade.colliderSize;
             g.GetComponent<MeshRenderer>().material = type.upgrade.material;
             builder.built.Add(g.gameObject);
-            if(g.gameObject.tag == "TownHall")
+            if (g.gameObject.tag == "TownHall")
             {
                 builder.townHallList.Add(g.gameObject);
+                GameObject child = Instantiate(g.GetComponent<Building>().type.healthBarHolder, g.gameObject.transform.position + g.GetComponent<Building>().type.heathbarSpawnOfzet, Quaternion.identity);
+                child.transform.SetParent(g.gameObject.transform);
             }
 
             u.selected = g;
@@ -262,7 +267,7 @@ public class Building : MonoBehaviour
             {
                 //rotate left
                 transform.Rotate(rotVector * Time.deltaTime * rotSpeed);
-                
+
             }
             if (Input.GetButton("TurnRight"))
             {

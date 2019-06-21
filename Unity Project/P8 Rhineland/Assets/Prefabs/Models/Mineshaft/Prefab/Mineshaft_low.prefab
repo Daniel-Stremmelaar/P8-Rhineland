@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5219871572954517176}
   - component: {fileID: 1927741221887833442}
   - component: {fileID: 7481460218858030258}
-  - component: {fileID: 695766971273054096}
+  - component: {fileID: -6317735016380315475}
   m_Layer: 0
   m_Name: Mineshaft_low
   m_TagString: Home
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5786109051302525540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,13 +94,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 61438f4f570e97940a04c63070fc34d9, type: 2}
   placing: 0
+  test: {fileID: 0}
   hp: 100
   time: 100
+  time2: 0
   timeReset: 100
+  timeReset2: 0
   spawn: {fileID: -3098622704098093065, guid: acea847ec3dcde74b971bee228e3cfa5, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates: []
+  creates:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!54 &7481460218858030258
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,8 +122,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &695766971273054096
-MeshCollider:
+--- !u!65 &-6317735016380315475
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,7 +132,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8541225974090680395, guid: 7efc8d945c5a3824c89a858c4a6c08f7, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8, z: 8}
+  m_Center: {x: 3.545459, y: 1.8221272, z: -0.18503714}

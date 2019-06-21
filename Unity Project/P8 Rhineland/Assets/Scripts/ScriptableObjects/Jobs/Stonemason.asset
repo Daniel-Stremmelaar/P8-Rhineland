@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879df1781faa794785efe74bc8e6d0b, type: 3}
   m_Name: Stonemason
   m_EditorClassIdentifier: 
-  carryCap: 5
+  carryCap: 50
   gatherRange: 3
-  gatherTime: 1
+  gatherTime: 0.1
   goldCost: 50
-  type: 0
+  type: 2
   jobSprite: {fileID: 21300000, guid: a4d2f6c97bae186488d119c0f7ad0a20, type: 3}
   foodMax: 100
   foodMin: 0
+  consumeTime: 3
+  mesh: {fileID: 0}
+  mat: {fileID: 0}
   resource: 1

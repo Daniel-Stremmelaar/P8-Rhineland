@@ -32,12 +32,23 @@ public class ResourceManager : MonoBehaviour
     public float time;
     public float timer;
     private int average;
+    private int total;
     private int count;
     public int index;
     private Builder builder;
 
     private void Start()
     {
+        foods.Add(resourcesCurrent[4]);
+        foods.Add(resourcesCurrent[5]);
+        foods.Add(resourcesCurrent[6]);
+        foods.Add(resourcesCurrent[7]);
+
+        foodsValues.Add(resourceTypes[4]);
+        foodsValues.Add(resourceTypes[5]);
+        foodsValues.Add(resourceTypes[6]);
+        foodsValues.Add(resourceTypes[7]);
+        
         builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
         Gain(0, wood);
         Gain(1, planks);
@@ -121,23 +132,17 @@ public class ResourceManager : MonoBehaviour
 
     public void UpdateFoodUI()
     {
-        average = 0;
-        count = 0;
-        foreach (int i in foods)
-        {
-            average += i * foodsValues[count].quantity;
-            count++;
-        }
-        if (count > 0)
-        {
-            average /= count;
-            average = Mathf.RoundToInt(average);
-            resourceTexts[3].text = average.ToString();
-        }
-        else
-        {
-            //print("Divide by 0");
-        }
+        total = 0;
+        foods[0] = resourcesCurrent[4];
+        total+= foods[0] * foodsValues[0].quantity;
+        foods[1] = resourcesCurrent[5];
+        total+= foods[1] * foodsValues[1].quantity;
+        foods[2] = resourcesCurrent[6];
+        total+= foods[2] * foodsValues[2].quantity;
+        foods[3] = resourcesCurrent[7];
+        total+= foods[3] * foodsValues[3].quantity;
+
+        resourceTexts[3].text = total.ToString();
     }
 
     public void Spend(int index, int i)

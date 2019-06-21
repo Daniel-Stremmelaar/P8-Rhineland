@@ -16,8 +16,11 @@ MonoBehaviour:
   gatherRange: 3
   gatherTime: 0.25
   goldCost: 50
-  type: 10
+  type: 7
   jobSprite: {fileID: 0}
   foodMax: 100
   foodMin: 0
+  consumeTime: 5
+  mesh: {fileID: 0}
+  mat: {fileID: 0}
   resource: 2

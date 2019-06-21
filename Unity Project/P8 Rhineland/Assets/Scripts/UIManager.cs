@@ -103,7 +103,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenUIGatherInfo(Sprite s)
     {
-        gethererImage.sprite = s;
+        //gethererImage.sprite = s;
         gatherInfoPanel.SetActive(true);
     }
 

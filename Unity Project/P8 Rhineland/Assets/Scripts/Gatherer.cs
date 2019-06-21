@@ -54,6 +54,8 @@ public class Gatherer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        consumeTimerReset = type.consumeTime;
+        consumeTimer = consumeTimerReset;
         foodMax = type.foodMax;
         foodMin = type.foodMin;
         consume = 0;
@@ -90,17 +92,17 @@ public class Gatherer : MonoBehaviour
             case state.search:
                 //search behavior
                 trigger.radius += triggerGrow;
-                if(target != null && home != null)
+                if (target != null && home != null)
                 {
-                    if(gathering == true && eating == false)
+                    if (gathering == true && eating == false)
                     {
                         currentJob = state.gather;
                     }
-                    else if(gathering == false && eating == false)
+                    else if (gathering == false && eating == false)
                     {
                         currentJob = state.deliver;
                     }
-                    else if(eating == true)
+                    else if (eating == true)
                     {
                         currentJob = state.eat;
                     }
@@ -123,52 +125,72 @@ public class Gatherer : MonoBehaviour
                 agent.destination = target.transform.position;
                 break;
         }
-        Debug.Log(Vector3.Distance(transform.position, target.transform.position));
-        if (transform.position != target.transform.position)
+        if (target != null)
         {
-            animator.SetBool("IsWalking", true);
-        }
-        else
-        {
-            animator.SetBool("IsWalking", false);
+            if (transform.position != target.transform.position)
+            {
+                animator.SetBool("IsWalking", true);
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == type.resource.ToString() && eating == false)
+        if (other.tag == type.resource.ToString() && eating == false)
         {
             target = other.gameObject;
             target.GetComponent<ResourcePoint>().current.Add(this.gameObject.GetComponent<Gatherer>());
         }
-        if(other.tag == "Home" || other.tag == "TownHall")
+        if (other.tag == "Home" || other.tag == "TownHall")
         {
-            if(type.resource.ToString() == other.GetComponent<Building>().type.recieveType.ToString() || other.GetComponent<Building>().type.recieveType.ToString() == "All")
+            if (type.resource.ToString() == other.GetComponent<Building>().type.recieveType.ToString() || other.GetComponent<Building>().type.recieveType.ToString() == "All")
             {
                 home = other.gameObject;
             }
         }
-        if(other.tag == "Tavern" && eating == true)
+        if (other.tag == "Tavern" && eating == true)
         {
             target = other.gameObject;
         }
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Home" && gathered > 0 || collision.gameObject.tag == "TownHall" && gathered > 0)
+        {
+            delivering = true;
+            deliverPoint = collision.gameObject;
+        }
+        if (collision.gameObject.tag == "Tavern")
+        {
+            consume = r.Eat(consume);
+            food = foodMax - consume;
+            eatPoint = food / 2;
+            target = null;
+            currentJob = state.search;
+            eating = false;
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
-        if(currentJob == state.gather && other.gameObject.tag == type.resource.ToString())
+        if (currentJob == state.gather && other.gameObject.tag == type.resource.ToString())
         {
             timer += Time.deltaTime * happinessMod;
-            if(timer >= type.gatherTime)
+            if (timer >= type.gatherTime)
             {
                 gathered += 1;
                 target.GetComponent<ResourcePoint>().amount -= 1;
-                if(target.GetComponent<ResourcePoint>().amount == 0)
+                if (target.GetComponent<ResourcePoint>().amount == 0)
                 {
                     target.GetComponent<ResourcePoint>().Empty();
                 }
                 timer = 0.0f;
-                if(gathered == type.carryCap)
+                if (gathered == type.carryCap)
                 {
                     gathering = false;
                     home = null;
@@ -179,27 +201,9 @@ public class Gatherer : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Home" && gathered > 0 || collision.gameObject.tag == "TownHall" && gathered > 0)
-        {
-            delivering = true;
-            deliverPoint = collision.gameObject;
-        }
-        if(collision.gameObject.tag == "Tavern")
-        {
-            consume = r.Eat(consume);
-            food = foodMax - consume;
-            eatPoint = food / 2;
-            target = null;
-            currentJob = state.search;
-            eating = false;
-        }
-    }
-
     public void Deliver()
     {
-        if(r.CheckCap(type.type, gathered))
+        if (r.CheckCap(type.type, gathered))
         {
             type.Deliver(gathered, deliverPoint);
             gathered = 0;
@@ -228,7 +232,7 @@ public class Gatherer : MonoBehaviour
                 food -= 1;
                 consume += 1;
             }
-            else if(food < 1)
+            else if (food < 1)
             {
                 Debug.Log("NO FOOD IN POP");
                 r.villagers.Remove(this.gameObject.GetComponent<Gatherer>());
@@ -244,7 +248,7 @@ public class Gatherer : MonoBehaviour
             }
             consumeTimer = consumeTimerReset;
         }
-        if(food < eatPoint)
+        if (food < eatPoint)
         {
             eating = true;
             target = null;

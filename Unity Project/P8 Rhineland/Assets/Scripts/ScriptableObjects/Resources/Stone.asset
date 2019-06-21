@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quantity: 0
   required: {fileID: 0}
-  amountNeeded: 0
+  amountNeeded: 10
   index: 2

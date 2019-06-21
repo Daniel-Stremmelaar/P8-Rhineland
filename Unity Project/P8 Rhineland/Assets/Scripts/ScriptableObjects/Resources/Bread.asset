@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec40c38f0b1ca7b4f8494b3689c64024, type: 3}
   m_Name: Bread
   m_EditorClassIdentifier: 
-  quantity: 0
+  quantity: 5
   required: {fileID: 11400000, guid: 5c41b4a94aff0194aba0cd6c25c7142d, type: 2}
   amountNeeded: 1
   index: 6

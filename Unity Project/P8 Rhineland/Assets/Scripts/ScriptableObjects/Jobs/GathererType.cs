@@ -16,6 +16,7 @@ public class GathererType : ScriptableObject
     public Sprite jobSprite;
     public int foodMax;
     public int foodMin;
+    public float consumeTime;
     public Mesh mesh;
     public Material mat;
 
@@ -46,7 +47,6 @@ public class GathererType : ScriptableObject
         }
         if (i > 0)
         {
-            Debug.Log("Delivered " + i.ToString() + " " + resource.ToString());
             g.GetComponent<Building>().r.Gain(type, i);
         }
     }

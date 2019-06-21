@@ -123,13 +123,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 89cc76812f59d7f4aa4cefc123a48f76, type: 2}
   placing: 0
+  test: {fileID: 0}
   hp: 50
   time: 50
   time2: 0
   timeReset: 50
   timeReset2: 0
-  healthSlider: {fileID: 0}
-  spawn: {fileID: 0}
+  spawn: {fileID: -3098622704098093065, guid: acea847ec3dcde74b971bee228e3cfa5, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
   creates: []

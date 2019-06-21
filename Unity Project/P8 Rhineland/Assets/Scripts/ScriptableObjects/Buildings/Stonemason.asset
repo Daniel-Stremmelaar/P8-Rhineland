@@ -18,8 +18,8 @@ MonoBehaviour:
   ironCost: 0
   maintainCost: 2
   hp: 10
-  spawnType: {fileID: 0}
-  spawnOffset: {x: 0, y: 0, z: 0}
+  spawnType: {fileID: 11400000, guid: af66f8fcc1109bf40b199d448859de8a, type: 2}
+  spawnOffset: {x: 3, y: 0, z: 0}
   building: {fileID: 4893810427402132225, guid: d5765c504ab85204bbb44c6c0b23f572,
     type: 3}
   material: {fileID: 2100000, guid: f6483f2a6a7627a4cb7b8add96800799, type: 2}
@@ -27,7 +27,7 @@ MonoBehaviour:
   upgrade: {fileID: 0}
   colliderSize: {x: 3.9, y: 3.9, z: 3.9}
   maintainTime: 70
-  createTime: 0
+  createTime: 10
   townHallradius: 0
   required: {fileID: 0}
   healthBarHolder: {fileID: 1871992208997374930, guid: ac2636ce669b6ca4bbc659c5f771aac2,
@@ -37,5 +37,5 @@ MonoBehaviour:
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}
   creates: []
-  indexes: 
-  amount: 0
+  indexes: 00000000
+  amount: 50

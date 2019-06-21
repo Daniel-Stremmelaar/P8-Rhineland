@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec40c38f0b1ca7b4f8494b3689c64024, type: 3}
   m_Name: Flour
   m_EditorClassIdentifier: 
-  quantity: 0
+  quantity: 3
   required: {fileID: 11400000, guid: 1f0e3518491bcea4990dcdac7b3c2f34, type: 2}
   amountNeeded: 2
   index: 5
