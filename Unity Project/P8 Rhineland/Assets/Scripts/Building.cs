@@ -94,6 +94,7 @@ public class Building : MonoBehaviour
                     }
                 }
             }
+            time2 = timeReset2;
         }
         time2 -= Time.deltaTime;
 
