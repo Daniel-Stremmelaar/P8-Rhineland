@@ -35,7 +35,8 @@ public class OnMouseInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             texts[0].text = builder.buildings[index].name;
             texts[1].text = builder.buildings[index].woodCost.ToString();
             texts[2].text = builder.buildings[index].stoneCost.ToString();
-            texts[3].text = builder.buildings[index].ironCost.ToString();
+            texts[3].text = builder.buildings[index].plankCost.ToString();
+            texts[4].text = builder.buildings[index].ironCost.ToString();
         }
     }
 

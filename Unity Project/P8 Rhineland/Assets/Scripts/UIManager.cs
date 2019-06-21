@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     public OnMouseOverFood onMouseOverFood;
     public GameObject buildingInfoHolder;
     public GameObject hoverOverResource;
+    public GameObject recruitCostTextHolder;
 
     [Header("Building Select")]
     public Text type;
@@ -77,6 +78,7 @@ public class UIManager : MonoBehaviour
         extraFoodUi.SetActive(false);
         ///
         buildingInfoHolder.SetActive(false);
+        recruitCostTextHolder.SetActive(false);
         onMouseOverFood.foodUiHolder.SetActive(false);
         hoverOverResource.SetActive(false);
         reset.onClick.AddListener(ResetGame);
