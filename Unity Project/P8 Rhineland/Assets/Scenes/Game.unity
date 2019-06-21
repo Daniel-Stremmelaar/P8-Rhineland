@@ -1021,7 +1021,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 145533054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617780284}
+        m_MethodName: Recruit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &145533054
@@ -4186,7 +4197,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 559487653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617780284}
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &559487653
@@ -16231,11 +16253,11 @@ MonoBehaviour:
   buildingInfoHolder: {fileID: 1924234675}
   hoverOverResource: {fileID: 1083315357}
   type: {fileID: 2053099404}
-  recruit: {fileID: 145533053}
-  upgrade: {fileID: 559487652}
+  recruit: {fileID: 145533051}
+  upgrade: {fileID: 559487650}
   selectedPanel: {fileID: 1059813655}
   extraFoodUi: {fileID: 358719812}
-  goldOreUi: {fileID: 26604476}
+  goldOreUi: {fileID: 1417881639}
   ironOreUi: {fileID: 749711325}
   speed1: {fileID: 0}
   speed2: {fileID: 0}
