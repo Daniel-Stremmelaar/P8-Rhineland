@@ -125,9 +125,11 @@ MonoBehaviour:
   placing: 0
   hp: 100
   time: 50
+  time2: 0
   timeReset: 50
+  timeReset2: 0
+  healthSlider: {fileID: 0}
   spawn: {fileID: 7279155295534999561, guid: 0b200068ce6f8e544ab96a99112386d7, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates:
-  - {fileID: 11400000, guid: 937ca42b6bad12f47acdb07dfc9c1ff9, type: 2}
+  creates: []

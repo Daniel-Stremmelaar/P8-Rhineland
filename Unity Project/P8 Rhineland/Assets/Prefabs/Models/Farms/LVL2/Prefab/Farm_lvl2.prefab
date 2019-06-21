@@ -96,12 +96,14 @@ MonoBehaviour:
   placing: 0
   hp: 100
   time: 60
+  time2: 0
   timeReset: 60
+  timeReset2: 0
+  healthSlider: {fileID: 0}
   spawn: {fileID: 0}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates:
-  - {fileID: 11400000, guid: 1f0e3518491bcea4990dcdac7b3c2f34, type: 2}
+  creates: []
 --- !u!65 &7877251442893818740
 BoxCollider:
   m_ObjectHideFlags: 0
