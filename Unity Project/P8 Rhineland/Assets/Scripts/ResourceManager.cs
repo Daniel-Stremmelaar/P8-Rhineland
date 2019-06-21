@@ -72,6 +72,7 @@ public class ResourceManager : MonoBehaviour
         {
             Gain(4, 100);
             Gain(7, 100);
+            UpdateFoodUI();
         }
 
         time -= Time.deltaTime;
@@ -90,25 +91,6 @@ public class ResourceManager : MonoBehaviour
                 average /= count;
                 average = Mathf.RoundToInt(average);
                 resourceTexts[8].text = average.ToString();
-            }
-            else
-            {
-                //print("Divide by 0");
-            }
-
-            //Update food UI
-            average = 0;
-            count = 0;
-            foreach (int i in foods)
-            {
-                average += i * foodsValues[count].quantity;
-                count++;
-            }
-            if (count > 0)
-            {
-                average /= count;
-                average = Mathf.RoundToInt(average);
-                resourceTexts[3].text = "Food: " + average.ToString();
             }
             else
             {
@@ -137,12 +119,37 @@ public class ResourceManager : MonoBehaviour
         resourceTexts[14].text = resourcesCurrent[11].ToString() + "/" + resourceCaps[11].ToString();
     }
 
+    public void UpdateFoodUI()
+    {
+        average = 0;
+        count = 0;
+        foreach (int i in foods)
+        {
+            average += i * foodsValues[count].quantity;
+            count++;
+        }
+        if (count > 0)
+        {
+            average /= count;
+            average = Mathf.RoundToInt(average);
+            resourceTexts[3].text = average.ToString();
+        }
+        else
+        {
+            //print("Divide by 0");
+        }
+    }
+
     public void Spend(int index, int i)
     {
         resourcesCurrent[index] -= i;
 
         UpdateUI();
         builder.CheckBuildable();
+        if (index == 4 || index == 5 || index == 6 || index == 7)
+        {
+            UpdateFoodUI();
+        }
     }
 
     public void Gain(int index, int i)
@@ -151,6 +158,10 @@ public class ResourceManager : MonoBehaviour
 
         UpdateUI();
         builder.CheckBuildable();
+        if(index == 4 || index == 5 || index == 6 || index == 7)
+        {
+            UpdateFoodUI();
+        }
     }
 
     public bool Check(int index, int i)
