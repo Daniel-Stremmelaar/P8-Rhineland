@@ -113,8 +113,7 @@ MonoBehaviour:
   spawn: {fileID: 7539015181966913906, guid: 576f513246148314a83fafd5bcfcda7f, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates:
-  - {fileID: 11400000, guid: 08937cff94519bf429091806d97e8d09, type: 2}
+  creates: []
 --- !u!54 &-8950068134770855233
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b5aa907487ef84a925df09a99c8f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: {fileID: 0}
+  type: {fileID: 11400000, guid: 276d42b56e205fc43b2e805142c8b82c, type: 2}
   currentJob: 0
   triggerGrow: 1
   target: {fileID: 0}
