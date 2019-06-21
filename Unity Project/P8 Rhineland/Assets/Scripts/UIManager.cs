@@ -34,8 +34,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Building Select")]
     public Text type;
-    public Button recruit;
-    public Button upgrade;
+    public GameObject recruit;
+    public GameObject upgrade;
     public GameObject selectedPanel;
     public GameObject extraFoodUi;
     public GameObject goldOreUi;
@@ -69,8 +69,9 @@ public class UIManager : MonoBehaviour
         buttons[2].onClick.AddListener(delegate { OpenPanel(panels[2]); });
         buttons[3].onClick.AddListener(delegate { OpenPanel(panels[3]); });
         ///
-        recruit.onClick.AddListener(Recruit);
-        upgrade.onClick.AddListener(Upgrade);
+        upgrade.SetActive(true);
+        recruit.SetActive(true);
+
         sell.onClick.AddListener(delegate { Sell(selected.GetComponent<Building>()); });
         repair.onClick.AddListener(delegate { Repair(selected.GetComponent<Building>()); });
         extraFoodUi.SetActive(false);
@@ -146,6 +147,22 @@ public class UIManager : MonoBehaviour
     {
         selected = g;
         type.text = g.GetComponent<Building>().type.name;
+        if (g.GetComponent<Building>().type.upgrade == null)
+        {
+            upgrade.SetActive(false);
+        }
+        else
+        {
+            upgrade.SetActive(true);
+        }
+        if (g.GetComponent<Building>().type.spawnType == null)
+        {
+            recruit.SetActive(false);
+        }
+        else
+        {
+            recruit.SetActive(true);
+        }
         selectedPanel.SetActive(true);
     }
 
