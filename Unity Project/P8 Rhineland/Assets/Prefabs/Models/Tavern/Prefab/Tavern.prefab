@@ -108,14 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc70a599110ed448831e75c85b28741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: {fileID: 0}
+  type: {fileID: 11400000, guid: 2f5facbd2ea9b9a40a711674d7434836, type: 2}
   placing: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  hp: 0
-  time: 0
-  timeReset: 0
+  hp: 100
+  time: 50
+  timeReset: 50
   spawn: {fileID: 0}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}

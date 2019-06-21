@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc70a599110ed448831e75c85b28741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: {fileID: 0}
+  type: {fileID: 11400000, guid: f18b74ab81809b246b4ab24d85aaeeb1, type: 2}
   placing: 0
   hp: 10
   time: 0

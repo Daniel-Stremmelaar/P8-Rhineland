@@ -94,13 +94,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 221336366851a87439941febb7118cee, type: 2}
   placing: 0
-  hp: 0
-  time: 0
-  timeReset: 0
-  spawn: {fileID: 0}
+  hp: 100
+  time: 50
+  timeReset: 50
+  spawn: {fileID: 278007646902574370, guid: 91cd14d66c105e643af08c70b37c1c38, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates: []
+  creates:
+  - {fileID: 11400000, guid: 5c41b4a94aff0194aba0cd6c25c7142d, type: 2}
 --- !u!65 &8949620741895877312
 BoxCollider:
   m_ObjectHideFlags: 0

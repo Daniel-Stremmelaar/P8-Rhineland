@@ -94,13 +94,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: befdf111ea4090b4e98c4fa553817136, type: 2}
   placing: 0
-  hp: 10
-  time: 0
-  timeReset: 10
-  spawn: {fileID: 1457856473980359745, guid: 754d3dd2ece6f2d4982e5b49b5b7ed18, type: 3}
+  hp: 100
+  time: 100
+  timeReset: 100
+  spawn: {fileID: 0}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates: []
+  creates:
+  - {fileID: 11400000, guid: 7473a12ff243d06468a5f8945e750c30, type: 2}
 --- !u!54 &-4961100525765814484
 Rigidbody:
   m_ObjectHideFlags: 0

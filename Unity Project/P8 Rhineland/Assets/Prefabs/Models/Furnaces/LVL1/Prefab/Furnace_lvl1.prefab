@@ -121,12 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc70a599110ed448831e75c85b28741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: {fileID: 0}
+  type: {fileID: 11400000, guid: f5428619f49cf544cb2d6c0f6960949f, type: 2}
   placing: 0
-  hp: 0
-  time: 0
-  timeReset: 0
+  hp: 100
+  time: 50
+  timeReset: 50
   spawn: {fileID: 7279155295534999561, guid: 0b200068ce6f8e544ab96a99112386d7, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates: []
+  creates:
+  - {fileID: 11400000, guid: 937ca42b6bad12f47acdb07dfc9c1ff9, type: 2}

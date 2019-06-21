@@ -107,9 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: c1c7a3a41bb08a942b26f770d459e623, type: 2}
   placing: 0
-  hp: 10
-  time: 0
-  timeReset: 10
+  hp: 100
+  time: 50
+  timeReset: 50
   spawn: {fileID: 0}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}

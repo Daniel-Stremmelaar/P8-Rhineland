@@ -94,16 +94,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 0e437a5a895b37b449d121fc9ac2e985, type: 2}
   placing: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  hp: 10
-  time: 0
-  timeReset: 0
-  spawn: {fileID: 1457856473980359745, guid: 754d3dd2ece6f2d4982e5b49b5b7ed18, type: 3}
+  hp: 100
+  time: 60
+  timeReset: 60
+  spawn: {fileID: 0}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates: []
+  creates:
+  - {fileID: 11400000, guid: 1f0e3518491bcea4990dcdac7b3c2f34, type: 2}
 --- !u!65 &7877251442893818740
 BoxCollider:
   m_ObjectHideFlags: 0

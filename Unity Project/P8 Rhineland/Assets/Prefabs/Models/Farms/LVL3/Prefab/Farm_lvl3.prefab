@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2890084912806802395}
   - component: {fileID: 8874111623809945378}
   - component: {fileID: 6938490254673032260}
+  - component: {fileID: 2471637879551590096}
   m_Layer: 9
   m_Name: Farm_lvl3
   m_TagString: Home
@@ -91,3 +92,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 25.459103, y: 4.784479, z: 23.089003}
   m_Center: {x: 10.588051, y: 1.9077606, z: 8.164097}
+--- !u!114 &2471637879551590096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141578219547360254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc70a599110ed448831e75c85b28741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: {fileID: 11400000, guid: 8a2ffce221e7834429c38125a3eb8fb0, type: 2}
+  placing: 0
+  hp: 100
+  time: 70
+  timeReset: 70
+  spawn: {fileID: 0}
+  radiusSprite: {fileID: 0}
+  r: {fileID: 0}
+  creates:
+  - {fileID: 11400000, guid: 1f0e3518491bcea4990dcdac7b3c2f34, type: 2}

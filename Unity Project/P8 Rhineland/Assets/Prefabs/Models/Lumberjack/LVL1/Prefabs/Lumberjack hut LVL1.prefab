@@ -107,16 +107,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: bf60da745dc3bb4458033d7eaa85d653, type: 2}
   placing: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  hp: 0
-  time: 0
-  timeReset: 0
+  hp: 100
+  time: 50
+  timeReset: 50
   spawn: {fileID: 7539015181966913906, guid: 576f513246148314a83fafd5bcfcda7f, type: 3}
   radiusSprite: {fileID: 0}
   r: {fileID: 0}
-  creates: []
+  creates:
+  - {fileID: 11400000, guid: 08937cff94519bf429091806d97e8d09, type: 2}
 --- !u!54 &-8950068134770855233
 Rigidbody:
   m_ObjectHideFlags: 0
