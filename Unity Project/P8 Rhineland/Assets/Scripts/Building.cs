@@ -29,6 +29,8 @@ public class Building : MonoBehaviour
     public float timeReset;
     public float timeReset2;
     public Slider healthSlider;
+    public GameObject healthBarHolder;
+    public Vector3 heathbarSpawnOfzet;
     public Gatherer spawn;
     public GameObject radiusSprite;
 
@@ -55,6 +57,8 @@ public class Building : MonoBehaviour
         soundManager = GameObject.FindWithTag("Builder").GetComponent<SoundManager>();
         camMoveEmpty = GameObject.FindWithTag("Respawn").GetComponent<CamMoveEmpty>();
         rotVector.y += 1f;
+
+        //Instantiate
     }
 
     void Update()
@@ -68,6 +72,9 @@ public class Building : MonoBehaviour
         if (time <= 0)
         {
             Maintain(type.maintainCost);
+
+            healthSlider.value = hp;
+
             time = timeReset;
         }
         time -= Time.deltaTime;
