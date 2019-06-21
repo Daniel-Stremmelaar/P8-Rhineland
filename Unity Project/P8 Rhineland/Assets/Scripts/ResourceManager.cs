@@ -80,7 +80,7 @@ public class ResourceManager : MonoBehaviour
             //Update happiness UI
             average = 0;
             count = 0;
-            foreach(Gatherer g in villagers)
+            foreach (Gatherer g in villagers)
             {
                 average += g.happiness;
                 count++;
@@ -89,7 +89,7 @@ public class ResourceManager : MonoBehaviour
             {
                 average /= count;
                 average = Mathf.RoundToInt(average);
-                resourceTexts[8].text = "Happiness: " + average.ToString();
+                resourceTexts[8].text = average.ToString();
             }
             else
             {
@@ -99,7 +99,7 @@ public class ResourceManager : MonoBehaviour
             //Update food UI
             average = 0;
             count = 0;
-            foreach(int i in foods)
+            foreach (int i in foods)
             {
                 average += i * foodsValues[count].quantity;
                 count++;
@@ -155,7 +155,7 @@ public class ResourceManager : MonoBehaviour
 
     public bool Check(int index, int i)
     {
-        if(resourcesCurrent[index] >= i)
+        if (resourcesCurrent[index] >= i)
         {
             return true;
         }
@@ -167,7 +167,7 @@ public class ResourceManager : MonoBehaviour
 
     public bool CheckCap(int index, int i)
     {
-        if(resourceCaps[index] - resourcesCurrent[index] >= i)
+        if (resourceCaps[index] - resourcesCurrent[index] >= i)
         {
             return true;
         }
@@ -180,11 +180,11 @@ public class ResourceManager : MonoBehaviour
     public int Eat(int hunger)
     {
         int i = 0;
-        for(i = hunger; i > 0; i = i)
+        for (i = hunger; i > 0; i = i)
         {
-            for(int n = 0; n < foods.Count+1; n = n)
+            for (int n = 0; n < foods.Count + 1; n = n)
             {
-                if(foods[n] == 0)
+                if (foods[n] == 0)
                 {
                     n++;
                 }
@@ -193,7 +193,7 @@ public class ResourceManager : MonoBehaviour
                     foods[n]--;
                     i -= foodsValues[n].quantity;
                 }
-                if(i <= 0)
+                if (i <= 0)
                 {
                     i = 0;
                     return i;
