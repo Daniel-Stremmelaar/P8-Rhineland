@@ -18,12 +18,6 @@ public class OnMouseInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         uIManager.buildingInfoHolder.SetActive(true);
 
-        if (!transform.GetChild(0).GetComponent<Button>())
-        {
-            transform.GetChild(1);
-        }
-        else
-        {
             for (int i = 0; i < builder.buttons.Count; i++)
             {
                 if (transform.GetChild(0).name == builder.buttons[i].name)
@@ -37,7 +31,6 @@ public class OnMouseInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             texts[2].text = builder.buildings[index].stoneCost.ToString();
             texts[3].text = builder.buildings[index].plankCost.ToString();
             texts[4].text = builder.buildings[index].ironCost.ToString();
-        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
