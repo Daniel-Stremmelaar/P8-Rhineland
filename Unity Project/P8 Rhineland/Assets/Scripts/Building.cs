@@ -25,10 +25,12 @@ public class Building : MonoBehaviour
     private Gatherer g;
     public int hp;
     public float time;
+    public float time2;
     public float timeReset;
+    public float timeReset2;
+    public Slider healthSlider;
     public Gatherer spawn;
     public GameObject radiusSprite;
-    public Slider healthSlider;
 
     SoundManager soundManager;
     UIManager u;
@@ -44,7 +46,8 @@ public class Building : MonoBehaviour
         builder = GameObject.FindGameObjectWithTag("Builder").GetComponent<Builder>();
         c = GetComponent<Collider>();
         hp = type.hp;
-        timeReset = type.timeReset;
+        timeReset = type.maintainTime;
+        timeReset2 = type.createTime;
         foreach (ResourceType r in type.creates)
         {
             creates.Add(r);
@@ -66,17 +69,28 @@ public class Building : MonoBehaviour
         {
             Maintain(type.maintainCost);
             time = timeReset;
+        }
+        time -= Time.deltaTime;
 
-            foreach (ResourceType resource in creates)
+        if(time2 <= 0)
+        {
+            if (creates.Count > 0)
             {
-                if (r.Check(resource.required.index, resource.required.amountNeeded) && r.CheckCap(resource.index, 1))
+                foreach (ResourceType resource in creates)
                 {
-                    r.Spend(resource.required.index, resource.required.amountNeeded);
-                    r.Gain(resource.index, 1);
+                    if (resource.required != null && r.CheckCap(resource.index, 1))
+                    {
+                        r.Gain(resource.index, 1);
+                    }
+                    else if (r.Check(resource.required.index, resource.required.amountNeeded) && r.CheckCap(resource.index, 1))
+                    {
+                        r.Spend(resource.required.index, resource.required.amountNeeded);
+                        r.Gain(resource.index, 1);
+                    }
                 }
             }
         }
-        time -= Time.deltaTime;
+        time2 -= Time.deltaTime;
 
         if (placing == true)
         {

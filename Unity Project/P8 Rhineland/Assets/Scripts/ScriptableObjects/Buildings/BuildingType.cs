@@ -22,7 +22,8 @@ public class BuildingType : ScriptableObject
     public recieves recieveType;
     public BuildingType upgrade;
     public Vector3 colliderSize;
-    public float timeReset;
+    public float maintainTime;
+    public float createTime;
     public float townHallradius;
     public BuildingType required;
 
