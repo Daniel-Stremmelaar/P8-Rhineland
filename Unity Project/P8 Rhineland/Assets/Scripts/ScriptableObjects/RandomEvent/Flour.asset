@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Flour
-    description: 
-    material: 0
-    amount: 75
+    description: The mills have been cleaned, while doing so we found some leftover
+      flour.
+    material: 8
+    amount: 50
     add: 1
   - eventName: Remove Flour
-    description: 
-    material: 0
-    amount: 25
+    description: Some rodents chewed through our bags of flour. We won't be able to
+      recover it.
+    material: 8
+    amount: 20
     add: 0

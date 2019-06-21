@@ -28,6 +28,7 @@ public class Building : MonoBehaviour
     public float timeReset;
     public Gatherer spawn;
     public GameObject radiusSprite;
+    public Slider healthSlider;
 
     SoundManager soundManager;
     UIManager u;

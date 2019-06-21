@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add IronOre
-    description: 
+    description: We found some iron ore in the rock outcroppings.
     material: 3
-    amount: 75
+    amount: 50
     add: 1
   - eventName: Remove IronOre
-    description: 
+    description: The iron vein we were mining ran out. Some of the things we mined
+      were just rocks.
     material: 3
-    amount: 25
+    amount: 20
     add: 0

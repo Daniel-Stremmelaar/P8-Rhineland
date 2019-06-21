@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add GoldOre
-    description: 
-    material: 0
-    amount: 75
+    description: We found some gold nuggets while panning in the rivers.
+    material: 4
+    amount: 50
     add: 1
   - eventName: Remove GoldOre
-    description: 
-    material: 0
-    amount: 25
+    description: Some of the gold ore we had turned out to just be shiny rocks.
+    material: 4
+    amount: 20
     add: 0

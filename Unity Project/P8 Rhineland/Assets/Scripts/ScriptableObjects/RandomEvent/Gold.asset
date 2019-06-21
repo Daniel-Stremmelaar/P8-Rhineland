@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Gold
-    description: 
-    material: 0
-    amount: 75
+    description: The pope endorses our work. He has given us some gold.
+    material: 6
+    amount: 50
     add: 1
   - eventName: Remove Gold
-    description: 
-    material: 0
-    amount: 25
+    description: The king has increased the taxes, we payed him but it cost us.
+    material: 6
+    amount: 20
     add: 0

@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Wood
-    description: 
+    description: We finished our last project with wood to spare. It has been placed
+      in storage.
     material: 1
-    amount: 75
+    amount: 50
     add: 1
   - eventName: Remove Wood
-    description: 
+    description: Some of our wood has rotted, we wont be able to use it anymore.
     material: 1
-    amount: 25
+    amount: 20
     add: 0

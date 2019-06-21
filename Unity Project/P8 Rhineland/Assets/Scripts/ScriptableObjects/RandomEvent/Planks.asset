@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Planks
-    description: 
+    description: We finished our last project with planks to spare. It has been placed
+      in storage.
     material: 2
-    amount: 75
+    amount: 50
     add: 1
   - eventName: Remove Planks
-    description: 
+    description: ' A few planks were cut too thin, they are useless. '
     material: 2
-    amount: 25
+    amount: 20
     add: 0

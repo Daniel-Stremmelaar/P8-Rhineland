@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Berry
-    description: 
+    description: The villagers stumbled upon a grove while away. They brought the
+      berries home with them.
     material: 10
-    amount: 75
+    amount: 50
     add: 1
   - eventName: Remove Berry
-    description: 
+    description: Some of the kids have used the berries to paint with.
     material: 10
-    amount: 25
+    amount: 20
     add: 0

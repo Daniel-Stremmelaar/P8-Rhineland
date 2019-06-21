@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Wheat
-    description: 
+    description: We had a bountiful harvest. The extra wheat has been placed in storage.
     material: 7
-    amount: 75
+    amount: 50
     add: 1
   - eventName: Remove Wheat
-    description: 
+    description: We had a bad harvest, we have less wheat than we expected.
     material: 7
-    amount: 25
+    amount: 20
     add: 0

@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Iron
-    description: 
-    material: 0
-    amount: 75
+    description: We managed to melt down some of our old tools. The iron has been
+      placed in storage.
+    material: 5
+    amount: 50
     add: 1
   - eventName: Remove Iron
-    description: 
-    material: 0
-    amount: 25
+    description: Some of our Iron has rusted away.
+    material: 5
+    amount: 20
     add: 0

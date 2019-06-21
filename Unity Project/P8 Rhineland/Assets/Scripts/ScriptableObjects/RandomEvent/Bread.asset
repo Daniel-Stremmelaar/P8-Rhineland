@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Bread
-    description: 
-    material: 0
-    amount: 75
+    description: Our bakers outdid themselves today. They made more bread than usual.
+    material: 9
+    amount: 50
     add: 1
   - eventName: Remove Bread
-    description: 
-    material: 0
-    amount: 25
+    description: Thieves stole some of our bread.
+    material: 9
+    amount: 20
     add: 0

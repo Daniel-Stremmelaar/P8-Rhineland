@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addValues:
   - eventName: Add Stone
-    description: 
+    description: We finished our last project with stone to spare. It has been placed
+      in storage.
     material: 0
-    amount: 75
+    amount: 50
     add: 1
   - eventName: Remove Stone
-    description: 
+    description: Some of the masons dropped the stones they were working on. They
+      shattered.
     material: 0
-    amount: 25
+    amount: 20
     add: 0
