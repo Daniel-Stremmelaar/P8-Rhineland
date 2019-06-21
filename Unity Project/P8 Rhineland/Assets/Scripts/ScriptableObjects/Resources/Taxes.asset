@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec40c38f0b1ca7b4f8494b3689c64024, type: 3}
-  m_Name: Gold
+  m_Name: Taxes
   m_EditorClassIdentifier: 
   quantity: 0
   required: {fileID: 11400000, guid: 5bca432f2dc7a7843b61d88f2727da68, type: 2}

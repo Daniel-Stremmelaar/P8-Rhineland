@@ -26,7 +26,7 @@ MonoBehaviour:
   recieveType: 6
   upgrade: {fileID: 0}
   colliderSize: {x: 11, y: 9, z: 7.5}
-  maintainTime: 0
+  maintainTime: 300
   createTime: 0
   townHallradius: 0
   required: {fileID: 0}

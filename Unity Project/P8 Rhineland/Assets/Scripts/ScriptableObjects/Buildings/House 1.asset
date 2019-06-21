@@ -26,8 +26,8 @@ MonoBehaviour:
   recieveType: 6
   upgrade: {fileID: 11400000, guid: d3f4005707d957e47bb7564be6ecc3f6, type: 2}
   colliderSize: {x: 4, y: 5, z: 7}
-  maintainTime: 0
-  createTime: 0
+  maintainTime: 100
+  createTime: 17
   townHallradius: 0
   required: {fileID: 0}
   healthBarHolder: {fileID: 1871992208997374930, guid: ac2636ce669b6ca4bbc659c5f771aac2,
@@ -36,6 +36,7 @@ MonoBehaviour:
   buildingSound: {fileID: 8300000, guid: e1033db1caf86254d949f2e2be5b3667, type: 3}
   buildingSourceSound: {fileID: 3951266432047846797, guid: a90690ddecdafb848bdd6b75f4992f57,
     type: 3}
-  creates: []
+  creates:
+  - {fileID: 11400000, guid: 39fb312afdd577c41802e95769c913fe, type: 2}
   indexes: 0f000000
   amount: 10

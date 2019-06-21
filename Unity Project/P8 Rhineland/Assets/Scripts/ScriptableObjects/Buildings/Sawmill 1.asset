@@ -26,8 +26,8 @@ MonoBehaviour:
   recieveType: 6
   upgrade: {fileID: 0}
   colliderSize: {x: 9.7, y: 9.3, z: 10.3}
-  maintainTime: 0
-  createTime: 0
+  maintainTime: 60
+  createTime: 12
   townHallradius: 0
   required: {fileID: 11400000, guid: bf60da745dc3bb4458033d7eaa85d653, type: 2}
   healthBarHolder: {fileID: 1871992208997374930, guid: ac2636ce669b6ca4bbc659c5f771aac2,
