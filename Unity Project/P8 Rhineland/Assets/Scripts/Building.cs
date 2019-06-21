@@ -20,6 +20,7 @@ public class Building : MonoBehaviour
     Vector3 rotVector;
 
     [Header("Data")]
+    public GameObject test;
     private Builder builder;
     private Collider c;
     private Gatherer g;
@@ -28,9 +29,7 @@ public class Building : MonoBehaviour
     public float time2;
     public float timeReset;
     public float timeReset2;
-    public Slider healthSlider;
-    public GameObject healthBarHolder;
-    public Vector3 heathbarSpawnOfzet;
+
     public Gatherer spawn;
     public GameObject radiusSprite;
 
@@ -58,7 +57,6 @@ public class Building : MonoBehaviour
         camMoveEmpty = GameObject.FindWithTag("Respawn").GetComponent<CamMoveEmpty>();
         rotVector.y += 1f;
 
-        //Instantiate
     }
 
     void Update()
@@ -73,7 +71,7 @@ public class Building : MonoBehaviour
         {
             Maintain(type.maintainCost);
 
-            healthSlider.value = hp;
+            type.healthBarHolder.GetComponentInChildren<Slider>().value = hp;
 
             time = timeReset;
         }

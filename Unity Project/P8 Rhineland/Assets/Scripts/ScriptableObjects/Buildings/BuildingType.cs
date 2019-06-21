@@ -26,6 +26,8 @@ public class BuildingType : ScriptableObject
     public float createTime;
     public float townHallradius;
     public BuildingType required;
+    public GameObject healthBarHolder;
+    public Vector3 heathbarSpawnOfzet;
 
     [Header("Sound")]
     public AudioClip buildingSound;

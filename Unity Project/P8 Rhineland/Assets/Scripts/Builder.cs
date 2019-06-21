@@ -77,6 +77,8 @@ public class Builder : MonoBehaviour
             holder = Instantiate(buildings[i].building, Camera.main.ScreenToViewportPoint(Input.mousePosition), Quaternion.identity).GetComponent<Building>();
             holder.placing = true;
             holder.type = buildings[i];
+            GameObject child =  Instantiate(holder.type.healthBarHolder, holder.gameObject.transform.position + holder.type.heathbarSpawnOfzet, Quaternion.identity);
+            child.transform.SetParent(holder.gameObject.transform);
         }
     }
     void Update()
