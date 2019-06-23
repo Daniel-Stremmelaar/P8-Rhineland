@@ -9,6 +9,7 @@ public class Gatherer : MonoBehaviour
     public GathererType type;
     public enum state { search, gather, deliver, eat };
     public state currentJob;
+    public float mindist;
 
     [Header("Navigation")]
     public int triggerGrow;
@@ -125,15 +126,19 @@ public class Gatherer : MonoBehaviour
                 agent.destination = target.transform.position;
                 break;
         }
+
         if (target != null)
         {
-            if (transform.position != target.transform.position)
+            float dist = Vector3.Distance(transform.position, target.transform.position);
+            if (dist > mindist)
             {
                 animator.SetBool("IsWalking", true);
+                agent.isStopped = false;
             }
             else
             {
                 animator.SetBool("IsWalking", false);
+                agent.isStopped = true;
             }
         }
     }
@@ -189,14 +194,14 @@ public class Gatherer : MonoBehaviour
                 {
                     target.GetComponent<ResourcePoint>().Empty();
                 }
-                timer = 0.0f;
-                if (gathered == type.carryCap)
+                else if (gathered == type.carryCap)
                 {
                     gathering = false;
                     home = null;
                     target.GetComponent<ResourcePoint>().current.Remove(this.gameObject.GetComponent<Gatherer>());
                     currentJob = state.search;
                 }
+                timer = 0.0f;
             }
         }
     }

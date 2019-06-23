@@ -748,6 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 276d42b56e205fc43b2e805142c8b82c, type: 2}
   currentJob: 0
+  mindist: 3
   triggerGrow: 1
   target: {fileID: 0}
   timer: 0

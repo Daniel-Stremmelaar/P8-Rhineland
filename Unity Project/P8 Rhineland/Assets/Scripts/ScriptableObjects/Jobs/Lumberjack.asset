@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Lumberjack
   m_EditorClassIdentifier: 
   carryCap: 50
-  gatherRange: 3
-  gatherTime: 0.1
+  gatherRange: 2
+  gatherTime: 0.2
   goldCost: 50
   type: 0
   jobSprite: {fileID: 21300000, guid: 9fef68ce349822e4883f5d2f9d180936, type: 3}

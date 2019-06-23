@@ -17,13 +17,16 @@ public class OnMouseOverResource : MonoBehaviour, IPointerEnterHandler, IPointer
 
         for (int i = 0; i < resourceManager.resourceTexts.Count; i++)
         {
-            if (transform.GetChild(1).name == resourceManager.resourceTexts[i].name)
+            if (resourceManager.resourceTexts[i] != null)
             {
-                index = i;
-                break;
+                if (transform.GetChild(1).name == resourceManager.resourceTexts[i].name)
+                {
+                    index = i;
+                    break;
+                }
             }
         }
-        
+
         uIManager.hoverOverResource.GetComponentInChildren<Text>().text = resourceManager.resourceTexts[index].name;
     }
 
